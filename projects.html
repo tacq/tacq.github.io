@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Projects by tacq — robotics, 3D and software.">
+  <title>tacq · Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html">TACQ<span>_</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="label">Project archive · <span id="project-count">04</span> entries</p>
+      <h1>Projects</h1>
+      <p class="lead">Each project has its own page with the full story — goals, process, results and media.</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
+      <button class="filter-btn" type="button" data-filter="three-d" aria-pressed="false">3D</button>
+      <button class="filter-btn" type="button" data-filter="software" aria-pressed="false">Software</button>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="projects/autonomous-rover.html" data-category="robotics software">
+        <div class="card-media"><img src="assets/img/robotics.svg" alt="Autonomous rover project thumbnail" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-id">PRJ-001 · 2025</span>
+          <h3>Autonomous Rover</h3>
+          <p>Outdoor rover with SLAM navigation, a custom sensor mast and a web-based teleop dashboard.</p>
+          <div class="tags"><span class="tag robotics">Robotics</span><span class="tag software">Software</span></div>
+          <span class="card-cta">Open file →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/robotic-arm.html" data-category="robotics three-d">
+        <div class="card-media"><img src="assets/img/robotics.svg" alt="Robotic arm project thumbnail" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-id">PRJ-002 · 2024</span>
+          <h3>6-DOF Robotic Arm</h3>
+          <p>3D-printed manipulator with inverse kinematics and camera-based pick-and-place.</p>
+          <div class="tags"><span class="tag robotics">Robotics</span><span class="tag three-d">3D</span></div>
+          <span class="card-cta">Open file →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/scifi-environment.html" data-category="three-d">
+        <div class="card-media"><img src="assets/img/three-d.svg" alt="Sci-fi environment project thumbnail" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-id">PRJ-003 · 2025</span>
+          <h3>Orbital Station Environment</h3>
+          <p>Real-time sci-fi interior: modular kit, PBR texturing and lighting in Unreal Engine.</p>
+          <div class="tags"><span class="tag three-d">3D</span></div>
+          <span class="card-cta">Open file →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/mech-model.html" data-category="three-d">
+        <div class="card-media"><img src="assets/img/three-d.svg" alt="Mech model project thumbnail" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-id">PRJ-004 · 2023</span>
+          <h3>Hard-Surface Mech</h3>
+          <p>Game-ready hard-surface mech with a full rig and turntable renders.</p>
+          <div class="tags"><span class="tag three-d">3D</span></div>
+          <span class="card-cta">Open file →</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> tacq</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

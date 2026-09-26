@@ -2,26 +2,39 @@
   'use strict';
 
   // Footer year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
 
-  // Theme toggle (stores only a non-sensitive UI preference)
-  const root = document.documentElement;
-  const toggle = document.getElementById('theme-toggle');
-  const ALLOWED = ['light', 'dark'];
+  // Project filter (projects.html). Categories come from hardcoded data attributes only.
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card[data-category]');
+  const counter = document.getElementById('project-count');
 
-  let saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) { /* storage unavailable */ }
-
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initial = ALLOWED.includes(saved) ? saved : (prefersDark ? 'dark' : 'light');
-  root.setAttribute('data-theme', initial);
-
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+  function applyFilter(category) {
+    let shown = 0;
+    cards.forEach(function (card) {
+      const cats = (card.getAttribute('data-category') || '').split(' ');
+      const match = category === 'all' || cats.includes(category);
+      card.hidden = !match;
+      if (match) shown++;
     });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === category));
+    });
+    if (counter) counter.textContent = String(shown).padStart(2, '0');
   }
+
+  if (buttons.length && cards.length) {
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyFilter(btn.getAttribute('data-filter') || 'all');
+      });
+    });
+    applyFilter('all');
+  }
+
+  // Resume print button
+  const printBtn = document.getElementById('print-resume');
+  if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
 })();

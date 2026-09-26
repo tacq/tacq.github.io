@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="SOFTWARE placeholder">
+  <rect width="800" height="450" fill="#0c1320"/>
+  <g stroke="#4de1ff" stroke-opacity="0.08"><path d="M0 0V450"/><path d="M40 0V450"/><path d="M80 0V450"/><path d="M120 0V450"/><path d="M160 0V450"/><path d="M200 0V450"/><path d="M240 0V450"/><path d="M280 0V450"/><path d="M320 0V450"/><path d="M360 0V450"/><path d="M400 0V450"/><path d="M440 0V450"/><path d="M480 0V450"/><path d="M520 0V450"/><path d="M560 0V450"/><path d="M600 0V450"/><path d="M640 0V450"/><path d="M680 0V450"/><path d="M720 0V450"/><path d="M760 0V450"/><path d="M800 0V450"/><path d="M0 0H800"/><path d="M0 40H800"/><path d="M0 80H800"/><path d="M0 120H800"/><path d="M0 160H800"/><path d="M0 200H800"/><path d="M0 240H800"/><path d="M0 280H800"/><path d="M0 320H800"/><path d="M0 360H800"/><path d="M0 400H800"/><path d="M0 440H800"/></g>
+  <g fill="none" stroke="#4de1ff" stroke-width="3">
+    <path d="M24 64V24h40M736 24h40v40M776 386v40h-40M64 426H24v-40"/>
+  </g>
+  <g fill="none" stroke="#4de1ff" stroke-width="5" stroke-linecap="round"><path d="M330 160l-70 70 70 70M470 160l70 70-70 70M430 130l-60 200"/></g>
+  <text x="400" y="395" fill="#4de1ff" font-family="Menlo, monospace" font-size="20" letter-spacing="6" text-anchor="middle">SOFTWARE // REPLACE IMAGE</text>
+</svg>

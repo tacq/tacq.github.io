@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Resume of tacq.">
+  <title>tacq · Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html">TACQ<span>_</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="label">Personnel file</p>
+      <h1>Resume</h1>
+      <p class="lead">Engineer working across robotics, 3D content and software.</p>
+      <div class="btn-row no-print mt-2">
+        <a class="btn primary" href="assets/resume.pdf" download="tacq-resume.pdf">Download PDF ↓</a>
+        <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <button class="btn" type="button" id="print-resume">Print</button>
+      </div>
+    </header>
+
+    <div class="resume-grid">
+      <aside class="resume-side">
+        <div class="panel">
+          <h3>Skills</h3>
+          <ul>
+            <li>ROS 2, MoveIt, Nav2</li>
+            <li>C++, Python, TypeScript</li>
+            <li>Computer vision, SLAM</li>
+            <li>Blender, Unreal Engine, Substance</li>
+            <li>Fusion 360, 3D printing</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Education</h3>
+          <ul>
+            <li><strong>M.S. Robotics</strong></li>
+            <li class="muted">University Name · 2020–2022</li>
+            <li class="mt-1"><strong>B.S. Mechanical Eng.</strong></li>
+            <li class="muted">University Name · 2016–2020</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Languages</h3>
+          <ul>
+            <li>English</li>
+            <li>Chinese</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="timeline" aria-label="Experience">
+        <p class="label">Experience</p>
+
+        <article class="panel entry">
+          <div class="entry-head">
+            <h3>Senior Robotics Engineer</h3>
+            <span class="entry-date">2023 — PRESENT</span>
+          </div>
+          <p class="entry-org">Company Name · City</p>
+          <ul>
+            <li>Led development of the navigation stack for a fleet of mobile robots.</li>
+            <li>Reduced localization drift by 40% with a new sensor-fusion pipeline.</li>
+            <li>Mentored 4 engineers and set up CI/simulation testing.</li>
+          </ul>
+        </article>
+
+        <article class="panel entry">
+          <div class="entry-head">
+            <h3>Robotics Software Engineer</h3>
+            <span class="entry-date">2022 — 2023</span>
+          </div>
+          <p class="entry-org">Company Name · City</p>
+          <ul>
+            <li>Built perception modules for manipulation using depth cameras.</li>
+            <li>Developed 3D digital twins for simulation and operator training.</li>
+          </ul>
+        </article>
+
+        <article class="panel entry">
+          <div class="entry-head">
+            <h3>3D Artist (Freelance)</h3>
+            <span class="entry-date">2019 — 2022</span>
+          </div>
+          <p class="entry-org">Self-employed · Remote</p>
+          <ul>
+            <li>Delivered hard-surface and environment assets for indie games.</li>
+            <li>Created product visualizations and animations for hardware startups.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> tacq</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

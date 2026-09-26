@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="An outdoor rover that maps and navigates unknown terrain using lidar SLAM, with a custom sensor mast and a browser-based teleoperation dashboard.">
+  <title>tacq · Autonomous Rover</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="../index.html">TACQ<span>_</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / PRJ-001</nav>
+
+    <header class="page-head">
+      <p class="label">PRJ-001</p>
+      <h1>Autonomous Rover</h1>
+      <p class="lead">An outdoor rover that maps and navigates unknown terrain using lidar SLAM, with a custom sensor mast and a browser-based teleoperation dashboard.</p>
+      <div class="tags mt-2"><span class="tag robotics">Robotics</span><span class="tag software">Software</span></div>
+    </header>
+
+    <div class="project-hero"><img src="../assets/img/robotics.svg" alt="Autonomous Rover — hero image"></div>
+
+    <div class="project-layout">
+      <article class="project-content">
+        <h2>Overview</h2>
+        <p>Describe what the project is and why you built it. Keep the first paragraph short — a reader should understand the project in 30 seconds.</p>
+
+        <h2>Goals</h2>
+        <ul>
+          <li>Goal or requirement #1</li>
+          <li>Goal or requirement #2</li>
+          <li>Goal or requirement #3</li>
+        </ul>
+
+        <h2>Process</h2>
+        <p>Walk through the key design decisions, iterations and technical challenges. Add diagrams, CAD screenshots, wireframes or code snippets here.</p>
+
+        <div class="gallery">
+          <figure><img src="../assets/img/robotics.svg" alt="Process image 1" loading="lazy"><figcaption>Caption for image 1</figcaption></figure>
+          <figure><img src="../assets/img/robotics.svg" alt="Process image 2" loading="lazy"><figcaption>Caption for image 2</figcaption></figure>
+          <figure><img src="../assets/img/robotics.svg" alt="Process image 3" loading="lazy"><figcaption>Caption for image 3</figcaption></figure>
+        </div>
+
+        <h2>Demo</h2>
+        <!-- Put a self-hosted video in assets/video/ and use:
+             <video controls preload="metadata" src="../assets/video/demo.mp4"></video>
+             (YouTube embeds would need frame-src https://www.youtube-nocookie.com added to the CSP.) -->
+        <div class="video-embed">[ VIDEO PLACEHOLDER ]</div>
+
+        <h2>Results</h2>
+        <p>Summarize outcomes with concrete numbers where possible, and what you would do differently next time.</p>
+      </article>
+
+      <aside class="project-meta panel" aria-label="Project details">
+        <p class="label">Spec sheet</p>
+        <ul class="status-list">
+          <li><span class="k">Role</span><span class="v">Lead engineer</span></li>
+          <li><span class="k">Timeline</span><span class="v">Jan – Aug 2025</span></li>
+          <li><span class="k">Team</span><span class="v">Solo</span></li>
+          <li><span class="k">Tools</span><span class="v">ROS 2, Nav2, C++, Fusion 360</span></li>
+          <li><span class="k">Status</span><span class="v">Complete</span></li>
+        </ul>
+        <div class="btn-row mt-2">
+          <a class="btn" href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+      </aside>
+    </div>
+
+    <nav class="project-nav" aria-label="More projects">
+      <a class="btn" href="../projects.html">← All projects</a>
+      <a class="btn" href="robotic-arm.html">6-DOF Robotic Arm →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> tacq</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
