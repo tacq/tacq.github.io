@@ -7,15 +7,15 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="Resume of tacq.">
-  <title>tacq · Resume</title>
+  <meta name="description" content="Resume of Renlong Zhang — Senior Software Engineer (backend, data infrastructure, full-stack).">
+  <title>Renlong Zhang · Resume</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="resume-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav" aria-label="Main">
-      <a class="logo" href="index.html">TACQ<span>_</span></a>
+      <a class="logo" href="index.html">RENLONG<span>_</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -27,92 +27,147 @@
 
   <main id="main">
     <header class="page-head">
-      <p class="label">Personnel file</p>
-      <h1>Resume</h1>
-      <p class="lead">Engineer working across robotics, 3D content and software.</p>
+      <p class="label no-print">Personnel file</p>
+      <h1>Renlong Zhang</h1>
+      <p class="lead">Senior Software Engineer · Backend, Data Infrastructure &amp; Full-Stack</p>
+      <!-- Phone number intentionally omitted: this page and the PDF are public. Share it privately with recruiters. -->
+      <ul class="contact-line">
+        <li><a href="mailto:zrl0420@gmail.com">zrl0420@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/RenlongZhang" target="_blank" rel="noopener noreferrer">linkedin.com/in/RenlongZhang</a></li>
+        <li><a href="https://tacq.github.io" target="_blank" rel="noopener noreferrer">tacq.github.io</a></li>
+      </ul>
       <div class="btn-row no-print mt-2">
-        <a class="btn primary" href="assets/resume.pdf" download="tacq-resume.pdf">Download PDF ↓</a>
+        <a class="btn primary" href="assets/resume.pdf" download="Renlong-Zhang-Resume.pdf">Download PDF ↓</a>
         <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
         <button class="btn" type="button" id="print-resume">Print</button>
       </div>
     </header>
 
     <div class="resume-grid">
-      <aside class="resume-side">
+      <div class="resume-main">
+        <section class="panel resume-block" aria-labelledby="summary-h">
+          <p class="label" id="summary-h">Summary</p>
+          <p class="mb-0">
+            Senior software engineer with 10+ years of experience building large-scale backend services,
+            financial data pipelines and full-stack / mobile products at <strong>Google</strong>,
+            <strong>YouTube</strong>, <strong>Chainalysis</strong>, <strong>Roblox</strong> and <strong>Huawei</strong>.
+            Led teams of up to 9 engineers and architected data systems contributing to
+            <strong>$10M+ in quarterly revenue</strong>. Deep expertise in payments and tax-compliance
+            infrastructure, access control, and high-throughput API design.
+          </p>
+        </section>
+
+        <section class="timeline" aria-labelledby="exp-h">
+          <p class="label" id="exp-h">Experience</p>
+
+          <article class="panel entry">
+            <div class="entry-head">
+              <h3>Senior Software Engineer</h3>
+              <span class="entry-date">07/2025 — PRESENT</span>
+            </div>
+            <p class="entry-org">Google · YouTube RevTube</p>
+            <ul>
+              <li><strong>Earnings &amp; payments infrastructure:</strong> Lead development and scaling of the RevTube pipeline that computes earnings and distributes payments to YouTube creators and partners worldwide.</li>
+              <li><strong>Tax compliance:</strong> Architected and optimized tax data pipelines, ensuring accurate withholding and reporting across international tax jurisdictions.</li>
+              <li><strong>Pipeline reliability:</strong> Improved reliability and throughput of financial data processing, delivering timely, accurate payouts for high-volume partner accounts.</li>
+            </ul>
+          </article>
+
+          <article class="panel entry">
+            <div class="entry-head">
+              <h3>Staff Engineer &amp; Engineering Manager</h3>
+              <span class="entry-date">11/2022 — 07/2025</span>
+            </div>
+            <p class="entry-org">Chainalysis</p>
+            <ul>
+              <li><strong>Team leadership:</strong> Managed a 9-engineer Data Enrichment team owning the company's highest-revenue data products.</li>
+              <li><strong>DeFi Metadata Suite:</strong> Spearheaded the design of a suite ingesting blockchain data into API and data-cloud feeds, contributing to <strong>$10M+ in quarterly revenue</strong>.</li>
+              <li><strong>Price Service:</strong> Architected a scalable service ingesting massive hourly price-data feeds with high performance and low latency.</li>
+              <li><strong>Ascriber pipeline:</strong> Built a data pipeline for storage and quality control of entity data, guaranteeing cross-chain data integrity.</li>
+            </ul>
+          </article>
+
+          <article class="panel entry">
+            <div class="entry-head">
+              <h3>Senior Software Engineer</h3>
+              <span class="entry-date">11/2018 — 11/2022</span>
+            </div>
+            <p class="entry-org">Google · GCP &amp; YouTube</p>
+            <ul>
+              <li><strong>Access control:</strong> Designed and built the access-control system securing core YouTube Live data entities across complex user-permission scenarios.</li>
+              <li><strong>APIs &amp; services:</strong> Built high-scale services for creators and viewers, including entity-management APIs and the public YouTube Data API v3.</li>
+              <li><strong>Google Cloud Talent Solution:</strong> Maintained job-matching APIs and built a “Conversation Engine” powering conversational chatbots.</li>
+            </ul>
+          </article>
+
+          <article class="panel entry">
+            <div class="entry-head">
+              <h3>Full-Stack Software Engineer</h3>
+              <span class="entry-date">01/2018 — 11/2018</span>
+            </div>
+            <p class="entry-org">Roblox</p>
+            <ul>
+              <li>Designed and shipped “Play Together” social game-card sharing and built mobile chat features.</li>
+              <li>Integrated profanity filtering across front-end and back-end systems to improve platform safety.</li>
+            </ul>
+          </article>
+
+          <article class="panel entry">
+            <div class="entry-head">
+              <h3>Mobile Developer &amp; Tech Lead Manager</h3>
+              <span class="entry-date">09/2017 — 01/2018</span>
+            </div>
+            <p class="entry-org">Huawei Technologies</p>
+            <ul>
+              <li>Led a 6-engineer team building Android and iOS health-monitoring apps integrating streaming cameras and smartwatches.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+
+      <aside class="resume-side" aria-label="Skills">
         <div class="panel">
-          <h3>Skills</h3>
+          <h3>Core</h3>
           <ul>
-            <li>ROS 2, MoveIt, Nav2</li>
-            <li>C++, Python, TypeScript</li>
-            <li>Computer vision, SLAM</li>
-            <li>Blender, Unreal Engine, Substance</li>
-            <li>Fusion 360, 3D printing</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Education</h3>
-          <ul>
-            <li><strong>M.S. Robotics</strong></li>
-            <li class="muted">University Name · 2020–2022</li>
-            <li class="mt-1"><strong>B.S. Mechanical Eng.</strong></li>
-            <li class="muted">University Name · 2016–2020</li>
+            <li>Distributed systems design</li>
+            <li>API design &amp; development</li>
+            <li>Big-data pipelines</li>
+            <li>Async services (queues, Pub/Sub)</li>
+            <li>Cloud infrastructure</li>
+            <li>Project scoping &amp; tech leadership</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Languages</h3>
           <ul>
-            <li>English</li>
-            <li>Chinese</li>
+            <li>C++, Java <span class="muted">(Google readability-certified)</span></li>
+            <li>Python, TypeScript <span class="muted">(expert)</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Technologies</h3>
+          <ul>
+            <li>Spanner, Flume (FlumeJava)</li>
+            <li>Google Cloud Platform</li>
+            <li>Pub/Sub, large-scale RPC services</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Domains</h3>
+          <ul>
+            <li>Payments &amp; tax compliance</li>
+            <li>Access control &amp; security</li>
+            <li>Blockchain data</li>
+            <li>Creator platforms</li>
           </ul>
         </div>
       </aside>
-
-      <section class="timeline" aria-label="Experience">
-        <p class="label">Experience</p>
-
-        <article class="panel entry">
-          <div class="entry-head">
-            <h3>Senior Robotics Engineer</h3>
-            <span class="entry-date">2023 — PRESENT</span>
-          </div>
-          <p class="entry-org">Company Name · City</p>
-          <ul>
-            <li>Led development of the navigation stack for a fleet of mobile robots.</li>
-            <li>Reduced localization drift by 40% with a new sensor-fusion pipeline.</li>
-            <li>Mentored 4 engineers and set up CI/simulation testing.</li>
-          </ul>
-        </article>
-
-        <article class="panel entry">
-          <div class="entry-head">
-            <h3>Robotics Software Engineer</h3>
-            <span class="entry-date">2022 — 2023</span>
-          </div>
-          <p class="entry-org">Company Name · City</p>
-          <ul>
-            <li>Built perception modules for manipulation using depth cameras.</li>
-            <li>Developed 3D digital twins for simulation and operator training.</li>
-          </ul>
-        </article>
-
-        <article class="panel entry">
-          <div class="entry-head">
-            <h3>3D Artist (Freelance)</h3>
-            <span class="entry-date">2019 — 2022</span>
-          </div>
-          <p class="entry-org">Self-employed · Remote</p>
-          <ul>
-            <li>Delivered hard-surface and environment assets for indie games.</li>
-            <li>Created product visualizations and animations for hardware startups.</li>
-          </ul>
-        </article>
-      </section>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="inner">
-      <span>© <span data-year></span> tacq</span>
+      <span>© <span data-year></span> Renlong Zhang</span>
       <span>END OF TRANSMISSION</span>
     </div>
   </footer>

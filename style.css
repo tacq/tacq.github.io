@@ -199,7 +199,11 @@ main { flex: 1; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1
 .filter-btn[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
 
 /* ---------- Resume ---------- */
-.resume-grid { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
+.resume-grid { display: grid; grid-template-columns: 1fr 290px; gap: 2rem; align-items: start; margin-top: 2rem; }
+.resume-main { display: flex; flex-direction: column; gap: 2rem; min-width: 0; }
+.resume-block .label { margin-bottom: 0.6rem; }
+.contact-line { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--mono); font-size: 0.88rem; }
+.contact-line li { overflow-wrap: anywhere; }
 .resume-side { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 1.5rem; }
 .resume-side h3 { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
 .resume-side ul { list-style: none; margin: 0; padding: 0; }
@@ -256,15 +260,33 @@ main { flex: 1; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1
 }
 
 /* ---------- Print (resume prints cleanly) ---------- */
+@page { size: letter; margin: 0.35in 0.5in; }
 @media print {
-  body { background: #fff; color: #000; font-size: 11pt; }
-  .site-header, .site-footer, .no-print { display: none !important; }
+  body { background: #fff; color: #111; font-size: 9pt; line-height: 1.3; display: block; min-height: 0; }
+  .site-header, .site-footer, .no-print, .skip-link { display: none !important; }
+  main { padding: 0; max-width: none; }
+  .page-head { padding: 0 0 0.5rem; margin: 0; border-bottom: 2px solid #111; }
+  .page-head h1 { font-size: 19pt; margin: 0 0 0.1rem; }
+  .page-head p.lead { color: #333; font-size: 11pt; }
+  .contact-line { margin-top: 0.35rem; font-size: 9pt; }
+  a { color: #111; text-decoration: none; }
   .panel { background: none; border: none; padding: 0; }
   .panel::before, .panel::after { display: none; }
-  .resume-grid { grid-template-columns: 1fr; }
-  .resume-side { position: static; }
-  a { color: #000; }
-  .label, .entry-date, .resume-side h3 { color: #333; }
+  .label { color: #111; font-weight: 700; font-size: 9.5pt; border-bottom: 1px solid #999; padding-bottom: 0.15rem; margin: 0 0 0.4rem; }
+  .label::before { content: none; }
+  .resume-grid { display: block; margin-top: 0.6rem; }
+  .resume-main { gap: 0.6rem; }
+  .timeline { gap: 0.4rem; }
+  .entry { break-inside: avoid; }
+  .entry-head h3 { font-size: 10.5pt; }
+  .entry-date { color: #111; font-size: 9pt; }
+  .entry-org { color: #444; margin: 0 0 0.2rem; font-style: italic; }
+  .entry li { margin: 0.05rem 0; }
+  .resume-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1.5rem; margin-top: 0.5rem; padding-top: 0.4rem; border-top: 1px solid #999; break-inside: avoid; }
+  .resume-side h3 { color: #111; font-size: 9pt; margin: 0 0 0.15rem; }
+  .resume-side li { color: #111; font-size: 9pt; padding: 0; display: inline; }
+  .resume-side li:not(:last-child)::after { content: " · "; }
+  .muted { color: #555; }
 }
 
 /* ---------- Utilities (CSP blocks inline style attributes) ---------- */
