@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and X-Frame-Options are ignored in <meta>; clickjacking
+    protection would require a proxy/CDN (e.g. Cloudflare) in front of GitHub Pages.
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Personal website of tacq">
+  <title>tacq · Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#top">tacq</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>tacq</h1>
+      <p class="tagline">Software engineer · builder · lifelong learner</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">See my work</a>
+        <a class="btn" href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        This is a demo homepage hosted on GitHub Pages. Replace this text with a short
+        bio — what you do, what you care about, and what you're currently working on.
+      </p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>A short description of an interesting project and the problem it solves.</p>
+          <a href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">View →</a>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>Another highlight — tools used, impact, or what you learned.</p>
+          <a href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">View →</a>
+        </article>
+        <article class="card">
+          <h3>Project Three</h3>
+          <p>Something fun or experimental you built on the side.</p>
+          <a href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">View →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Find me on <a href="https://github.com/tacq" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> tacq · Built with plain HTML, CSS &amp; JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
