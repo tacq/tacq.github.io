@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="ENKI Motion-Activated Illuminated Nameplate — a custom bedroom nameplate built for my son in 2014, combining woodworking (power-sawn plywood &amp; wood slats), 3ds Max 3D modeling, two-part 3D-printed letters with internal LEDs, and a 30-second motion detection sensor.">
+  <meta name="theme-color" content="#070b12">
+  <title>Renlong Zhang · ENKI Motion-Activated Nameplate</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="../index.html">RENLONG<span>_</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / ENKI Motion-Activated Nameplate</nav>
+
+    <header class="page-head">
+      <p class="label">NP-01 · 2014 · Woodworking, 3D print &amp; electronics</p>
+      <h1>ENKI Motion-Activated Illuminated Nameplate</h1>
+      <p class="lead">
+        A custom wall-mounted nameplate built for my son, <strong>Enki</strong>, in 2014 — blending hands-on
+        <strong>woodworking</strong>, <strong>3ds Max 3D design</strong>, <strong>two-part 3D-printed diffuser letters</strong>,
+        and <strong>motion-triggered LED electronics</strong>. Inspired by a decorative slatted plaque I saw at Target,
+        the sign automatically lights up for <strong>30 seconds</strong> whenever someone walks past.
+      </p>
+      <div class="tags mt-2">
+        <span class="tag three-d">3ds Max · 3D Print</span>
+        <span class="tag">Woodworking (Power Saw)</span>
+        <span class="tag robotics">PIR Motion Sensor · LED</span>
+        <span class="tag">Family Gift</span>
+      </div>
+      <div class="btn-row mt-2">
+        <a class="btn primary" href="#media-gallery" data-play-first-video>▶ Watch demo video</a>
+        <a class="btn" href="#sec-build">How it was built</a>
+      </div>
+    </header>
+
+    <!-- Unified Video & Photo Gallery -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="ENKI Motion-Activated Nameplate video and photos">
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/DdzlQF3ykdN/embed/" data-video-title="ENKI Nameplate // Motion-Activated 30s LED Demo" tabindex="0" role="button" aria-label="Play ENKI Nameplate motion-activated LED demo video on this page">
+        <div class="video-tile-media">
+          <img src="../assets/img/nameplate/reel-cover.jpg" alt="ENKI illuminated 3D-printed nameplate mounted on slatted wood rails glowing in the dark">
+          <span class="play-badge">▶ VIDEO</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>01 // Motion-sensor walk-by &amp; 30s LED glow demo</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/nameplate/lit-glow.jpg" alt="ENKI nameplate illuminated in a dark room with internal LEDs glowing through the translucent white 3D-printed letters" loading="lazy">
+        <figcaption>02 // Illuminated night glow (LEDs inside each two-part letter)</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/nameplate/wall-mounted.jpg" alt="ENKI slatted wood and 3D-printed nameplate mounted on the wall beside a bedroom door" loading="lazy">
+        <figcaption>03 // Wall-mounted beside the bedroom door</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/nameplate/closeup.jpg" alt="Close-up of the two-part 3D-printed E N K I letters with black shells and white diffusers mounted on horizontal wood slats over a black plywood backing" loading="lazy">
+        <figcaption>04 // Close-up: 2-part 3D-printed letters &amp; power-sawn plywood backing</figcaption>
+      </figure>
+    </div>
+
+    <!-- Key numbers -->
+    <section class="stats" aria-label="ENKI Nameplate at a glance">
+      <div class="stat"><span class="stat-num" data-count="30" data-suffix="s">30s</span><span class="stat-label">Auto-on motion timer</span></div>
+      <div class="stat"><span class="stat-num" data-count="4">4</span><span class="stat-label">2-part 3D-printed letters (E·N·K·I)</span></div>
+      <div class="stat"><span class="stat-num" data-count="6">6</span><span class="stat-label">Horizontal wood slats</span></div>
+      <div class="stat"><span class="stat-num" data-count="3">3</span><span class="stat-label">Disciplines (Wood · 3D · Electronics)</span></div>
+    </section>
+
+    <div class="project-layout mt-3">
+      <article class="project-content">
+        <h2 id="sec-overview">Overview &amp; inspiration</h2>
+        <p>
+          While browsing Target, I spotted a slatted wooden wall plaque and had the idea to build a personalized,
+          illuminated version for my son, <strong>Enki</strong>. Instead of a static sign, I wanted it to double as a
+          gentle hallway/doorway nightlight that comes alive automatically when someone walks by.
+        </p>
+        <p>
+          The finished sign combines a custom-cut plywood backboard and warm natural wood slats with bold geometric
+          <strong>E N K I</strong> lettering modeled in <strong>3ds Max</strong>. Inside each hollow 3D-printed character
+          sits a cluster of LEDs wired together and controlled by a concealed motion detection sensor that lights the
+          nameplate for <strong>30 seconds</strong> on every pass.
+        </p>
+
+        <h2 id="sec-build">Design &amp; build process</h2>
+        <div class="feature-grid">
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">📐</span>
+            <h3>1. 3ds Max typography &amp; 2-part letters</h3>
+            <p>Designed custom stencil-style <code>E N K I</code> letterforms in <strong>3ds Max</strong>. Each letter is engineered as <strong>two 3D-printed parts</strong>: a matte-black rear housing channel and a snap-fit translucent white front diffuser cap.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">🪚</span>
+            <h3>2. Plywood cutting &amp; slatted woodwork</h3>
+            <p>Cut the main backing plate from plywood using a power saw (电锯), finished it in matte black for high contrast, and mounted six evenly spaced natural wood horizontal slats across the face.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">💡</span>
+            <h3>3. Internal per-letter LED wiring</h3>
+            <p>Embedded bright warm-white LEDs inside the cavity of each 3D-printed letter before snapping on the white diffuser caps, then routed and connected all four letters together behind the slats.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">📡</span>
+            <h3>4. 30-second PIR motion trigger</h3>
+            <p>Integrated a passive infrared (PIR) motion sensor into the circuit so walking past the bedroom door automatically illuminates the entire sign for <strong>30 seconds</strong> before powering back down.</p>
+          </div>
+        </div>
+
+        <h2 id="sec-materials">Components &amp; materials</h2>
+        <div class="table-wrap">
+          <table class="bom">
+            <caption class="muted">Build breakdown</caption>
+            <thead><tr><th scope="col">Subsystem</th><th scope="col">Tools &amp; Materials</th><th scope="col">Details</th></tr></thead>
+            <tbody>
+              <tr><td>3D design</td><td>Autodesk 3ds Max</td><td>Custom geometric stencil letterforms (<code>E</code>, <code>N</code>, <code>K</code>, <code>I</code>) with internal wire channels and diffuser ledges</td></tr>
+              <tr><td>3D-printed letters (×4)</td><td>2-part PLA print (Black + White)</td><td>Each character printed in 2 parts: black side/back shell + white light-diffusing faceplate</td></tr>
+              <tr><td>Backing &amp; slats</td><td>Plywood + wood strips + power saw (电锯)</td><td>Power-sawn matte-black plywood base layered with 6 natural-finish horizontal wood rails</td></tr>
+              <tr><td>Illumination</td><td>Internal LED array</td><td>LEDs installed inside every letter cavity and wired together in parallel across the backing board</td></tr>
+              <tr><td>Motion control</td><td>PIR motion detection sensor</td><td>Automatically switches the LEDs on for 30 seconds whenever motion is detected near the doorway</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <aside class="project-meta panel" aria-label="Project details">
+        <p class="label">Spec sheet</p>
+        <ul class="status-list">
+          <li><span class="k">Designation</span><span class="v">NP-01 · Enki Edition</span></li>
+          <li><span class="k">Year</span><span class="v">2014</span></li>
+          <li><span class="k">Inspiration</span><span class="v">Target slatted wall plaque</span></li>
+          <li><span class="k">CAD software</span><span class="v">Autodesk 3ds Max</span></li>
+          <li><span class="k">Woodwork</span><span class="v">Power-sawn plywood + 6 wood slats</span></li>
+          <li><span class="k">Letters</span><span class="v">4 × 2-part 3D prints (black + white)</span></li>
+          <li><span class="k">Electronics</span><span class="v">Internal LEDs + 30s motion sensor</span></li>
+          <li><span class="k">Status</span><span class="v"><span class="dot" aria-hidden="true"></span>Complete · wall-mounted</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <nav class="project-nav" aria-label="More projects">
+      <a class="btn" href="ferris-wheel.html">← Ferris Wheel Photo Frame</a>
+      <a class="btn" href="autonomous-rover.html">Autonomous Rover →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> Renlong Zhang</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
