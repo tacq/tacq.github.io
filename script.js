@@ -306,6 +306,7 @@
   }
 
   /* ---------- Gallery lightbox (photos) ---------- */
+  let openLightboxImg = null;
   const galleryImgs = document.querySelectorAll(
     '.gallery img, .project-hero img, .photo-trio figure:not(.video-tile) img, .media-gallery figure:not(.video-tile) img, .schematic-figure img'
   );
@@ -322,23 +323,27 @@
     close.addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
 
+    openLightboxImg = function (src, alt, captionText) {
+      big.src = src;
+      big.alt = alt || '';
+      cap.textContent = captionText || alt || '';
+      dlg.showModal();
+    };
+
     galleryImgs.forEach(function (img) {
       img.classList.add('zoomable');
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'button');
       const open = function () {
-        big.src = img.currentSrc || img.src;   // same-origin only (CSP img-src 'self')
-        big.alt = img.alt;
         const fc = img.closest('figure') && img.closest('figure').querySelector('figcaption');
-        cap.textContent = fc ? fc.textContent : img.alt;
-        dlg.showModal();
+        openLightboxImg(img.currentSrc || img.src, img.alt, fc ? fc.textContent : img.alt);
       };
       img.addEventListener('click', open);
       img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
     });
   }
 
-  /* ---------- On-page video player (modal, strict embed allow-list) ---------- */
+  /* ---------- Interactive Media Showcase (Stage + Thumbnail Gallery) ---------- */
   function isAllowedEmbed(url) {
     return typeof url === 'string' && (
       url.indexOf('https://www.instagram.com/reel/') === 0 ||
@@ -356,43 +361,235 @@
     return frame;
   }
 
-  const videoTiles = document.querySelectorAll('.video-tile[data-video-embed]');
-  if (videoTiles.length && typeof HTMLDialogElement === 'function') {
-    const vDlg = document.createElement('dialog');
-    vDlg.className = 'lightbox video-lightbox';
-    const vClose = document.createElement('button');
-    vClose.type = 'button'; vClose.className = 'lightbox-close';
-    vClose.setAttribute('aria-label', 'Close video'); vClose.textContent = '×';
-    const vMount = document.createElement('div');
-    vMount.className = 'video-lightbox-mount';
-    const vCap = document.createElement('p');
-    vDlg.appendChild(vClose); vDlg.appendChild(vMount); vDlg.appendChild(vCap);
-    document.body.appendChild(vDlg);
-    vClose.addEventListener('click', function () { vDlg.close(); });
-    vDlg.addEventListener('click', function (e) { if (e.target === vDlg) vDlg.close(); });
-    vDlg.addEventListener('close', function () { vMount.replaceChildren(); });
-
-    const openTileVideo = function (tile) {
-      const url = tile.getAttribute('data-video-embed') || '';
-      if (!isAllowedEmbed(url)) return;
-      const title = tile.getAttribute('data-video-title') || 'EO-01 Demo Video';
-      vMount.replaceChildren(buildEmbedIframe(url, title));
-      vCap.textContent = title;
-      vDlg.showModal();
-    };
-
-    videoTiles.forEach(function (tile) {
-      tile.addEventListener('click', function () { openTileVideo(tile); });
-      tile.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTileVideo(tile); }
+  const mediaGallery = document.querySelector('.media-gallery');
+  if (mediaGallery) {
+    const figures = Array.prototype.slice.call(mediaGallery.querySelectorAll(':scope > figure'));
+    if (figures.length > 0) {
+      const items = figures.map(function (fig, idx) {
+        const isVideo = fig.classList.contains('video-tile') && fig.hasAttribute('data-video-embed');
+        const embedUrl = isVideo ? (fig.getAttribute('data-video-embed') || '') : '';
+        const videoTitle = isVideo ? (fig.getAttribute('data-video-title') || '') : '';
+        const imgEl = fig.querySelector('img');
+        const capEl = fig.querySelector('figcaption');
+        const rawCap = capEl ? capEl.textContent.trim() : (imgEl ? imgEl.alt : '');
+        const cleanCap = rawCap.replace(/\s*\(click to play\)\s*/i, '');
+        return {
+          index: idx,
+          isVideo: isVideo && isAllowedEmbed(embedUrl),
+          embedUrl: embedUrl,
+          videoTitle: videoTitle,
+          imgSrc: imgEl ? (imgEl.getAttribute('src') || '') : '',
+          imgAlt: imgEl ? (imgEl.getAttribute('alt') || '') : '',
+          caption: cleanCap || ('Item ' + String(idx + 1).padStart(2, '0'))
+        };
       });
-    });
 
-    document.querySelectorAll('[data-play-first-video]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openTileVideo(videoTiles[0]);
+      const videoCount = items.filter(function (it) { return it.isVideo; }).length;
+      const photoCount = items.length - videoCount;
+
+      const showcase = document.createElement('div');
+      showcase.className = 'media-showcase';
+
+      // Left: Main Stage
+      const stage = document.createElement('div');
+      stage.className = 'media-stage';
+
+      const stageBar = document.createElement('div');
+      stageBar.className = 'media-stage-bar';
+      const stageCounter = document.createElement('span');
+      stageCounter.className = 'media-stage-counter';
+      const stageCaption = document.createElement('span');
+      stageCaption.className = 'media-stage-caption';
+      const stageAction = document.createElement('button');
+      stageAction.type = 'button';
+      stageAction.className = 'media-stage-action';
+      stageBar.appendChild(stageCounter);
+      stageBar.appendChild(stageCaption);
+      stageBar.appendChild(stageAction);
+
+      const viewport = document.createElement('div');
+      viewport.className = 'media-stage-viewport';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.className = 'stage-nav-btn prev';
+      prevBtn.setAttribute('aria-label', 'Previous media');
+      prevBtn.textContent = '‹';
+
+      const nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'stage-nav-btn next';
+      nextBtn.setAttribute('aria-label', 'Next media');
+      nextBtn.textContent = '›';
+
+      stage.appendChild(stageBar);
+      stage.appendChild(viewport);
+
+      // Right: Thumbnail Playlist
+      const playlist = document.createElement('div');
+      playlist.className = 'media-playlist';
+
+      const playlistHead = document.createElement('div');
+      playlistHead.className = 'media-playlist-head';
+      const headLabel = document.createElement('span');
+      headLabel.textContent = '// Media gallery';
+      const headCounts = document.createElement('strong');
+      const countParts = [];
+      if (videoCount > 0) countParts.push(videoCount + (videoCount === 1 ? ' video' : ' videos'));
+      if (photoCount > 0) countParts.push(photoCount + (photoCount === 1 ? ' photo' : ' photos'));
+      headCounts.textContent = countParts.join(' · ');
+      playlistHead.appendChild(headLabel);
+      playlistHead.appendChild(headCounts);
+
+      const thumbGrid = document.createElement('div');
+      thumbGrid.className = 'media-thumb-grid';
+
+      const thumbButtons = [];
+      let activeIdx = 0;
+      let isPlayingVideo = false;
+
+      function renderStage(idx, playNow) {
+        activeIdx = (idx + items.length) % items.length;
+        const item = items[activeIdx];
+        isPlayingVideo = Boolean(playNow && item.isVideo);
+
+        thumbButtons.forEach(function (btn, i) {
+          btn.classList.toggle('active', i === activeIdx);
+          btn.setAttribute('aria-pressed', String(i === activeIdx));
+        });
+
+        const numStr = String(activeIdx + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
+        stageCounter.textContent = numStr + (item.isVideo ? ' · ▶ VIDEO' : ' · PHOTO');
+        stageCaption.textContent = item.caption;
+        viewport.classList.toggle('is-video', item.isVideo && !isPlayingVideo);
+        viewport.replaceChildren();
+
+        if (isPlayingVideo) {
+          stageAction.textContent = '✕ Stop video';
+          viewport.appendChild(buildEmbedIframe(item.embedUrl, item.videoTitle || item.caption));
+        } else {
+          const img = document.createElement('img');
+          img.className = 'stage-img';
+          img.src = item.imgSrc;
+          img.alt = item.imgAlt;
+          viewport.appendChild(img);
+
+          if (item.isVideo) {
+            stageAction.textContent = '▶ Play video';
+            const playOverlay = document.createElement('span');
+            playOverlay.className = 'play-btn-overlay';
+            playOverlay.setAttribute('aria-hidden', 'true');
+            const tri = document.createElement('span');
+            tri.className = 'play-triangle';
+            playOverlay.appendChild(tri);
+            viewport.appendChild(playOverlay);
+
+            const startPlay = function () { renderStage(activeIdx, true); };
+            img.addEventListener('click', startPlay);
+            playOverlay.style.cursor = 'pointer';
+            playOverlay.addEventListener('click', startPlay);
+          } else {
+            stageAction.textContent = '⛶ Fullscreen';
+            img.addEventListener('click', function () {
+              if (openLightboxImg) openLightboxImg(item.imgSrc, item.imgAlt, item.caption);
+            });
+          }
+        }
+
+        if (items.length > 1) {
+          viewport.appendChild(prevBtn);
+          viewport.appendChild(nextBtn);
+        }
+      }
+
+      items.forEach(function (item, idx) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'media-thumb' + (item.isVideo ? ' is-video' : '');
+        btn.setAttribute('aria-label', (item.isVideo ? 'Video: ' : 'Photo: ') + item.caption);
+
+        const mediaBox = document.createElement('div');
+        mediaBox.className = 'media-thumb-media';
+
+        const tImg = document.createElement('img');
+        tImg.src = item.imgSrc;
+        tImg.alt = '';
+        tImg.loading = 'lazy';
+        mediaBox.appendChild(tImg);
+
+        const badge = document.createElement('span');
+        badge.className = 'media-thumb-badge';
+        badge.textContent = (item.isVideo ? '▶ VID ' : 'IMG ') + String(idx + 1).padStart(2, '0');
+        mediaBox.appendChild(badge);
+
+        if (item.isVideo) {
+          const playWrap = document.createElement('span');
+          playWrap.className = 'media-thumb-play';
+          const playIcon = document.createElement('span');
+          playIcon.className = 'media-thumb-play-icon';
+          playWrap.appendChild(playIcon);
+          mediaBox.appendChild(playWrap);
+        }
+
+        const cap = document.createElement('span');
+        cap.className = 'media-thumb-cap';
+        cap.textContent = item.caption.replace(/^\d+\s*\/\/\s*/, '');
+
+        btn.appendChild(mediaBox);
+        btn.appendChild(cap);
+
+        btn.addEventListener('click', function () {
+          // Clicking a video thumbnail selects it and starts playback if clicked again (or if user clicks Play)
+          renderStage(idx, item.isVideo && activeIdx === idx && !isPlayingVideo);
+        });
+
+        thumbButtons.push(btn);
+        thumbGrid.appendChild(btn);
       });
-    });
+
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        renderStage(activeIdx - 1, false);
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        renderStage(activeIdx + 1, false);
+      });
+
+      stageAction.addEventListener('click', function () {
+        const item = items[activeIdx];
+        if (item.isVideo) {
+          renderStage(activeIdx, !isPlayingVideo);
+        } else if (openLightboxImg) {
+          openLightboxImg(item.imgSrc, item.imgAlt, item.caption);
+        }
+      });
+
+      showcase.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); renderStage(activeIdx - 1, false); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); renderStage(activeIdx + 1, false); }
+      });
+
+      playlist.appendChild(playlistHead);
+      playlist.appendChild(thumbGrid);
+      showcase.appendChild(stage);
+      showcase.appendChild(playlist);
+
+      mediaGallery.classList.add('is-enhanced');
+      mediaGallery.appendChild(showcase);
+      renderStage(0, false);
+
+      document.querySelectorAll('[data-play-first-video]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const firstVidIdx = items.findIndex(function (it) { return it.isVideo; });
+          if (firstVidIdx >= 0) {
+            mediaGallery.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+            renderStage(firstVidIdx, true);
+          }
+        });
+      });
+    }
   }
 })();
+
