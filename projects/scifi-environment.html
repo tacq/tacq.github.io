@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="A real-time sci-fi station interior built from a modular kit, textured with PBR materials and lit in Unreal Engine 5.">
   <title>Renlong Zhang · Orbital Station Environment</title>
@@ -29,13 +29,19 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / PRJ-003</nav>
 
     <header class="page-head">
-      <p class="label">PRJ-003</p>
+      <p class="label">PRJ-003 · 2025</p>
       <h1>Orbital Station Environment</h1>
       <p class="lead">A real-time sci-fi station interior built from a modular kit, textured with PBR materials and lit in Unreal Engine 5.</p>
       <div class="tags mt-2"><span class="tag three-d">3D</span></div>
     </header>
 
-    <div class="project-hero"><img src="../assets/img/three-d.svg" alt="Orbital Station Environment — hero image"></div>
+    <!-- Unified Video & Photo Gallery -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="Orbital Station Environment videos and photos">
+      <figure><img src="../assets/img/three-d.svg" alt="Orbital Station Environment — main corridor render"><figcaption>01 // Main corridor lighting pass</figcaption></figure>
+      <figure><img src="../assets/img/three-d.svg" alt="Modular sci-fi wall and trim sheet kit" loading="lazy"><figcaption>02 // Modular environment kit</figcaption></figure>
+      <figure><img src="../assets/img/three-d.svg" alt="PBR material and trim texture breakdown" loading="lazy"><figcaption>03 // PBR material breakdown</figcaption></figure>
+      <figure><img src="../assets/img/three-d.svg" alt="Unreal Engine 5 real-time viewport" loading="lazy"><figcaption>04 // UE5 real-time scene</figcaption></figure>
+    </div>
 
     <div class="project-layout">
       <article class="project-content">
@@ -51,18 +57,6 @@
 
         <h2>Process</h2>
         <p>Walk through the key design decisions, iterations and technical challenges. Add diagrams, CAD screenshots, wireframes or code snippets here.</p>
-
-        <div class="gallery">
-          <figure><img src="../assets/img/three-d.svg" alt="Process image 1" loading="lazy"><figcaption>Caption for image 1</figcaption></figure>
-          <figure><img src="../assets/img/three-d.svg" alt="Process image 2" loading="lazy"><figcaption>Caption for image 2</figcaption></figure>
-          <figure><img src="../assets/img/three-d.svg" alt="Process image 3" loading="lazy"><figcaption>Caption for image 3</figcaption></figure>
-        </div>
-
-        <h2>Demo</h2>
-        <!-- Put a self-hosted video in assets/video/ and use:
-             <video controls preload="metadata" src="../assets/video/demo.mp4"></video>
-             (YouTube embeds would need frame-src https://www.youtube-nocookie.com added to the CSP.) -->
-        <div class="video-embed">[ VIDEO PLACEHOLDER ]</div>
 
         <h2>Results</h2>
         <p>Summarize outcomes with concrete numbers where possible, and what you would do differently next time.</p>

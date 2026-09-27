@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="A fully 3D-printed six-axis manipulator with custom inverse kinematics and camera-based pick-and-place.">
   <title>Renlong Zhang · 6-DOF Robotic Arm</title>
@@ -29,13 +29,19 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / PRJ-002</nav>
 
     <header class="page-head">
-      <p class="label">PRJ-002</p>
+      <p class="label">PRJ-002 · 2024</p>
       <h1>6-DOF Robotic Arm</h1>
       <p class="lead">A fully 3D-printed six-axis manipulator with custom inverse kinematics and camera-based pick-and-place.</p>
       <div class="tags mt-2"><span class="tag robotics">Robotics</span><span class="tag three-d">3D</span></div>
     </header>
 
-    <div class="project-hero"><img src="../assets/img/robotics.svg" alt="6-DOF Robotic Arm — hero image"></div>
+    <!-- Unified Video & Photo Gallery -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="6-DOF Robotic Arm videos and photos">
+      <figure><img src="../assets/img/robotics.svg" alt="6-DOF Robotic Arm — full assembly"><figcaption>01 // 6-DOF manipulator assembly</figcaption></figure>
+      <figure><img src="../assets/img/robotics.svg" alt="3D-printed joint and planetary gear stage" loading="lazy"><figcaption>02 // 3D-printed joint actuators</figcaption></figure>
+      <figure><img src="../assets/img/robotics.svg" alt="Inverse kinematics trajectory planning" loading="lazy"><figcaption>03 // Inverse kinematics solver</figcaption></figure>
+      <figure><img src="../assets/img/robotics.svg" alt="Camera-guided pick and place" loading="lazy"><figcaption>04 // Vision pick-and-place</figcaption></figure>
+    </div>
 
     <div class="project-layout">
       <article class="project-content">
@@ -51,18 +57,6 @@
 
         <h2>Process</h2>
         <p>Walk through the key design decisions, iterations and technical challenges. Add diagrams, CAD screenshots, wireframes or code snippets here.</p>
-
-        <div class="gallery">
-          <figure><img src="../assets/img/robotics.svg" alt="Process image 1" loading="lazy"><figcaption>Caption for image 1</figcaption></figure>
-          <figure><img src="../assets/img/robotics.svg" alt="Process image 2" loading="lazy"><figcaption>Caption for image 2</figcaption></figure>
-          <figure><img src="../assets/img/robotics.svg" alt="Process image 3" loading="lazy"><figcaption>Caption for image 3</figcaption></figure>
-        </div>
-
-        <h2>Demo</h2>
-        <!-- Put a self-hosted video in assets/video/ and use:
-             <video controls preload="metadata" src="../assets/video/demo.mp4"></video>
-             (YouTube embeds would need frame-src https://www.youtube-nocookie.com added to the CSP.) -->
-        <div class="video-embed">[ VIDEO PLACEHOLDER ]</div>
 
         <h2>Results</h2>
         <p>Summarize outcomes with concrete numbers where possible, and what you would do differently next time.</p>

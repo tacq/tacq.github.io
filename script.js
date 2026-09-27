@@ -343,7 +343,7 @@
     });
   }
 
-  /* ---------- Interactive Media Showcase (Stage + Thumbnail Gallery) ---------- */
+  /* ---------- Interactive Media Showcase + Full-Screen Review Dialog ---------- */
   function isAllowedEmbed(url) {
     return typeof url === 'string' && (
       url.indexOf('https://www.instagram.com/reel/') === 0 ||
@@ -352,9 +352,14 @@
     );
   }
 
-  function buildEmbedIframe(url, title) {
+  function withAutoplay(url) {
+    if (!url) return '';
+    return url + (url.indexOf('?') === -1 ? '?autoplay=1' : '&autoplay=1');
+  }
+
+  function buildEmbedIframe(url, title, autoplay) {
     const frame = document.createElement('iframe');
-    frame.src = url;
+    frame.src = autoplay ? withAutoplay(url) : url;
     frame.title = title || 'Embedded video player';
     frame.setAttribute('allow', 'autoplay; encrypted-media; fullscreen; picture-in-picture');
     frame.setAttribute('allowfullscreen', '');
@@ -445,8 +450,156 @@
       thumbGrid.className = 'media-thumb-grid';
 
       const thumbButtons = [];
+      const stripButtons = [];
       let activeIdx = 0;
       let isPlayingVideo = false;
+      let reviewDlg = null;
+      let reviewCounter = null;
+      let reviewCaption = null;
+      let reviewBody = null;
+
+      if (typeof HTMLDialogElement === 'function') {
+        reviewDlg = document.createElement('dialog');
+        reviewDlg.className = 'lightbox media-review-dialog';
+
+        const rBar = document.createElement('div');
+        rBar.className = 'review-dialog-bar';
+        reviewCounter = document.createElement('span');
+        reviewCounter.className = 'review-dialog-counter';
+        reviewCaption = document.createElement('span');
+        reviewCaption.className = 'review-dialog-caption';
+        const rClose = document.createElement('button');
+        rClose.type = 'button';
+        rClose.className = 'review-dialog-close';
+        rClose.setAttribute('aria-label', 'Close full-screen preview');
+        rClose.textContent = '×';
+        rBar.appendChild(reviewCounter);
+        rBar.appendChild(reviewCaption);
+        rBar.appendChild(rClose);
+
+        reviewBody = document.createElement('div');
+        reviewBody.className = 'review-dialog-body';
+
+        const rPrev = document.createElement('button');
+        rPrev.type = 'button';
+        rPrev.className = 'review-nav-btn prev';
+        rPrev.setAttribute('aria-label', 'Previous item');
+        rPrev.textContent = '‹';
+
+        const rNext = document.createElement('button');
+        rNext.type = 'button';
+        rNext.className = 'review-nav-btn next';
+        rNext.setAttribute('aria-label', 'Next item');
+        rNext.textContent = '›';
+
+        const rStrip = document.createElement('div');
+        rStrip.className = 'review-dialog-strip';
+
+        items.forEach(function (it, idx) {
+          const sb = document.createElement('button');
+          sb.type = 'button';
+          sb.className = 'review-strip-btn';
+          sb.setAttribute('aria-label', (it.isVideo ? 'Video ' : 'Photo ') + (idx + 1));
+          const sImg = document.createElement('img');
+          sImg.src = it.imgSrc;
+          sImg.alt = '';
+          sImg.loading = 'lazy';
+          sb.appendChild(sImg);
+          if (it.isVideo) {
+            const sBadge = document.createElement('span');
+            sBadge.className = 'review-strip-badge';
+            sBadge.textContent = '▶';
+            sb.appendChild(sBadge);
+          }
+          sb.addEventListener('click', function () {
+            renderReviewDialog(idx);
+          });
+          stripButtons.push(sb);
+          rStrip.appendChild(sb);
+        });
+
+        rPrev.addEventListener('click', function (e) {
+          e.stopPropagation();
+          renderReviewDialog(activeIdx - 1);
+        });
+        rNext.addEventListener('click', function (e) {
+          e.stopPropagation();
+          renderReviewDialog(activeIdx + 1);
+        });
+
+        rClose.addEventListener('click', function () { reviewDlg.close(); });
+        reviewDlg.addEventListener('click', function (e) {
+          if (e.target === reviewDlg || e.target === reviewBody) reviewDlg.close();
+        });
+        reviewDlg.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); renderReviewDialog(activeIdx - 1); }
+          else if (e.key === 'ArrowRight') { e.preventDefault(); renderReviewDialog(activeIdx + 1); }
+        });
+        reviewDlg.addEventListener('close', function () {
+          reviewBody.replaceChildren();
+          // Sync stage to the item last viewed in full-screen
+          renderStage(activeIdx, false);
+        });
+
+        reviewDlg.appendChild(rBar);
+        reviewDlg.appendChild(reviewBody);
+        if (items.length > 1) {
+          reviewBody.appendChild(rPrev);
+          reviewBody.appendChild(rNext);
+          reviewDlg.appendChild(rStrip);
+        }
+        document.body.appendChild(reviewDlg);
+
+        var renderReviewDialog = function (idx) {
+          activeIdx = (idx + items.length) % items.length;
+          const item = items[activeIdx];
+
+          // Pause inline stage iframe while full-screen modal is open so audio never overlaps
+          if (isPlayingVideo) {
+            renderStage(activeIdx, false);
+          } else {
+            thumbButtons.forEach(function (btn, i) {
+              btn.classList.toggle('active', i === activeIdx);
+              btn.setAttribute('aria-pressed', String(i === activeIdx));
+            });
+          }
+
+          stripButtons.forEach(function (sb, i) {
+            sb.classList.toggle('active', i === activeIdx);
+          });
+
+          const numStr = String(activeIdx + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
+          reviewCounter.textContent = numStr + (item.isVideo ? ' · ▶ VIDEO' : ' · PHOTO');
+          reviewCaption.textContent = item.caption;
+
+          reviewBody.replaceChildren();
+          if (item.isVideo) {
+            reviewBody.appendChild(buildEmbedIframe(item.embedUrl, item.videoTitle || item.caption, true));
+          } else {
+            const bigImg = document.createElement('img');
+            bigImg.src = item.imgSrc;
+            bigImg.alt = item.imgAlt;
+            reviewBody.appendChild(bigImg);
+          }
+
+          if (items.length > 1) {
+            reviewBody.appendChild(rPrev);
+            reviewBody.appendChild(rNext);
+          }
+
+          if (!reviewDlg.open) {
+            reviewDlg.showModal();
+          }
+        };
+      }
+
+      function openFullScreenReview(idx) {
+        if (reviewDlg && typeof renderReviewDialog === 'function') {
+          renderReviewDialog(idx);
+        } else {
+          renderStage(idx, true);
+        }
+      }
 
       function renderStage(idx, playNow) {
         activeIdx = (idx + items.length) % items.length;
@@ -461,12 +614,12 @@
         const numStr = String(activeIdx + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
         stageCounter.textContent = numStr + (item.isVideo ? ' · ▶ VIDEO' : ' · PHOTO');
         stageCaption.textContent = item.caption;
+        stageAction.textContent = '⛶ Fullscreen';
         viewport.classList.toggle('is-video', item.isVideo && !isPlayingVideo);
         viewport.replaceChildren();
 
         if (isPlayingVideo) {
-          stageAction.textContent = '✕ Stop video';
-          viewport.appendChild(buildEmbedIframe(item.embedUrl, item.videoTitle || item.caption));
+          viewport.appendChild(buildEmbedIframe(item.embedUrl, item.videoTitle || item.caption, true));
         } else {
           const img = document.createElement('img');
           img.className = 'stage-img';
@@ -475,7 +628,6 @@
           viewport.appendChild(img);
 
           if (item.isVideo) {
-            stageAction.textContent = '▶ Play video';
             const playOverlay = document.createElement('span');
             playOverlay.className = 'play-btn-overlay';
             playOverlay.setAttribute('aria-hidden', 'true');
@@ -483,17 +635,15 @@
             tri.className = 'play-triangle';
             playOverlay.appendChild(tri);
             viewport.appendChild(playOverlay);
-
-            const startPlay = function () { renderStage(activeIdx, true); };
-            img.addEventListener('click', startPlay);
             playOverlay.style.cursor = 'pointer';
-            playOverlay.addEventListener('click', startPlay);
-          } else {
-            stageAction.textContent = '⛶ Fullscreen';
-            img.addEventListener('click', function () {
-              if (openLightboxImg) openLightboxImg(item.imgSrc, item.imgAlt, item.caption);
+            playOverlay.addEventListener('click', function () {
+              openFullScreenReview(activeIdx);
             });
           }
+
+          img.addEventListener('click', function () {
+            openFullScreenReview(activeIdx);
+          });
         }
 
         if (items.length > 1) {
@@ -539,8 +689,12 @@
         btn.appendChild(cap);
 
         btn.addEventListener('click', function () {
-          // Clicking a video thumbnail selects it and starts playback if clicked again (or if user clicks Play)
-          renderStage(idx, item.isVideo && activeIdx === idx && !isPlayingVideo);
+          // Selecting a video starts playing it immediately; clicking again opens full-screen review
+          if (activeIdx === idx && (!item.isVideo || isPlayingVideo)) {
+            openFullScreenReview(idx);
+          } else {
+            renderStage(idx, item.isVideo);
+          }
         });
 
         thumbButtons.push(btn);
@@ -549,25 +703,29 @@
 
       prevBtn.addEventListener('click', function (e) {
         e.stopPropagation();
-        renderStage(activeIdx - 1, false);
+        const nextIdx = (activeIdx - 1 + items.length) % items.length;
+        renderStage(nextIdx, items[nextIdx].isVideo);
       });
       nextBtn.addEventListener('click', function (e) {
         e.stopPropagation();
-        renderStage(activeIdx + 1, false);
+        const nextIdx = (activeIdx + 1) % items.length;
+        renderStage(nextIdx, items[nextIdx].isVideo);
       });
 
       stageAction.addEventListener('click', function () {
-        const item = items[activeIdx];
-        if (item.isVideo) {
-          renderStage(activeIdx, !isPlayingVideo);
-        } else if (openLightboxImg) {
-          openLightboxImg(item.imgSrc, item.imgAlt, item.caption);
-        }
+        openFullScreenReview(activeIdx);
       });
 
       showcase.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { e.preventDefault(); renderStage(activeIdx - 1, false); }
-        else if (e.key === 'ArrowRight') { e.preventDefault(); renderStage(activeIdx + 1, false); }
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const nextIdx = (activeIdx - 1 + items.length) % items.length;
+          renderStage(nextIdx, items[nextIdx].isVideo);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          const nextIdx = (activeIdx + 1) % items.length;
+          renderStage(nextIdx, items[nextIdx].isVideo);
+        }
       });
 
       playlist.appendChild(playlistHead);
@@ -584,8 +742,7 @@
           e.preventDefault();
           const firstVidIdx = items.findIndex(function (it) { return it.isVideo; });
           if (firstVidIdx >= 0) {
-            mediaGallery.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-            renderStage(firstVidIdx, true);
+            openFullScreenReview(firstVidIdx);
           }
         });
       });
