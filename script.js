@@ -305,8 +305,10 @@
     }
   }
 
-  /* ---------- Gallery lightbox ---------- */
-  const galleryImgs = document.querySelectorAll('.gallery img, .project-hero img, .photo-trio img, .schematic-figure img');
+  /* ---------- Gallery lightbox (photos) ---------- */
+  const galleryImgs = document.querySelectorAll(
+    '.gallery img, .project-hero img, .photo-trio figure:not(.video-tile) img, .schematic-figure img'
+  );
   if (galleryImgs.length && typeof HTMLDialogElement === 'function') {
     const dlg = document.createElement('dialog');
     dlg.className = 'lightbox';
@@ -333,6 +335,72 @@
       };
       img.addEventListener('click', open);
       img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
+  }
+
+  /* ---------- On-page video player (modal + inline, strict embed allow-list) ---------- */
+  function isAllowedEmbed(url) {
+    return typeof url === 'string' && (
+      url.indexOf('https://www.instagram.com/reel/') === 0 ||
+      url.indexOf('https://www.instagram.com/p/') === 0 ||
+      url.indexOf('https://www.youtube-nocookie.com/embed/') === 0
+    );
+  }
+
+  function buildEmbedIframe(url, title) {
+    const frame = document.createElement('iframe');
+    frame.src = url;
+    frame.title = title || 'Embedded video player';
+    frame.setAttribute('allow', 'autoplay; encrypted-media; fullscreen; picture-in-picture');
+    frame.setAttribute('allowfullscreen', '');
+    return frame;
+  }
+
+  const videoTiles = document.querySelectorAll('.video-tile[data-video-embed]');
+  if (videoTiles.length) {
+    let vDlg = null, vMount = null, vCap = null;
+    if (typeof HTMLDialogElement === 'function') {
+      vDlg = document.createElement('dialog');
+      vDlg.className = 'lightbox video-lightbox';
+      const vClose = document.createElement('button');
+      vClose.type = 'button'; vClose.className = 'lightbox-close';
+      vClose.setAttribute('aria-label', 'Close video'); vClose.textContent = '×';
+      vMount = document.createElement('div');
+      vMount.className = 'video-lightbox-mount';
+      vCap = document.createElement('p');
+      vDlg.appendChild(vClose); vDlg.appendChild(vMount); vDlg.appendChild(vCap);
+      document.body.appendChild(vDlg);
+      vClose.addEventListener('click', function () { vDlg.close(); });
+      vDlg.addEventListener('click', function (e) { if (e.target === vDlg) vDlg.close(); });
+      vDlg.addEventListener('close', function () { vMount.replaceChildren(); });
+    }
+
+    videoTiles.forEach(function (tile) {
+      const play = function () {
+        const url = tile.getAttribute('data-video-embed') || '';
+        if (!isAllowedEmbed(url)) return;
+        const title = tile.getAttribute('data-video-title') || 'EO-01 Demo Video';
+        const mode = tile.getAttribute('data-play-mode');
+        const media = tile.querySelector('.video-tile-media');
+
+        if (mode === 'inline' && media) {
+          if (tile.classList.contains('is-playing')) return;
+          tile.classList.add('is-playing');
+          tile.removeAttribute('role');
+          tile.removeAttribute('tabindex');
+          media.replaceChildren(buildEmbedIframe(url, title));
+          return;
+        }
+        if (vDlg && vMount) {
+          vMount.replaceChildren(buildEmbedIframe(url, title));
+          if (vCap) vCap.textContent = title;
+          vDlg.showModal();
+        }
+      };
+      tile.addEventListener('click', play);
+      tile.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+      });
     });
   }
 })();
