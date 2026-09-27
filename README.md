@@ -33,3 +33,14 @@ To add a new category, add a filter button in `projects.html` with a matching `d
   `style=""`/`<script>`. Use CSS classes instead of inline styles.
 - To embed YouTube videos, add `frame-src https://www.youtube-nocookie.com` to the CSP on that page.
 - Preview locally: `python3 -m http.server 8000 --bind 127.0.0.1` → http://127.0.0.1:8000
+
+## Interactions (script.js)
+
+Mobile hamburger menu, scroll progress bar, reveal-on-scroll, typing roles in the hero
+(`data-roles="a|b|c"`), count-up stats (`data-count`, `data-prefix`, `data-suffix`), card tilt +
+cursor spotlight, hero particle canvas, animated project filter, back-to-top button, and on project
+pages an auto-generated "On this page" TOC and an image lightbox.
+
+- Every page is fully readable with JS disabled (animations are progressive enhancement).
+- All motion is disabled when the OS setting "Reduce motion" is on.
+- Any element with class `reveal` fades in on scroll; panels, cards and entries get it automatically.

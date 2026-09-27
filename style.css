@@ -300,3 +300,188 @@ main { flex: 1; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1
 .cards { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
 .contact-grid { grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); }
 .status-list .v { overflow-wrap: anywhere; }
+
+/* ==========================================================================
+   Interactive layer (enabled by script.js adding .js to <html>)
+   Motion is short, one-shot, and disabled under prefers-reduced-motion.
+   ========================================================================== */
+body { overflow-x: clip; }
+
+/* ---------- Header state + scroll progress ---------- */
+.site-header { transition: background 0.25s, box-shadow 0.25s; }
+.site-header.scrolled { background: rgba(7, 11, 18, 0.96); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45); }
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 50;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30;
+  width: 44px; height: 44px; border-radius: var(--radius);
+  background: var(--panel); color: var(--accent); border: 1px solid var(--line-bright);
+  font-size: 1.1rem; cursor: pointer; backdrop-filter: blur(6px);
+  opacity: 0; translate: 0 12px; pointer-events: none;
+  transition: opacity 0.25s, translate 0.25s, border-color 0.15s;
+}
+.to-top.show { opacity: 1; translate: 0 0; pointer-events: auto; }
+.to-top:hover { border-color: var(--accent); box-shadow: 0 0 14px rgba(77, 225, 255, 0.3); }
+
+/* ---------- Mobile nav ---------- */
+.nav-toggle { display: none; }
+@media (max-width: 720px) {
+  .js .nav { flex-wrap: nowrap; }
+  .js .nav-toggle {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    margin-left: auto; width: 44px; height: 44px; padding: 0 11px;
+    background: transparent; border: 1px solid var(--line-bright); border-radius: var(--radius); cursor: pointer;
+  }
+  .js .nav-toggle span { display: block; height: 2px; background: var(--fg); border-radius: 2px; transition: transform 0.25s, opacity 0.2s; }
+  .js .nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .js .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .js .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .js .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0; width: auto; margin: 0;
+    flex-direction: column; gap: 0; padding: 0.5rem 1rem 1rem;
+    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); z-index: 25;
+    clip-path: inset(0 0 100% 0); visibility: hidden;
+    transition: clip-path 0.3s ease, visibility 0s linear 0.3s;
+  }
+  .js .nav.open .nav-links { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path 0.3s ease; }
+  .js .nav-links a { padding: 0.9rem 0.75rem; font-size: 0.95rem; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .js .nav-links li:last-child a { border-bottom: 0; }
+}
+
+/* ---------- Reveal on scroll (uses `translate` so it composes with tilt transforms) ---------- */
+.js .reveal { opacity: 0; translate: 0 18px; transition: opacity 0.6s ease var(--delay, 0ms), translate 0.6s cubic-bezier(.2,.7,.2,1) var(--delay, 0ms); }
+.js .reveal.is-visible { opacity: 1; translate: 0 0; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: min(78vh, 760px); padding: 5rem 0 3rem; isolation: isolate; }
+.hero-canvas {
+  position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; height: 100%;
+  translate: -50% 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}
+.hero-role { font-family: var(--mono); font-size: clamp(1rem, 2.4vw, 1.3rem); margin: 0 0 1rem; min-height: 1.7em; }
+.typer { color: var(--accent); }
+.typer::after { content: "▍"; margin-left: 2px; color: var(--accent); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-panel { backdrop-filter: blur(4px); }
+
+/* ---------- Stats ---------- */
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.stat { background: var(--bg-2); padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.stat-num { font-family: var(--mono); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--fg); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Capabilities ---------- */
+.cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1.25rem; }
+.cap { display: flex; flex-direction: column; gap: 0.6rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.cap p { margin: 0; color: var(--muted); }
+.cap .tags { margin-top: auto; padding-top: 0.5rem; }
+.cap-icon { font-size: 1.6rem; color: var(--accent); line-height: 1; }
+.cap:hover { border-color: var(--line-bright); box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 32px rgba(0, 0, 0, 0.35); }
+
+/* ---------- Cards: tilt + spotlight ---------- */
+.card {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s ease-out, opacity 0.6s ease var(--delay, 0ms), translate 0.6s cubic-bezier(.2,.7,.2,1) var(--delay, 0ms);
+}
+.card:hover { --lift: -4px; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift)); }
+.card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.25s;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(77, 225, 255, 0.12), transparent 60%);
+}
+.card:hover::after { opacity: 1; }
+.card-media img { transition: transform 0.5s ease; }
+.card:hover .card-media img { transform: scale(1.05); }
+.card-cta { transition: letter-spacing 0.2s; }
+.card:hover .card-cta { letter-spacing: 0.2em; }
+.card.pop { animation: pop 0.35s ease both; }
+@keyframes pop { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+
+/* ---------- Mission log (home timeline) ---------- */
+.mission-log { list-style: none; margin: 0; padding: 0 0 0 1.5rem; position: relative; }
+.mission-log::before { content: ""; position: absolute; left: 5px; top: 0.4rem; bottom: 0.4rem; width: 1px; background: linear-gradient(var(--accent), var(--line)); }
+.mission-log li { position: relative; display: grid; grid-template-columns: 140px 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px dashed var(--line); }
+.mission-log li:last-child { border-bottom: 0; }
+.mission-log li::before {
+  content: ""; position: absolute; left: calc(-1.5rem + 1px); top: 1.35rem; width: 9px; height: 9px;
+  border: 2px solid var(--accent); background: var(--bg); border-radius: 50%;
+}
+.mission-log li:first-child::before { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.mission-log h3 { margin: 0 0 0.15rem; font-size: 1.05rem; }
+.mission-log p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.ml-date { font-family: var(--mono); font-size: 0.8rem; color: var(--amber); letter-spacing: 0.08em; padding-top: 0.2rem; }
+
+/* ---------- CTA ---------- */
+.cta { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding: 2rem; background: linear-gradient(120deg, rgba(77, 225, 255, 0.08), rgba(16, 26, 42, 0.8)); }
+.cta h2 { margin: 0.3rem 0 0.4rem; }
+
+/* ---------- Buttons: subtle sheen ---------- */
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-20deg); transition: left 0.5s ease; pointer-events: none;
+}
+.btn:hover::after { left: 120%; }
+
+/* ---------- Project page: TOC + lightbox ---------- */
+.toc { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
+.toc ol { list-style: none; margin: 0.6rem 0 0; padding: 0; counter-reset: toc; }
+.toc li { counter-increment: toc; }
+.toc a { display: block; padding: 0.35rem 0 0.35rem 0.75rem; border-left: 2px solid var(--line); color: var(--muted); font-size: 0.92rem; transition: color 0.15s, border-color 0.15s; }
+.toc a::before { content: counter(toc, decimal-leading-zero) "  "; font-family: var(--mono); font-size: 0.75rem; color: var(--line-bright); }
+.toc a:hover { color: var(--fg); text-decoration: none; }
+.toc a.active { color: var(--accent); border-left-color: var(--accent); }
+.toc a.active::before { color: var(--accent); }
+.project-content h2 { scroll-margin-top: 90px; }
+
+.zoomable { cursor: zoom-in; transition: transform 0.4s ease, filter 0.3s; }
+.gallery figure { overflow: hidden; }
+.gallery figure:hover .zoomable { transform: scale(1.04); filter: brightness(1.1); }
+.lightbox {
+  max-width: min(1100px, 92vw); max-height: 92vh; padding: 0; border: 1px solid var(--accent);
+  background: var(--bg-2); color: var(--fg); border-radius: var(--radius); box-shadow: 0 0 40px rgba(77, 225, 255, 0.2);
+}
+.lightbox::backdrop { background: rgba(3, 6, 12, 0.85); backdrop-filter: blur(4px); }
+.lightbox img { max-height: 80vh; width: auto; margin: 0 auto; }
+.lightbox p { margin: 0; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); }
+.lightbox-close {
+  position: absolute; top: 0.5rem; right: 0.5rem; width: 36px; height: 36px; z-index: 1;
+  background: rgba(7, 11, 18, 0.8); color: var(--fg); border: 1px solid var(--line-bright); border-radius: var(--radius); font-size: 1.3rem; cursor: pointer;
+}
+.lightbox[open] { animation: pop 0.25s ease both; }
+
+/* ---------- Responsive tweaks for new sections ---------- */
+@media (max-width: 860px) {
+  .hero { min-height: 0; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .mission-log li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .cta { padding: 1.5rem; }
+  .to-top { right: 0.9rem; bottom: 0.9rem; }
+}
+
+/* ---------- Reduced motion: show everything immediately ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; translate: none; }
+  .typer::after { animation: none; }
+  .card, .card:hover { transform: none; }
+  .btn::after { display: none; }
+}
+
+/* Print: never hide content behind reveal state */
+@media print {
+  .js .reveal { opacity: 1 !important; translate: none !important; }
+  .scroll-progress, .to-top, .nav-toggle, .hero-canvas { display: none !important; }
+}

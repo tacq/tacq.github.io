@@ -12,6 +12,7 @@
         content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="Renlong Zhang — senior software engineer (backend, data, full-stack) with side projects in robotics and 3D.">
+  <meta name="theme-color" content="#070b12">
   <title>Renlong Zhang · Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,7 +21,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main">
       <a class="logo" href="index.html">RENLONG<span>_</span></a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -30,22 +31,29 @@
   </header>
 
   <main id="main">
+    <!-- ============ HERO ============ -->
     <section class="hero">
-      <div>
-        <p class="label">System online</p>
-        <h1>Hi, I'm <span class="accent">Renlong</span>.</h1>
-        <p class="tagline">
-          Senior software engineer building large-scale payments and data systems at YouTube.
-          Outside of work I build robots and 3D worlds — this is where I document them in depth.
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-copy">
+        <p class="label reveal">System online</p>
+        <h1 class="reveal">Hi, I'm <span class="accent">Renlong</span>.</h1>
+        <p class="hero-role reveal">
+          <span class="muted">I build</span>
+          <!-- Full list is readable by screen readers / no-JS; JS cycles through it visually. -->
+          <span class="typer" data-roles="payments infrastructure at scale|data pipelines that move money|APIs used by millions|robots in my garage|sci-fi worlds in 3D">payments infrastructure at scale</span>
         </p>
-        <div class="btn-row">
+        <p class="tagline reveal">
+          Senior software engineer at YouTube with 10+ years across Google, Chainalysis, Roblox and Huawei.
+          Outside of work I build robots and 3D worlds — documented here in depth.
+        </p>
+        <div class="btn-row reveal">
           <a class="btn primary" href="projects.html">View projects</a>
           <a class="btn" href="resume.html">Resume</a>
           <a class="btn" href="assets/resume.pdf" download="Renlong-Zhang-Resume.pdf">Download CV ↓</a>
         </div>
       </div>
 
-      <aside class="panel" aria-label="Quick facts">
+      <aside class="panel hero-panel reveal" aria-label="Quick facts">
         <p class="label">Operator profile</p>
         <ul class="status-list">
           <li><span class="k">Current</span><span class="v"><span class="dot" aria-hidden="true"></span>Senior Engineer · YouTube</span></li>
@@ -57,8 +65,47 @@
       </aside>
     </section>
 
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Highlights">
+      <div class="stat reveal"><span class="stat-num" data-count="10" data-suffix="+">10+</span><span class="stat-label">Years engineering</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="10" data-prefix="$" data-suffix="M+">$10M+</span><span class="stat-label">Quarterly revenue enabled</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="9">9</span><span class="stat-label">Engineers led</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="5">5</span><span class="stat-label">Companies shipped at</span></div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
     <section class="section">
-      <div class="section-head">
+      <div class="section-head reveal">
+        <div>
+          <p class="label">Capabilities</p>
+          <h2>What I do</h2>
+        </div>
+      </div>
+      <div class="cap-grid">
+        <article class="panel cap reveal">
+          <span class="cap-icon" aria-hidden="true">⌬</span>
+          <h3>Backend &amp; Data</h3>
+          <p>Distributed services, financial and blockchain data pipelines, async systems with queues and Pub/Sub.</p>
+          <div class="tags"><span class="tag software">C++</span><span class="tag software">Java</span><span class="tag software">Spanner</span></div>
+        </article>
+        <article class="panel cap reveal">
+          <span class="cap-icon" aria-hidden="true">◈</span>
+          <h3>Full-stack &amp; Mobile</h3>
+          <p>Public APIs, creator tools, social features and Android/iOS apps — from design to production.</p>
+          <div class="tags"><span class="tag software">TypeScript</span><span class="tag software">Python</span></div>
+        </article>
+        <article class="panel cap reveal">
+          <span class="cap-icon" aria-hidden="true">⟁</span>
+          <h3>Robotics &amp; 3D</h3>
+          <p>Personal projects: autonomous robots, manipulators, and real-time sci-fi environments.</p>
+          <div class="tags"><span class="tag robotics">Robotics</span><span class="tag three-d">3D</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECTS ============ -->
+    <section class="section">
+      <div class="section-head reveal">
         <div>
           <p class="label">Featured</p>
           <h2>Selected projects</h2>
@@ -67,7 +114,7 @@
       </div>
 
       <div class="cards">
-        <a class="card" href="projects/autonomous-rover.html">
+        <a class="card reveal" href="projects/autonomous-rover.html">
           <div class="card-media"><img src="assets/img/robotics.svg" alt="Autonomous rover project thumbnail" loading="lazy"></div>
           <div class="card-body">
             <span class="card-id">PRJ-001</span>
@@ -77,7 +124,7 @@
             <span class="card-cta">Open file →</span>
           </div>
         </a>
-        <a class="card" href="projects/scifi-environment.html">
+        <a class="card reveal" href="projects/scifi-environment.html">
           <div class="card-media"><img src="assets/img/three-d.svg" alt="Sci-fi environment project thumbnail" loading="lazy"></div>
           <div class="card-body">
             <span class="card-id">PRJ-003</span>
@@ -87,7 +134,7 @@
             <span class="card-cta">Open file →</span>
           </div>
         </a>
-        <a class="card" href="projects/robotic-arm.html">
+        <a class="card reveal" href="projects/robotic-arm.html">
           <div class="card-media"><img src="assets/img/robotics.svg" alt="Robotic arm project thumbnail" loading="lazy"></div>
           <div class="card-body">
             <span class="card-id">PRJ-002</span>
@@ -98,6 +145,34 @@
           </div>
         </a>
       </div>
+    </section>
+
+    <!-- ============ EXPERIENCE TIMELINE ============ -->
+    <section class="section">
+      <div class="section-head reveal">
+        <div>
+          <p class="label">Mission log</p>
+          <h2>Experience</h2>
+        </div>
+        <a class="btn" href="resume.html">Full resume →</a>
+      </div>
+      <ol class="mission-log">
+        <li class="reveal"><span class="ml-date">2025 — now</span><div><h3>Google · YouTube RevTube</h3><p>Senior Software Engineer — creator earnings, payments &amp; tax pipelines.</p></div></li>
+        <li class="reveal"><span class="ml-date">2022 — 2025</span><div><h3>Chainalysis</h3><p>Staff Engineer &amp; Manager — led 9 engineers; DeFi data products ($10M+/qtr).</p></div></li>
+        <li class="reveal"><span class="ml-date">2018 — 2022</span><div><h3>Google · GCP &amp; YouTube</h3><p>Senior Software Engineer — YouTube Live access control, YouTube Data API v3.</p></div></li>
+        <li class="reveal"><span class="ml-date">2018</span><div><h3>Roblox</h3><p>Full-Stack Engineer — social sharing and mobile chat.</p></div></li>
+        <li class="reveal"><span class="ml-date">2017</span><div><h3>Huawei Technologies</h3><p>Mobile Developer &amp; TLM — health-monitoring apps.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta panel reveal">
+      <div>
+        <p class="label">Open channel</p>
+        <h2>Let's build something.</h2>
+        <p class="muted mb-0">Questions about a project, or want to collaborate? My inbox is open.</p>
+      </div>
+      <a class="btn primary" href="contact.html">Get in touch →</a>
     </section>
   </main>
 
