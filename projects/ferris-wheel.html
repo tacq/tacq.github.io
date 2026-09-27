@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Ferris Wheel Photo Frame — a custom 3D-printed rotating photo frame designed for my daughter, holding up to 12 photos with hand-painted 3D-printed rabbit, balloon bear, and unicorn figures plus hand-glued miniature nail-art flowers and butterflies.">
+  <meta name="theme-color" content="#070b12">
+  <title>Renlong Zhang · Ferris Wheel Photo Frame</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="../index.html">RENLONG<span>_</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / Ferris Wheel Photo Frame</nav>
+
+    <header class="page-head">
+      <p class="label">FW-01 · 2025 · Personal craft &amp; 3D print</p>
+      <h1>Ferris Wheel Photo Frame</h1>
+      <p class="lead">
+        A custom rotating Ferris wheel photo frame designed for my daughter, Cora, capable of displaying up to
+        <strong>12 family photos</strong> across six double-sided swinging bunny-eared gondolas. The wheel frame,
+        picket fence courtyard, and miniature characters (rabbit, balloon bear, and unicorns) are 3D printed — with
+        the characters hand-painted and the frame detailed one by one with tiny nail-art flowers and butterflies.
+      </p>
+      <div class="tags mt-2">
+        <span class="tag three-d">3D Printing</span>
+        <span class="tag">Hand-Painted Miniatures</span>
+        <span class="tag">Mixed-Media Craft</span>
+        <span class="tag">Family Gift</span>
+      </div>
+      <div class="btn-row mt-2">
+        <a class="btn primary" href="#media-gallery" data-play-first-video>▶ Watch video</a>
+        <a class="btn" href="#sec-craftsmanship">Craft &amp; assembly details</a>
+      </div>
+    </header>
+
+    <!-- Unified Video & Photo Gallery: add future <figure class="video-tile"> or <figure> items here -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="Ferris Wheel Photo Frame video and photos">
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/DFpEIv5R21B/embed/" data-video-title="Ferris Wheel Photo Frame // Full Showcase Reel" tabindex="0" role="button" aria-label="Play Ferris Wheel Photo Frame showcase video on this page">
+        <div class="video-tile-media">
+          <img src="../assets/img/ferris-wheel/reel-cover.jpg" alt="Ferris Wheel photo frame with hand-painted rabbit on the Cora hub, balloon bear on the arch, unicorns in the fenced courtyard, and nail-art floral trim">
+          <span class="play-badge">▶ VIDEO</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>01 // Full showcase with hand-painted figures (click to play)</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/ferris-wheel/gondolas.jpg" alt="Swinging bunny-eared photo gondolas holding family photos above a 3D-printed white picket fence base" loading="lazy">
+        <figcaption>02 // Bunny-eared swinging gondolas (up to 12 photos)</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/ferris-wheel/closeup.jpg" alt="Close-up of the Cora center medallion and miniature nail-art roses, leaves, and butterflies glued along the 3D-printed wheel rim" loading="lazy">
+        <figcaption>03 // Center hub &amp; hand-glued nail-art florals</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/ferris-wheel/overview.jpg" alt="Top-quarter view of the 3D-printed Ferris wheel photo frame and picket fence courtyard on a countertop" loading="lazy">
+        <figcaption>04 // Star-spoked wheel &amp; fenced courtyard</figcaption>
+      </figure>
+    </div>
+
+    <!-- Key numbers -->
+    <section class="stats" aria-label="Ferris Wheel Photo Frame at a glance">
+      <div class="stat"><span class="stat-num" data-count="12">12</span><span class="stat-label">Photo capacity (6 × 2 sides)</span></div>
+      <div class="stat"><span class="stat-num" data-count="6">6</span><span class="stat-label">Swinging bunny gondolas</span></div>
+      <div class="stat"><span class="stat-num" data-count="4">4</span><span class="stat-label">Hand-painted 3D figures</span></div>
+      <div class="stat"><span class="stat-num" data-count="100" data-suffix="%">100%</span><span class="stat-label">3D-printed structure</span></div>
+    </section>
+
+    <div class="project-layout mt-3">
+      <article class="project-content">
+        <h2 id="sec-overview">Overview</h2>
+        <p>
+          Between robotics and software projects, I wanted to build something warm and personal for my daughter,
+          <strong>Cora</strong> — a tabletop Ferris wheel that turns everyday family snapshots into a miniature
+          amusement park scene.
+        </p>
+        <p>
+          As the wheel spins, six gravity-leveled gondolas swing gently so that the photos always stay upright.
+          Each gondola holds two back-to-back prints, allowing the wheel to showcase up to <strong>12 photos</strong>
+          at once.
+        </p>
+
+        <h2 id="sec-craftsmanship">3D printing, hand painting &amp; nail-art detailing</h2>
+        <div class="feature-grid">
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">🎡</span>
+            <h3>12-photo rotating wheel</h3>
+            <p>Twin star-spoked wheel rims, A-frame support legs, and six bunny-eared double-sided photo gondolas printed in crisp white PLA.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">🎨</span>
+            <h3>Hand-painted 3D miniatures</h3>
+            <p>The decorative rabbit on the hub, the balloon bear on the lower arch, and the two unicorns in the courtyard are 3D printed and hand-painted.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">🌸</span>
+            <h3>Nail-art flower &amp; butterfly trim</h3>
+            <p>Miniature 3D pastel roses, leaves, and butterflies — originally made for women's nail art — were purchased and hand-glued one by one across the wheel.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">🏡</span>
+            <h3>Fenced courtyard &amp; nameplate</h3>
+            <p>Surrounded by a 3D-printed white picket fence base and crowned with a custom <code>cora</code> center medallion framed by a floral wreath.</p>
+          </div>
+        </div>
+
+        <h2 id="sec-materials">Components &amp; materials</h2>
+        <div class="table-wrap">
+          <table class="bom">
+            <caption class="muted">Build breakdown</caption>
+            <thead><tr><th scope="col">Part</th><th scope="col">Method</th><th scope="col">Details</th></tr></thead>
+            <tbody>
+              <tr><td>Wheel rims, A-frame &amp; axle</td><td>3D printed (PLA)</td><td>Star-spoked dual rims and A-frame supports with recessed ornament slots</td></tr>
+              <tr><td>Photo gondolas (×6)</td><td>3D printed (PLA)</td><td>Swinging bunny-eared frames; double-sided to display up to 12 photos total</td></tr>
+              <tr><td>Courtyard fence &amp; base</td><td>3D printed (PLA)</td><td>Modular white picket fence enclosing the base platform and center <code>cora</code> hub</td></tr>
+              <tr><td>Rabbit, balloon bear &amp; unicorns</td><td>3D printed + hand-painted</td><td>Perched rabbit on the hub, bear with red/yellow/teal balloons on the arch, and two pastel unicorns on the base</td></tr>
+              <tr><td>Flowers &amp; butterflies</td><td>Nail-art charms (hand-glued)</td><td>Tiny 3D resin nail-art roses, leaves, and butterflies individually glued along the rim, struts, and fence</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <aside class="project-meta panel" aria-label="Project details">
+        <p class="label">Spec sheet</p>
+        <ul class="status-list">
+          <li><span class="k">Designation</span><span class="v">FW-01 · Cora Edition</span></li>
+          <li><span class="k">Year</span><span class="v">2025</span></li>
+          <li><span class="k">Type</span><span class="v">Rotating photo frame</span></li>
+          <li><span class="k">Capacity</span><span class="v">Up to 12 photos (6 gondolas)</span></li>
+          <li><span class="k">Main frame</span><span class="v">3D-printed white PLA</span></li>
+          <li><span class="k">3D figures</span><span class="v">Rabbit, balloon bear, unicorns, fence</span></li>
+          <li><span class="k">Finishing</span><span class="v">Hand-painted figures + nail-art deco</span></li>
+          <li><span class="k">Status</span><span class="v"><span class="dot" aria-hidden="true"></span>Complete · on display</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <nav class="project-nav" aria-label="More projects">
+      <a class="btn" href="eo-01.html">← EO-01 Quadruped Robot Dog</a>
+      <a class="btn" href="autonomous-rover.html">Autonomous Rover →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> Renlong Zhang</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
