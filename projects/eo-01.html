@@ -42,12 +42,13 @@
         <span class="tag software">Embedded</span><span class="tag">Open maker platform</span>
       </div>
       <div class="btn-row mt-2">
-        <a class="btn primary" href="#sec-demo-videos">Watch demos</a>
+        <a class="btn primary" href="#media-gallery" data-play-first-video>▶ Watch demo</a>
         <a class="btn" href="#sec-makerworld-crowdfunding">MakerWorld crowdfunding</a>
       </div>
     </header>
 
-    <div class="photo-trio" aria-label="EO-01 prototype media">
+    <!-- Unified Video & Photo Gallery: add future <figure class="video-tile"> or <figure> items here -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="EO-01 videos and photos">
       <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/DXgSz1IEkmg/embed/" data-video-title="EO-01 // Motion Demo Reel" tabindex="0" role="button" aria-label="Play EO-01 motion demo video on this page">
         <div class="video-tile-media">
           <img src="../assets/img/eo-01/reel-cover.jpg" alt="EO-01 motion demo video preview">
@@ -119,19 +120,6 @@
           <img src="../assets/img/eo-01/schematic.svg" alt="EO-01 system schematic showing head display, ESP32 + PCA9685, 14 MG92B servos and 12V power" loading="lazy">
           <figcaption>System callout diagram</figcaption>
         </figure>
-
-        <h2 id="sec-demo-videos">Demo videos</h2>
-        <p class="muted">Click play to watch directly on this page — no redirect required.</p>
-        <div class="inline-video-wrap">
-          <figure class="video-tile inline-player" data-play-mode="inline" data-video-embed="https://www.instagram.com/reel/DXgSz1IEkmg/embed/" data-video-title="EO-01 // Motion Demo Reel" tabindex="0" role="button" aria-label="Play EO-01 demo video inline">
-            <div class="video-tile-media">
-              <img src="../assets/img/eo-01/reel-cover.jpg" alt="EO-01 demo reel preview" loading="lazy">
-              <span class="play-badge">▶ PLAY INLINE</span>
-              <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
-            </div>
-            <figcaption>DEMO REEL // EO-01 walking, head display &amp; motion test</figcaption>
-          </figure>
-        </div>
 
         <h2 id="sec-hardware">Hardware</h2>
         <div class="table-wrap">
