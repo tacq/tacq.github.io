@@ -553,3 +553,14 @@ body { overflow-x: clip; }
 .card-media img[src*="eo-01/"] { object-position: center 22%; }
 .schematic-figure { margin: 1.25rem 0 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2); }
 .schematic-figure figcaption { font-size: 0.85rem; color: var(--muted); padding: 0.5rem 0.75rem; border-top: 1px solid var(--line); }
+
+/* Embedded video players (Instagram Reels/Posts & YouTube) */
+.embed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 1rem; margin-top: 1rem; }
+.embed-frame {
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2);
+  display: flex; flex-direction: column;
+}
+.embed-frame iframe { width: 100%; border: 0; display: block; background: #000; }
+.embed-frame.reel iframe { aspect-ratio: 9 / 16; min-height: 520px; }
+.embed-frame.wide iframe { aspect-ratio: 16 / 9; }
+.embed-frame figcaption { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); padding: 0.55rem 0.75rem; border-top: 1px solid var(--line); }

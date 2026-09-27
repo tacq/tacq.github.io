@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="EO-01 — a sci-fi inspired, fully 3D-printed quadruped robot dog platform built for makers. 14 DOF, ESP32 + PCA9685, printed in PLA on a Bambu Lab P1S.">
   <meta name="theme-color" content="#070b12">
@@ -128,8 +128,14 @@
             <span class="video-meta"><span class="card-id">DEMO 03</span><strong>More EO-01 updates</strong><span class="muted">Watch on rednote ↗</span></span>
           </a>
         </div>
-        <!-- To self-host a clip instead (plays inline, no third-party tracking):
-             <video controls preload="metadata" playsinline src="../assets/video/eo-01-walk.mp4"></video> -->
+        <!-- Instagram inline player template (replace SHORTCODE with your Reel/Post ID, e.g. C8abc123xyz):
+        <div class="embed-grid">
+          <figure class="embed-frame reel">
+            <iframe src="https://www.instagram.com/reel/SHORTCODE/embed/" loading="lazy" allow="encrypted-media" title="EO-01 demo 1"></iframe>
+            <figcaption>DEMO 01 // EO-01 in motion</figcaption>
+          </figure>
+        </div>
+        -->
 
         <h2 id="sec-hardware">Hardware</h2>
         <div class="table-wrap">
