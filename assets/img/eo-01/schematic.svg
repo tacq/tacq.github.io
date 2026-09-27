@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="EO-01 quadruped robot dog schematic">
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#4de1ff" stroke-opacity="0.07"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#12304a"/>
+      <stop offset="1" stop-color="#0a111c"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect width="1600" height="900" fill="url(#g)"/>
+
+  <!-- frame brackets -->
+  <g fill="none" stroke="#4de1ff" stroke-width="3">
+    <path d="M30 80V30h50M1520 30h50v50M1570 820v50h-50M80 870H30v-50"/>
+  </g>
+  <g font-family="Menlo, monospace" fill="#4de1ff">
+    <text x="120" y="95" font-size="30" letter-spacing="6" font-weight="700">EO-01</text>
+    <text x="120" y="128" font-size="16" letter-spacing="4" fill="#9aabc0">QUADRUPED PLATFORM // 14 DOF // 100% PRINTED STRUCTURE</text>
+  </g>
+
+  <!-- ground -->
+  <path d="M420 776H1400" stroke="#4de1ff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="10 8"/>
+  <ellipse cx="860" cy="778" rx="330" ry="14" fill="#4de1ff" fill-opacity="0.06"/>
+
+  <!-- far-side legs (dim) -->
+  <g fill="none" stroke="#4de1ff" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M960 455L1025 600L985 760"/>
+    <path d="M705 455L640 600L690 760"/>
+  </g>
+  <g fill="#0a111c" stroke="#4de1ff" stroke-opacity="0.35" stroke-width="3">
+    <circle cx="1025" cy="600" r="12"/><circle cx="640" cy="600" r="12"/>
+  </g>
+
+  <!-- body -->
+  <path d="M600 330H1040L1095 380V440L1050 485H600L555 440V372Z" fill="#0f1d2e" stroke="#4de1ff" stroke-width="4"/>
+  <path d="M620 350H1025L1065 388V430L1035 462H620L588 432V380Z" fill="none" stroke="#4de1ff" stroke-opacity="0.35" stroke-width="2"/>
+  <g stroke="#4de1ff" stroke-opacity="0.5" stroke-width="2">
+    <path d="M700 350V462M940 350V462"/>
+  </g>
+  <rect x="760" y="385" width="120" height="44" rx="4" fill="none" stroke="#5cf2a4" stroke-width="2"/>
+  <text x="820" y="413" font-family="Menlo, monospace" font-size="14" fill="#5cf2a4" text-anchor="middle" letter-spacing="2">ESP32</text>
+
+  <!-- neck + head -->
+  <path d="M1070 360L1150 300" stroke="#4de1ff" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1150" cy="300" r="12" fill="#0a111c" stroke="#4de1ff" stroke-width="3"/>
+  <path d="M1135 225H1300L1335 258V330L1305 355H1160L1125 322Z" fill="#0f1d2e" stroke="#4de1ff" stroke-width="4"/>
+  <rect x="1172" y="250" width="130" height="72" rx="8" fill="#04121a" stroke="#4de1ff" stroke-width="2"/>
+  <rect x="1195" y="272" width="30" height="26" rx="6" fill="#4de1ff"/>
+  <rect x="1250" y="272" width="30" height="26" rx="6" fill="#4de1ff"/>
+  <path d="M1172 250L1150 205M1300 225L1318 190" stroke="#4de1ff" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- near-side legs -->
+  <g fill="none" stroke="#4de1ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1000 470L1065 610L1015 762"/>
+    <path d="M660 470L595 610L648 762"/>
+  </g>
+  <g fill="#0a111c" stroke="#4de1ff" stroke-width="3">
+    <circle cx="1000" cy="470" r="16"/><circle cx="1065" cy="610" r="14"/>
+    <circle cx="660" cy="470" r="16"/><circle cx="595" cy="610" r="14"/>
+  </g>
+  <g fill="#4de1ff"><rect x="995" y="756" width="40" height="12" rx="6"/><rect x="628" y="756" width="40" height="12" rx="6"/></g>
+
+  <!-- tail -->
+  <path d="M555 372L500 330" stroke="#4de1ff" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- callouts -->
+  <g font-family="Menlo, monospace" font-size="16" letter-spacing="2" fill="#e6edf5">
+    <g stroke="#ffb547" stroke-width="1.5" fill="none">
+      <path d="M1302 286H1400V180H1440"/>
+      <path d="M880 407H920V240H960"/>
+      <path d="M1065 610H1200V560H1240"/>
+      <path d="M612 690H480V640H440"/>
+      <path d="M700 350V260H640"/>
+    </g>
+    <g fill="#ffb547"><circle cx="1302" cy="286" r="4"/><circle cx="880" cy="407" r="4"/><circle cx="1065" cy="610" r="4"/><circle cx="612" cy="690" r="4"/><circle cx="700" cy="350" r="4"/></g>
+    <text x="1448" y="186">HEAD DISPLAY</text>
+    <text x="968" y="236">ESP32 + PCA9685</text>
+    <text x="968" y="258" fill="#9aabc0" font-size="13">I²C · 16-CH PWM</text>
+    <text x="1248" y="566">MG92B × 14</text>
+    <text x="1248" y="588" fill="#9aabc0" font-size="13">METAL-GEAR SERVOS</text>
+    <text x="432" y="646" text-anchor="end">PLA STRUCTURE</text>
+    <text x="432" y="668" text-anchor="end" fill="#9aabc0" font-size="13">BAMBU LAB P1S</text>
+    <text x="632" y="266" text-anchor="end">12V POWER</text>
+    <text x="632" y="288" text-anchor="end" fill="#9aabc0" font-size="13">UBEC + DC-DC</text>
+  </g>
+
+  <text x="800" y="830" font-family="Menlo, monospace" font-size="15" letter-spacing="5" fill="#4de1ff" fill-opacity="0.6" text-anchor="middle">SCHEMATIC ILLUSTRATION // REPLACE WITH PROTOTYPE PHOTO</text>
+</svg>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO(security): frame-ancestors/X-Frame-Options can't be set on GitHub Pages (meta CSP ignores them). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="EO-01 — a sci-fi inspired, fully 3D-printed quadruped robot dog platform built for makers. 14 DOF, ESP32 + PCA9685, printed in PLA on a Bambu Lab P1S.">
+  <meta name="theme-color" content="#070b12">
+  <title>Renlong Zhang · EO-01 Quadruped Robot Dog</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="../index.html">RENLONG<span>_</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / EO-01</nav>
+
+    <header class="page-head">
+      <p class="label">EO-01 · Flagship project</p>
+      <h1>EO-01 Quadruped Robot Dog</h1>
+      <p class="lead">
+        A sci-fi inspired quadruped robot dog platform designed around accessibility and maker-friendly
+        fabrication. Every non-electronic structural part is 3D printed in PLA, so anyone with a consumer
+        printer can build one — no CNC machining or specialized manufacturing required.
+      </p>
+      <div class="tags mt-2">
+        <span class="tag robotics">Robotics</span><span class="tag three-d">3D Printing</span>
+        <span class="tag software">Embedded</span><span class="tag">Open maker platform</span>
+      </div>
+      <div class="btn-row mt-2">
+        <a class="btn primary" href="#sec-demo-videos">Watch demos</a>
+        <a class="btn" href="#sec-makerworld-crowdfunding">MakerWorld crowdfunding</a>
+      </div>
+    </header>
+
+    <div class="project-hero"><img src="../assets/img/eo-01/schematic.svg" alt="EO-01 schematic: a quadruped robot with a display head, ESP32 controller and 14 servos"></div>
+
+    <!-- Key numbers -->
+    <section class="stats" aria-label="EO-01 at a glance">
+      <div class="stat"><span class="stat-num" data-count="14">14</span><span class="stat-label">Servo-driven DOF</span></div>
+      <div class="stat"><span class="stat-num" data-count="100" data-suffix="%">100%</span><span class="stat-label">Printed structure</span></div>
+      <div class="stat"><span class="stat-num" data-count="0">0</span><span class="stat-label">CNC parts needed</span></div>
+      <div class="stat"><span class="stat-num" data-count="12" data-suffix="V">12V</span><span class="stat-label">Battery system</span></div>
+    </section>
+
+    <div class="project-layout mt-3">
+      <article class="project-content">
+        <h2 id="sec-overview">Overview</h2>
+        <p>
+          Most capable quadruped robots are expensive, closed, and built from machined aluminum. EO-01 takes the
+          opposite approach: a platform that the community can <strong>print, assemble, modify and reproduce</strong>
+          at home. The design pairs a sci-fi industrial look with off-the-shelf hobby electronics and a
+          fully printable PLA structure, tuned for a Bambu Lab P1S.
+        </p>
+        <p>
+          The current prototype walks stably, performs dynamic movements including jumps, and expresses itself
+          through an interactive head display — all driven by custom control software written for this robot.
+        </p>
+
+        <h2 id="sec-design-goals">Design goals</h2>
+        <ul class="check-list">
+          <li><strong>Accessible fabrication</strong> — every structural part prints in PLA on a consumer FDM printer.</li>
+          <li><strong>No specialized manufacturing</strong> — no CNC, laser cutting or custom metal parts.</li>
+          <li><strong>Off-the-shelf electronics</strong> — widely available hobby servos, ESP32 and PCA9685 boards.</li>
+          <li><strong>Reproducible by the community</strong> — designed to be rebuilt, repaired and remixed.</li>
+          <li><strong>Character, not just mechanics</strong> — a sci-fi aesthetic and an expressive display head.</li>
+        </ul>
+
+        <h2 id="sec-capabilities">Current capabilities</h2>
+        <div class="feature-grid">
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⟿</span>
+            <h3>Stable quadruped walking</h3>
+            <p>Coordinated gait across all four legs with a steady, balanced body.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⤒</span>
+            <h3>Dynamic moves &amp; jumping</h3>
+            <p>Expressive motion sequences and jump actions beyond basic locomotion.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">◉</span>
+            <h3>Interactive head display</h3>
+            <p>A display-based face that gives EO-01 personality and visual feedback.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⌘</span>
+            <h3>Custom control software</h3>
+            <p>Built-from-scratch tools for motor alignment and coordinated multi-servo movement.</p>
+          </div>
+        </div>
+
+        <h2 id="sec-demo-videos">Demo videos</h2>
+        <p class="muted">Hosted on Xiaohongshu (rednote). Links open in a new tab.</p>
+        <div class="video-grid">
+          <a class="video-card" href="https://xhslink.com/o/A5dmxgJi0Hj" target="_blank" rel="noopener noreferrer">
+            <span class="video-play" aria-hidden="true">▶</span>
+            <span class="video-meta"><span class="card-id">DEMO 01</span><strong>EO-01 in motion</strong><span class="muted">Watch on rednote ↗</span></span>
+          </a>
+          <a class="video-card" href="https://xhslink.com/o/4ekzFXynpL2" target="_blank" rel="noopener noreferrer">
+            <span class="video-play" aria-hidden="true">▶</span>
+            <span class="video-meta"><span class="card-id">DEMO 02</span><strong>Head install — “giving it a soul”</strong><span class="muted">Watch on rednote ↗</span></span>
+          </a>
+          <a class="video-card" href="https://xhslink.com/o/PAjnzwoTUw" target="_blank" rel="noopener noreferrer">
+            <span class="video-play" aria-hidden="true">▶</span>
+            <span class="video-meta"><span class="card-id">DEMO 03</span><strong>More EO-01 updates</strong><span class="muted">Watch on rednote ↗</span></span>
+          </a>
+        </div>
+        <!-- To self-host a clip instead (plays inline, no third-party tracking):
+             <video controls preload="metadata" playsinline src="../assets/video/eo-01-walk.mp4"></video> -->
+
+        <h2 id="sec-hardware">Hardware</h2>
+        <div class="table-wrap">
+          <table class="bom">
+            <caption class="muted">Current prototype bill of materials (electronics)</caption>
+            <thead><tr><th scope="col">Qty</th><th scope="col">Component</th><th scope="col">Role</th></tr></thead>
+            <tbody>
+              <tr><td>14</td><td>MG92B servo</td><td>Metal-gear micro servos driving every joint</td></tr>
+              <tr><td>1</td><td>ESP32 DevKit</td><td>Main controller — motion control, display, connectivity</td></tr>
+              <tr><td>1</td><td>PCA9685 servo controller</td><td>16-channel PWM driver over I²C</td></tr>
+              <tr><td>1</td><td>12V battery system</td><td>Main power source</td></tr>
+              <tr><td>—</td><td>UBEC + DC-DC regulators</td><td>Step 12V down to stable servo and logic rails</td></tr>
+              <tr><td>—</td><td>PLA filament</td><td>All structural parts, printed on a Bambu Lab P1S</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="sec-system-architecture">System architecture</h2>
+        <!-- TODO: confirm which regulator feeds which rail (assumed: UBEC → servos, DC-DC → logic). -->
+        <div class="sys-diagram" role="img" aria-label="Power: 12V battery feeds a UBEC for the servo rail and a DC-DC regulator for the ESP32 logic. Control: ESP32 talks I2C to the PCA9685, which drives 14 MG92B servos; ESP32 also drives the head display.">
+          <div class="sys-lane">
+            <span class="sys-lane-label">POWER</span>
+            <span class="sys-node amber">12V Battery</span><span class="sys-arrow">→</span>
+            <span class="sys-node">UBEC</span><span class="sys-arrow">→</span>
+            <span class="sys-node">Servo rail</span>
+            <span class="sys-sep"></span>
+            <span class="sys-node amber">12V Battery</span><span class="sys-arrow">→</span>
+            <span class="sys-node">DC-DC</span><span class="sys-arrow">→</span>
+            <span class="sys-node">Logic rail</span>
+          </div>
+          <div class="sys-lane">
+            <span class="sys-lane-label">CONTROL</span>
+            <span class="sys-node green">ESP32</span><span class="sys-arrow">I²C →</span>
+            <span class="sys-node">PCA9685</span><span class="sys-arrow">PWM ×14 →</span>
+            <span class="sys-node">MG92B ×14</span>
+            <span class="sys-sep"></span>
+            <span class="sys-node green">ESP32</span><span class="sys-arrow">→</span>
+            <span class="sys-node">Head display</span>
+          </div>
+        </div>
+
+        <h2 id="sec-software">Software</h2>
+        <p>
+          EO-01 runs custom control software developed specifically for this platform, covering two core problems
+          every servo-based legged robot has to solve:
+        </p>
+        <ul>
+          <li><strong>Motor alignment</strong> — calibrating each of the 14 servos so that printed parts, horn
+            positions and mechanical tolerances all map to a consistent joint zero.</li>
+          <li><strong>Coordinated movement</strong> — synchronizing all joints through the PCA9685 to produce
+            stable walking gaits, dynamic actions and jumps.</li>
+          <li><strong>Expression</strong> — driving the head display so the robot reacts and feels alive.</li>
+        </ul>
+
+        <h2 id="sec-fabrication">Fabrication</h2>
+        <p>
+          All non-electronic structural components are printed in <strong>PLA</strong> on a
+          <strong>Bambu Lab P1S</strong>. Choosing a common material and a popular consumer printer keeps the
+          barrier to entry low: if you can print, you can build EO-01.
+        </p>
+        <div class="gallery">
+          <figure><img src="../assets/img/eo-01/schematic.svg" alt="EO-01 full body" loading="lazy"><figcaption>Full body — replace with prototype photo</figcaption></figure>
+          <figure><img src="../assets/img/eo-01/schematic.svg" alt="EO-01 head display" loading="lazy"><figcaption>Head display — replace with close-up</figcaption></figure>
+          <figure><img src="../assets/img/eo-01/schematic.svg" alt="EO-01 printed parts" loading="lazy"><figcaption>Printed parts layout — replace with photo</figcaption></figure>
+        </div>
+
+        <h2 id="sec-build-log">Build log</h2>
+        <ol class="mission-log">
+          <li><span class="ml-date">v0</span><div><h3>First walking prototype</h3><p>Printed frame, 14-servo leg and body system, ESP32 + PCA9685 control stack. Stable walking achieved.</p></div></li>
+          <li><span class="ml-date">v1 head</span><div><h3>Head redesign</h3><p>The v0 head wasn't rigid enough and wobbled while walking, so it was redesigned. Slots are already in place for a rear head cover.</p></div></li>
+          <li><span class="ml-date">Motion</span><div><h3>Dynamic actions &amp; jumping</h3><p>Extended the control software beyond walking to dynamic movement sequences and jumps.</p></div></li>
+          <li><span class="ml-date">Next</span><div><h3>MakerWorld crowdfunding</h3><p>Submitting EO-01 to the MakerWorld crowdfunding program to take it from prototype to a platform anyone can build.</p></div></li>
+        </ol>
+
+        <h2 id="sec-makerworld-crowdfunding">MakerWorld crowdfunding</h2>
+        <div class="panel cta-inline">
+          <p class="label">Mission status: seeking backers</p>
+          <p>
+            EO-01 is being submitted to the <strong>MakerWorld crowdfunding program</strong>. The goal is to turn the
+            prototype into a polished, reproducible maker platform. Planned for the release:
+          </p>
+          <!-- TODO: confirm the planned deliverables and add the MakerWorld campaign link once live. -->
+          <ul class="check-list">
+            <li>Print-ready model files optimized for Bambu Lab printers</li>
+            <li>Full bill of materials with sourcing notes</li>
+            <li>Step-by-step assembly and wiring guide</li>
+            <li>Control software with the servo alignment tool</li>
+          </ul>
+          <div class="btn-row mt-2">
+            <a class="btn primary" href="../contact.html">Get updates →</a>
+            <a class="btn" href="https://xhslink.com/o/PAjnzwoTUw" target="_blank" rel="noopener noreferrer">Follow on rednote ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <aside class="project-meta panel" aria-label="Project details">
+        <p class="label">Spec sheet</p>
+        <ul class="status-list">
+          <li><span class="k">Designation</span><span class="v">EO-01</span></li>
+          <li><span class="k">Type</span><span class="v">Quadruped robot dog</span></li>
+          <li><span class="k">DOF</span><span class="v">14 × MG92B</span></li>
+          <li><span class="k">Controller</span><span class="v">ESP32 DevKit</span></li>
+          <li><span class="k">Servo driver</span><span class="v">PCA9685 (I²C)</span></li>
+          <li><span class="k">Power</span><span class="v">12V · UBEC · DC-DC</span></li>
+          <li><span class="k">Material</span><span class="v">PLA</span></li>
+          <li><span class="k">Printer</span><span class="v">Bambu Lab P1S</span></li>
+          <li><span class="k">Role</span><span class="v">Solo · design, build, software</span></li>
+          <li><span class="k">Status</span><span class="v"><span class="dot" aria-hidden="true"></span>Prototype · crowdfunding</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <nav class="project-nav" aria-label="More projects">
+      <a class="btn" href="../projects.html">← All projects</a>
+      <a class="btn" href="autonomous-rover.html">Autonomous Rover →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> Renlong Zhang</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
