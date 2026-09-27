@@ -556,9 +556,24 @@ body { overflow-x: clip; }
 .photo-trio img, .media-gallery img { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; object-position: center 40%; }
 .photo-trio figcaption, .media-gallery figcaption { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--muted); padding: 0.55rem 0.75rem; border-top: 1px solid var(--line); }
 @media (max-width: 560px) { .photo-trio, .media-gallery { grid-template-columns: 1fr; } }
-.card-media img[src*="eo-01/"] { object-position: center 22%; }
-.schematic-figure { margin: 1.25rem 0 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2); }
-.schematic-figure figcaption { font-size: 0.85rem; color: var(--muted); padding: 0.5rem 0.75rem; border-top: 1px solid var(--line); }
+.card-media img[src*="eo-01/"], .card-media img[src*="enco-02/"] { object-position: center 22%; }
+.schematic-figure { margin: 1.25rem 0 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2); display: flex; flex-direction: column; }
+.schematic-figure img { width: 100%; height: auto; display: block; }
+.schematic-figure figcaption { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.55rem 0.75rem; border-top: 1px solid var(--line); margin-top: auto; }
+
+/* Idea -> AI Blueprint -> 3D CAD -> Physical Robot pipeline steps + comparison grid */
+.pipeline-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0; }
+.pipeline-step { padding: 1.15rem 1.25rem; border-left: 2px solid var(--accent); }
+.pipeline-step h3 { font-size: 1.02rem; margin: 0.35rem 0 0.35rem; }
+.pipeline-step p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.step-num { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); }
+.compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0; align-items: stretch; }
+.compare-grid .schematic-figure { margin: 0; }
+.compare-grid.blueprint-compare .schematic-figure img { aspect-ratio: 1 / 1; object-fit: cover; object-position: center 35%; }
+.compare-grid.face-compare .schematic-figure img { aspect-ratio: 16 / 10; object-fit: contain; background: #0c1121; }
+@media (max-width: 640px) {
+  .pipeline-steps, .compare-grid { grid-template-columns: 1fr; }
+}
 
 /* Video tile with Play button overlay inside the media gallery */
 .video-tile {

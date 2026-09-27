@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; frame-src https://www.instagram.com https://www.youtube-nocookie.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="ENCO-02 — a sci-fi spider-mech desktop AI companion built from an AI-generated multi-view blueprint into a real 3D-printed dual-ESP32 robot with a full-color virtual character on 520KB SRAM (no PSRAM), camera vision, 3-axis head tracking, and swimming pool smart-home control.">
+  <title>ENCO-02 Desktop AI Companion Robot — Renlong Zhang</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="../index.html">RENLONG<span class="cursor">_</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container section">
+    <p class="breadcrumb"><a href="../projects.html">Projects</a> / ENCO-02</p>
+
+    <header class="project-header">
+      <p class="label">ENCO-02 · Latest project <span class="badge">LATEST</span></p>
+      <h1>ENCO-02 Desktop AI Companion Robot</h1>
+      <p class="lead">
+        Born from a basic idea, synthesized into a multi-view blueprint with generative AI, modeled in 3D CAD,
+        and brought to life with multi-color FDM printing and dual-ESP32 firmware. ENCO-02 combines a
+        full-color animated virtual character squeezed into <strong>520 KB SRAM (0 PSRAM)</strong>, a 3-axis
+        motorized neck, an <code>ESP32-CAM</code> vision eye, and voice-driven smart-home swimming pool control.
+      </p>
+      <div class="tags mt-2">
+        <span class="tag robotics">Robotics</span>
+        <span class="tag software">Embedded AI · ESP32</span>
+        <span class="tag three-d">AI Concept → 3D Print</span>
+        <span class="tag">Smart Home · Vision</span>
+      </div>
+      <div class="btn-row mt-2">
+        <a class="btn primary" href="#media-gallery" data-play-first-video>▶ Watch demos (5 Reels)</a>
+        <a class="btn" href="#sec-from-ai-concept-to-reality">Idea → AI → Real build</a>
+      </div>
+    </header>
+
+    <!-- Unified Video & Photo Gallery: 5 Instagram Reels + 3 real build photos (add future videos/photos here) -->
+    <div id="media-gallery" class="photo-trio media-gallery" aria-label="ENCO-02 demo videos and prototype photos">
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/Dds2BGxSN99/embed/" data-video-title="ENCO-02 // New Virtual Character (520KB SRAM, No PSRAM — Bye, Pixel Version)" tabindex="0" role="button" aria-label="Play ENCO-02 new virtual character demo video">
+        <div class="video-tile-media">
+          <img src="../assets/img/enco-02/reel-new-face.jpg" alt="ENCO-02 new full-color virtual character winking on the 240x320 screen">
+          <span class="play-badge">▶ VIDEO 01</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>01 // New face on 520KB SRAM (bye pixel version)</figcaption>
+      </figure>
+
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/DdqJpuRSvLW/embed/" data-video-title="ENCO-02 // Swimming Pool &amp; Smart-Home Control Integration" tabindex="0" role="button" aria-label="Play ENCO-02 swimming pool smart home control video">
+        <div class="video-tile-media">
+          <img src="../assets/img/enco-02/reel-pool.jpg" alt="ENCO-02 screen showing SPA temperature 99°F alert card next to the iAquaLink app">
+          <span class="play-badge">▶ VIDEO 02</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>02 // Swimming pool smart-home control</figcaption>
+      </figure>
+
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/Ddm9argymB-/embed/" data-video-title="ENCO-02 // Camera Integration, Voice-to-Action, Reminders &amp; Vision" tabindex="0" role="button" aria-label="Play ENCO-02 camera integration and voice-to-action video">
+        <div class="video-tile-media">
+          <img src="../assets/img/enco-02/reel-cam.jpg" alt="ENCO-02 live camera HUD viewfinder performing visual recognition">
+          <span class="play-badge">▶ VIDEO 03</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>03 // Cam vision, reminders &amp; voice-to-action</figcaption>
+      </figure>
+
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/Ddm9GueyG0l/embed/" data-video-title="ENCO-02 // AI Talk, Virtual Character &amp; 3-Axis Head Control" tabindex="0" role="button" aria-label="Play ENCO-02 AI talk and head control video">
+        <div class="video-tile-media">
+          <img src="../assets/img/enco-02/reel-talk.jpg" alt="ENCO-02 talking with animated character face and 3-axis servo neck">
+          <span class="play-badge">▶ VIDEO 04</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>04 // AI talk, character &amp; 3-axis head control</figcaption>
+      </figure>
+
+      <figure class="video-tile" data-video-embed="https://www.instagram.com/reel/Ddm8YuvvYuC/embed/" data-video-title="ENCO-02 // Exterior Outlook &amp; Hardware Demo" tabindex="0" role="button" aria-label="Play ENCO-02 outlook and hardware demo video">
+        <div class="video-tile-media">
+          <img src="../assets/img/enco-02/reel-outlook.jpg" alt="ENCO-02 spider-mech exterior and hardware outlook demo" loading="lazy">
+          <span class="play-badge">▶ VIDEO 05</span>
+          <span class="play-btn-overlay" aria-hidden="true"><span class="play-triangle"></span></span>
+        </div>
+        <figcaption>05 // Outlook &amp; full hardware walkthrough</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/enco-02/front.jpg" alt="ENCO-02 front build photo showing 2-inch portrait LCD, top camera eye, and 4 wheeled spider legs" loading="lazy">
+        <figcaption>06 // Front build: 2" LCD &amp; camera eye</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/enco-02/side.jpg" alt="ENCO-02 left side profile showing angled head visor, yellow accents, rear antenna, and wheeled legs" loading="lazy">
+        <figcaption>07 // Left profile: angled visor &amp; stance</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/enco-02/rear.jpg" alt="ENCO-02 rear view showing dual antennas, armor detailing, and 3-axis neck wiring harness" loading="lazy">
+        <figcaption>08 // Rear armor, dual antennas &amp; wiring</figcaption>
+      </figure>
+    </div>
+
+    <!-- Key numbers -->
+    <section class="stats" aria-label="ENCO-02 at a glance">
+      <div class="stat"><span class="stat-num" data-count="520" data-suffix="KB">520KB</span><span class="stat-label">SRAM · 0 PSRAM on main MCU</span></div>
+      <div class="stat"><span class="stat-num" data-count="3" data-suffix=" DOF">3 DOF</span><span class="stat-label">Motorized neck (pitch/yaw/roll)</span></div>
+      <div class="stat"><span class="stat-num" data-count="33" data-prefix="+">+33</span><span class="stat-label">RGB565 face sprites in flash</span></div>
+      <div class="stat"><span class="stat-num" data-count="2" data-suffix=" MCUs">2 MCUs</span><span class="stat-label">ESP32 + ESP32-CAM over UART</span></div>
+    </section>
+
+    <div class="project-layout mt-3">
+      <article class="project-content">
+        <h2 id="sec-from-ai-concept-to-reality">From AI concept to physical robot</h2>
+        <p>
+          ENCO-02 was built using an AI-accelerated hardware workflow: starting from a rough mental sketch of a
+          four-legged sci-fi desk mech with a vertical screen face, using image generation to lock in the
+          orthographic proportions, and then engineering every mechanical joint, servo mount, and circuit board
+          to make the physical robot match the concept 1:1.
+        </p>
+
+        <div class="pipeline-steps">
+          <div class="panel pipeline-step">
+            <span class="step-num">STEP 01 // IDEA</span>
+            <h3>Embodied desktop companion</h3>
+            <p>A smart speaker can answer questions, but it cannot turn its head, look at you, or wince at an alert. The goal was a spider-mech companion with a face, a 3-axis neck, and a camera eye.</p>
+          </div>
+          <div class="panel pipeline-step">
+            <span class="step-num">STEP 02 // AI BLUEPRINT</span>
+            <h3>AI-generated orthographic sheet</h3>
+            <p>Prompted generative AI to produce a multi-view engineering sheet (<em>Top, Front, Left Side</em>) with a 2" vertical LCD module replacing the front cover panel, four wheeled legs, and dual antennas.</p>
+          </div>
+          <div class="panel pipeline-step">
+            <span class="step-num">STEP 03 // 3D CAD MODEL</span>
+            <h3>Parametric modeling &amp; FDM printing</h3>
+            <p>Translated the 2D orthographic views into multi-part 3D CAD geometry with internal brackets for 3 neck servos, an OV2640 camera turret on the crown, and multi-color grey/black/yellow PLA armor.</p>
+          </div>
+          <div class="panel pipeline-step">
+            <span class="step-num">STEP 04 // MAKE IT REAL</span>
+            <h3>Dual-ESP32 firmware &amp; AI brain</h3>
+            <p>Wired the 240×320 SPI LCD, 3× MG92B servos, audio codec, ESP32-CAM vision module, and custom C++ firmware — turning a static render into a talking, seeing, smart-home-controlling robot.</p>
+          </div>
+        </div>
+
+        <div class="compare-grid blueprint-compare">
+          <figure class="schematic-figure">
+            <img src="../assets/img/enco-02/concept-sheet.jpg" alt="AI-generated orthographic concept blueprint for Drone Unit Mk.II showing Top, Front, and Left Side views with 2-inch vertical LCD integration" loading="lazy">
+            <figcaption>STAGE A // AI-generated multi-view concept sheet (Top · Front · Left Side + 2" portrait screen module)</figcaption>
+          </figure>
+          <figure class="schematic-figure">
+            <img src="../assets/img/enco-02/side.jpg" alt="Real 3D-printed ENCO-02 robot in side profile matching the AI concept blueprint" loading="lazy">
+            <figcaption>STAGE B // Physical 3D-printed &amp; wired ENCO-02 prototype on the desk</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="sec-virtual-character">520 KB SRAM, no PSRAM — bye, pixel version</h2>
+        <p>
+          The main controller is an <strong>ESP32-D0WD-V3 with 520 KB SRAM, zero PSRAM, and 4 MB Flash</strong>.
+          During live voice conversation (Wi-Fi + TLS + Opus audio + LVGL), free heap drops to ~20 KB and the
+          largest contiguous memory block hit a low of <strong>2,036 bytes</strong>.
+        </p>
+        <p>
+          Originally, the character face used a 16-color indexed bitmap (<code>LV_COLOR_FORMAT_I4</code>) which
+          looked posterized with harsh 1-px stair-stepped outlines. To replace it with a smooth, high-detail
+          Korean-manhwa-style character without touching a single byte of heap:
+        </p>
+        <ul class="check-list">
+          <li><strong>Zero-RAM flash streaming</strong> — Built an offline asset pipeline (<code>build_face_assets.py</code>) that aligns expression layers at 2× resolution, feathers alpha edges, and compiles the base portrait + <strong>33 animated sprites (595 KB total)</strong> into <code>.flash.rodata</code> as native 16-bit RGB565 arrays drawn straight from flash.</li>
+          <li><strong>Audio-driven lip-sync &amp; jaw motion</strong> — Rather than animating from network state, the mouth and jaw sprites track the real speaker output buffer and close within 200 ms of silence.</li>
+          <li><strong>Living micro-animations</strong> — Randomized natural blinking (open → half → shut → half → open over ~240 ms every 2.4–6 s) plus multi-frame bangs and side-lock hair breeze.</li>
+          <li><strong>9 voice-triggered &amp; LLM-synced emotions</strong> — Responds to 21 server mood tags and direct voice commands (<em>happy, sad, wink, pout/嘟嘴卖萌, surprised, angry, shy, thinking, neutral</em>).</li>
+        </ul>
+
+        <div class="compare-grid face-compare">
+          <figure class="schematic-figure">
+            <img src="../assets/img/enco-02/face-evolution.jpg" alt="Side-by-side comparison of the old 16-color jagged pixel face on the left and the new smooth 16-bit RGB565 character face on the right" loading="lazy">
+            <figcaption>BEFORE vs. AFTER // 16-color pixel version (left) → full-color RGB565 character streamed from flash at 0 B RAM cost (right)</figcaption>
+          </figure>
+          <figure class="schematic-figure">
+            <img src="../assets/img/enco-02/face-expressions.jpg" alt="Sprite sheet of 8 animated character expressions: happy, sad, wink, pout, surprised, angry, shy, and thinking" loading="lazy">
+            <figcaption>EXPRESSION ENGINE // 8 voice- &amp; emotion-triggered expressions (happy · sad · wink · pout · surprised · angry · shy · thinking)</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="sec-camera-vision">Camera integration, vision &amp; voice-to-action</h2>
+        <p>
+          Because a single VGA JPEG frame (25–40 KB) is 15× larger than the main board's free contiguous heap
+          during speech, vision is offloaded to an <strong>AI-Thinker ESP32-CAM (OV2640 + 4 MB PSRAM)</strong>
+          mounted in the crown turret above the visor. The two boards talk over a cross-wired UART link
+          (<code>GPIO 13/14 ↔ GPIO 18/19</code>) using a static 192-byte line buffer with zero runtime allocation:
+        </p>
+        <div class="feature-grid">
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">◉</span>
+            <h3>"这是什么?" visual recognition</h3>
+            <p>Ask what you are holding: the screen opens a live preview, freezes the frame on <code>SHOT</code>, uploads directly from the ESP32-CAM to the vision model, and speaks the answer aloud.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⌖</span>
+            <h3>10 FPS sci-fi HUD viewfinder</h3>
+            <p>Switches UART dynamically from <code>115200</code> to <code>921600</code> baud to stream <code>224×160</code> MJPEG frames with a hardware-painted reticle, blinking <code>REC ●</code>, and picture-in-picture ENCO avatar.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⟿</span>
+            <h3>3-axis head &amp; 1-finger tracking</h3>
+            <p>Smooth ease-in/ease-out servo control across pitch, yaw, and roll. Hold up one finger or say <em>"看着我"</em> to lock head tracking onto you; pauses ambient head bobbles automatically.</p>
+          </div>
+          <div class="panel feature">
+            <span class="feature-icon" aria-hidden="true">⏱</span>
+            <h3>Voice timers, toast alerts &amp; volume</h3>
+            <p>Set countdowns (<code>T-MINUS</code> bar) and on-screen reminder toasts that auto-dismiss, toggle scrolling subtitles, and adjust persistent NVS-backed speaker volume by voice.</p>
+          </div>
+        </div>
+
+        <h2 id="sec-smart-home-pool">Smart home: swimming pool &amp; spa control</h2>
+        <p>
+          Storing cloud OAuth tokens or running heavy TLS JSON parsers on a microcontroller with 2 KB of free
+          heap is both brittle and a security risk. Instead, ENCO-02 uses a <strong>local Home Bridge</strong>
+          running on a Mac (`tools/home_bridge/bridge.py`) that holds the <code>iAquaLink</code> credentials in
+          a git-ignored local <code>.env</code> and exposes a compact, hardened endpoint on the LAN:
+        </p>
+        <ul class="check-list">
+          <li><strong>Voice status &amp; live HUD card</strong> — Say <em>"泳池状态"</em> or <em>"Pool status"</em> to display a live on-screen telemetry card while ENCO-02 reads water and target temperatures aloud.</li>
+          <li><strong>Full equipment control</strong> — Voice commands toggle the filter pump (<code>pool_pump</code>), spa mode (<code>spa_pump</code>), pool &amp; spa heaters, cleaner, and lights, or set target temperatures (pool <code>70–90 °F</code>, spa <code>80–104 °F</code>) with read-back verification.</li>
+          <li><strong>Authenticated LAN protocol</strong> — Every request between the bridge and robot is signed with <code>HMAC-SHA256</code> + a one-time nonce, rate-limited to 20 req/min, and restricted to an explicit device/temperature allow-list.</li>
+        </ul>
+
+        <h2 id="sec-system-architecture">System architecture</h2>
+        <div class="sys-diagram" role="img" aria-label="Dual-MCU architecture: Main ESP32 (520KB SRAM, no PSRAM) drives the 240x320 SPI LCD, 3x MG92B neck servos, I2S audio, and WSS AI stream. UART2 connects to ESP32-CAM (OV2640, 4MB PSRAM) for 921.6kbps viewfinder and vision recognition. Local Mac Home Bridge handles HMAC-signed iAquaLink pool/spa control.">
+          <div class="sys-lane">
+            <span class="sys-lane-label">MAIN MCU</span>
+            <span class="sys-node green">ESP32 (520KB SRAM · 0 PSRAM)</span><span class="sys-arrow">SPI →</span>
+            <span class="sys-node">2" LCD (240×320 RGB565)</span>
+            <span class="sys-sep"></span>
+            <span class="sys-node green">ESP32</span><span class="sys-arrow">PWM ×3 →</span>
+            <span class="sys-node">MG92B ×3 (Pitch · Yaw · Roll)</span>
+          </div>
+          <div class="sys-lane">
+            <span class="sys-lane-label">VISION</span>
+            <span class="sys-node amber">ESP32-CAM (OV2640 · 4MB PSRAM)</span><span class="sys-arrow">UART 115K/921K ↔</span>
+            <span class="sys-node green">ESP32 Main</span>
+          </div>
+          <div class="sys-lane">
+            <span class="sys-lane-label">SMART HOME</span>
+            <span class="sys-node green">ESP32 Main</span><span class="sys-arrow">WSS / MCP →</span>
+            <span class="sys-node">Mac Home Bridge (HMAC)</span><span class="sys-arrow">HTTPS →</span>
+            <span class="sys-node amber">iAquaLink Pool &amp; Spa</span>
+          </div>
+        </div>
+
+        <h2 id="sec-hardware">Hardware &amp; memory budget</h2>
+        <div class="table-wrap">
+          <table class="bom">
+            <caption class="muted">ENCO-02 hardware configuration &amp; flash/RAM allocation</caption>
+            <thead><tr><th scope="col">Subsystem</th><th scope="col">Hardware / Allocation</th><th scope="col">Engineering Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Main MCU</td><td>ESP32-D0WD-V3 (240 MHz)</td><td>520 KB SRAM, <strong>no PSRAM</strong>, 4 MB Flash (<code>app0</code> = 3.97 MB)</td></tr>
+              <tr><td>Vision MCU</td><td>AI-Thinker ESP32-CAM</td><td>OV2640 sensor + 4 MB PSRAM; linked via UART2 (GPIO 13/14 ↔ 18/19)</td></tr>
+              <tr><td>Display</td><td>2.0" Portrait SPI LCD</td><td>240×320 resolution, 16-bit RGB565, LVGL with zero-RAM flash sprite streaming</td></tr>
+              <tr><td>Character Art</td><td>595 KB in <code>.flash.rodata</code></td><td>Base portrait + 33 sprites (blinks, jaw lip-sync, hair sway, 8 expressions)</td></tr>
+              <tr><td>Neck Actuation</td><td>3× MG92B Metal-Gear Servos</td><td>3-DOF head (pitch, yaw, roll) on GPIO 0 / 25 / 26 with smooth easing</td></tr>
+              <tr><td>Chassis</td><td>Multi-color PLA (FDM)</td><td>Modeled from AI orthographic blueprint; 4 wheeled legs + dual rear antennas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <aside class="project-meta panel" aria-label="Project details">
+        <p class="label">Spec sheet</p>
+        <ul class="status-list">
+          <li><span class="k">Designation</span><span class="v">ENCO-02 (EN-CO-02)</span></li>
+          <li><span class="k">Type</span><span class="v">Desktop AI companion</span></li>
+          <li><span class="k">Main MCU</span><span class="v">ESP32 · 520KB SRAM · 0 PSRAM</span></li>
+          <li><span class="k">Vision MCU</span><span class="v">ESP32-CAM · OV2640 · 4MB PSRAM</span></li>
+          <li><span class="k">Display</span><span class="v">2.0" IPS · 240×320 RGB565</span></li>
+          <li><span class="k">Head DOF</span><span class="v">3 × MG92B (Pitch/Yaw/Roll)</span></li>
+          <li><span class="k">Smart Home</span><span class="v">iAquaLink Pool &amp; Spa Bridge</span></li>
+          <li><span class="k">Workflow</span><span class="v">Idea → AI Sheet → CAD → Print</span></li>
+          <li><span class="k">Status</span><span class="v"><span class="dot" aria-hidden="true"></span>Latest build · active</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <nav class="project-nav" aria-label="More projects">
+      <a class="btn" href="eo-01.html">← EO-01 Quadruped Robot Dog</a>
+      <a class="btn" href="autonomous-rover.html">Autonomous Rover →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© <span data-year></span> Renlong Zhang</span>
+      <span>END OF TRANSMISSION</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
