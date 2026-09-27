@@ -77,7 +77,7 @@
   /* ---------- Reveal on scroll ---------- */
   // Auto-tag common blocks so every page animates without editing its HTML.
   document.querySelectorAll(
-    '.page-head > *, .panel, .card, .entry, .gallery figure, .filters, .project-hero, .project-content > h2, .breadcrumb'
+    '.page-head > *, .panel, .card, .entry, .gallery figure, .photo-trio figure, .schematic-figure, .filters, .project-hero, .project-content > h2, .breadcrumb'
   ).forEach(function (el) { el.classList.add('reveal'); });
 
   const revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
@@ -134,14 +134,17 @@
         const el = entry.target;
         const target = parseInt(el.getAttribute('data-count'), 10) || 0;
         const start = performance.now(), dur = 1200;
+        let done = false;
         const step = function (now) {
-          const t = Math.min((now - start) / dur, 1);
+          if (done) return;
+          const t = Math.min(Math.max((now - start) / dur, 0), 1);
           renderCount(el, Math.round(target * (1 - Math.pow(1 - t, 3))));
           if (t < 1) window.requestAnimationFrame(step);
+          else done = true;
         };
         window.requestAnimationFrame(step);
         // Safety net: always land on the real number even if rAF is throttled.
-        window.setTimeout(function () { renderCount(el, target); }, dur + 150);
+        window.setTimeout(function () { done = true; renderCount(el, target); }, dur + 150);
         cio.unobserve(el);
       });
     }, { threshold: 0.5 });
@@ -303,7 +306,7 @@
   }
 
   /* ---------- Gallery lightbox ---------- */
-  const galleryImgs = document.querySelectorAll('.gallery img, .project-hero img');
+  const galleryImgs = document.querySelectorAll('.gallery img, .project-hero img, .photo-trio img, .schematic-figure img');
   if (galleryImgs.length && typeof HTMLDialogElement === 'function') {
     const dlg = document.createElement('dialog');
     dlg.className = 'lightbox';
