@@ -260,32 +260,33 @@ main { flex: 1; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1
 }
 
 /* ---------- Print (resume prints cleanly on 1 page) ---------- */
-@page { size: letter; margin: 0.28in 0.45in; }
+@page { size: letter; margin: 0.32in 0.45in; }
 @media print {
-  body { background: #fff; color: #111; font-size: 8.4pt; line-height: 1.24; display: block; min-height: 0; }
+  body { background: #fff; color: #111; font-size: 8.5pt; line-height: 1.275; display: block; min-height: 0; }
   .site-header, .site-footer, .no-print, .skip-link { display: none !important; }
   main { padding: 0; max-width: none; }
-  .page-head { padding: 0 0 0.35rem; margin: 0; border-bottom: 2px solid #111; }
-  .page-head h1 { font-size: 17pt; margin: 0 0 0.05rem; }
+  .page-head { padding: 0 0 0.36rem; margin: 0; border-bottom: 2px solid #111; }
+  .page-head h1 { font-size: 17.5pt; margin: 0 0 0.05rem; }
   .page-head p.lead { color: #333; font-size: 9.8pt; margin: 0; }
   .contact-line { margin-top: 0.22rem; font-size: 8.4pt; }
   a { color: #111; text-decoration: none; }
   .panel { background: none; border: none; padding: 0; }
   .panel::before, .panel::after { display: none; }
-  .label { color: #111; font-weight: 700; font-size: 8.8pt; border-bottom: 1px solid #999; padding-bottom: 0.1rem; margin: 0 0 0.25rem; }
+  .label, .resume-block .label { color: #111; font-weight: 700; font-size: 8.8pt; border-bottom: 1px solid #999; padding-bottom: 0.11rem; margin: 0 0 0.24rem; }
   .label::before { content: none; }
+  .resume-block p { margin: 0; }
   .resume-grid { display: block; margin-top: 0.4rem; }
   .resume-main { gap: 0.4rem; }
-  .timeline { gap: 0.26rem; }
+  .timeline { gap: 0.31rem; }
   .entry { break-inside: avoid; }
   .entry-head h3 { font-size: 9.6pt; }
   .entry-date { color: #111; font-size: 8.4pt; }
-  .entry-org { color: #444; margin: 0 0 0.1rem; font-style: italic; font-size: 8.4pt; }
+  .entry-org { color: #444; margin: 0 0 0.11rem; font-style: italic; font-size: 8.4pt; }
   .entry ul { margin: 0; padding-left: 1rem; }
-  .entry li { margin: 0.02rem 0; }
-  .resume-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 0.22rem 1.2rem; margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px solid #999; break-inside: avoid; }
-  .resume-side h3 { color: #111; font-size: 8.4pt; margin: 0 0 0.08rem; }
-  .resume-side li { color: #111; font-size: 8.2pt; padding: 0; display: inline; }
+  .entry li { margin: 0.045rem 0; }
+  .resume-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 0.26rem 1.2rem; margin-top: 0.42rem; padding-top: 0.35rem; border-top: 1px solid #999; break-inside: avoid; }
+  .resume-side h3 { color: #111; font-size: 8.5pt; margin: 0 0 0.09rem; }
+  .resume-side li { color: #111; font-size: 8.3pt; padding: 0; display: inline; }
   .resume-side li:not(:last-child)::after { content: " · "; }
   .muted { color: #555; }
 }
