@@ -18,7 +18,7 @@ script.js           Footer year, project filter, print button
 
 ## Add a new project
 
-1. Copy an existing page, e.g. `projects/robotic-arm.html` → `projects/my-project.html`.
+1. Copy an existing page, e.g. `projects/ferris-wheel.html` → `projects/my-project.html`.
 2. Edit the title, summary, spec sheet, sections and images.
    Put images in `assets/img/my-project/`.
 3. Add a card to `projects.html` (and optionally `index.html`).
