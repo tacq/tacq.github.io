@@ -2,7 +2,7 @@
   "use strict";
 
   const GITHUB_NEW_ISSUE_BASE = "https://github.com/tAcQ/money/issues/new";
-  const SUPPORT_EMAIL = "tacq999@gmail.com";
+  const SUPPORT_EMAIL = "zrl0420@gmail.com";
 
   const playerIdInput = document.getElementById("bug-player-id");
   const deviceInput = document.getElementById("bug-device");
