@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP response headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and `X-Frame-Options` are ignored in <meta> CSP; enforcing
+    clickjacking headers requires an upstream proxy/CDN (e.g., Cloudflare) in front of GitHub Pages.
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'nonce-pa-support-20261016'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Pocket Arcade (com.tacq.pocketarcade) — Official Support, Bug Bounty Program (3 Days Ad-Free VIP), and Privacy Policy for Cosmic Merge, Gem Blocks, Sky Stack, and Pin Spin.">
+  <meta name="theme-color" content="#080c17">
+  <title>Pocket Arcade · Support &amp; Bug Bounty Program</title>
+  <style nonce="pa-support-20261016">
+    :root {
+      --bg: #080c17;
+      --bg-glow: radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.14), transparent 50%),
+                 radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.14), transparent 50%);
+      --card: #111827;
+      --card-elevated: #172033;
+      --border: #1e293b;
+      --border-highlight: rgba(96, 165, 250, 0.45);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #7dd3fc;
+      --gold: #fbbf24;
+      --gold-bg: rgba(251, 191, 36, 0.14);
+      --gold-border: rgba(251, 191, 36, 0.38);
+      --green: #34d399;
+      --purple: #c084fc;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1.75rem 1.15rem 4rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      background-color: var(--bg);
+      background-image: var(--bg-glow);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .site-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .brand-link {
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-link span {
+      color: var(--accent);
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .nav-pills a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: rgba(17, 24, 39, 0.75);
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-pills a:hover,
+    .nav-pills a:focus {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, rgba(23, 32, 51, 0.95), rgba(17, 24, 39, 0.98));
+      border: 1px solid var(--border-highlight);
+      border-radius: 18px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background-color: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .badge.gold {
+      background-color: var(--gold-bg);
+      color: var(--gold);
+      border-color: var(--gold-border);
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+      line-height: 1.2;
+      margin: 0 0 0.65rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+      max-width: 68ch;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.25rem;
+    }
+
+    .game-tile {
+      background-color: rgba(8, 12, 23, 0.65);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+
+    .game-tile h3 {
+      font-size: 1rem;
+      margin: 0 0 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .game-tile p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+    }
+
+    .bounty-card {
+      border-color: var(--gold-border);
+      background: linear-gradient(160deg, rgba(251, 191, 36, 0.06), rgba(17, 24, 39, 0.98) 42%);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 1.35rem 0 0.55rem;
+    }
+
+    p {
+      margin: 0 0 0.85rem;
+    }
+
+    ol, ul {
+      margin: 0.5rem 0 1.1rem;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background-color: var(--card-elevated);
+      color: #e2e8f0;
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+      margin-top: 1.25rem;
+    }
+
+    .step-box {
+      background-color: var(--card-elevated);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .step-box h3 {
+      margin-top: 0;
+      color: var(--gold);
+    }
+
+    .step-box ol {
+      margin-bottom: 0;
+    }
+
+    /* Form styles */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-grid .field {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    label span.hint {
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      background-color: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.15rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.3rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.1s ease, background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #08101d;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--card-elevated);
+      color: var(--text);
+      border: 1px solid var(--border-highlight);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+    }
+
+    .status-note {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 2px;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--accent-hover);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.85rem 3rem;
+      }
+
+      .hero-card,
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-bar">
+      <a class="brand-link" href="/pocket-arcade/">POCKET ARCADE<span>_</span></a>
+      <nav class="nav-pills" aria-label="Pocket Arcade links">
+        <a href="#bug-bounty">🎁 Bug Bounty</a>
+        <a href="#report-helper">Submit Bug Report</a>
+        <a href="/pocket-arcade/privacy.html">Privacy Policy</a>
+        <a href="/">Developer Home</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- APP OVERVIEW -->
+      <section class="hero-card" aria-labelledby="app-title">
+        <div class="badge-row">
+          <span class="badge">Android &amp; iOS · Godot 4.7</span>
+          <span class="badge">com.tacq.pocketarcade</span>
+          <span class="badge gold">🎁 3-Day Ad-Free Bug Bounty</span>
+        </div>
+        <h1 id="app-title">Pocket Arcade</h1>
+        <p class="hero-sub">
+          <strong>4 original casual arcade mini-games in one app</strong> — instant pick-up-and-play sessions, global leaderboards, and tactile arcade physics.
+        </p>
+
+        <div class="games-grid">
+          <article class="game-tile">
+            <h3>🪐 Cosmic Merge</h3>
+            <p>Drop &amp; merge cute planets with Gravity Well black holes.</p>
+          </article>
+          <article class="game-tile">
+            <h3>💎 Gem Blocks</h3>
+            <p>8&times;8 grid puzzle with explosive Bomb &amp; Prism Gem Cores.</p>
+          </article>
+          <article class="game-tile">
+            <h3>🏗️ Sky Stack</h3>
+            <p>One-tap timing tower stacker with Wind Gusts &amp; Golden Slabs.</p>
+          </article>
+          <article class="game-tile">
+            <h3>🎯 Pin Spin</h3>
+            <p>Orbiting wheel pin-thrower with Moons &amp; Mines.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- BUG BOUNTY PROGRAM -->
+      <section id="bug-bounty" class="card bounty-card" aria-labelledby="bounty-heading">
+        <div class="badge-row">
+          <span class="badge gold">Player Reward Program</span>
+        </div>
+        <h2 id="bounty-heading">🎁 Bug Bounty Program (Report a Bug &rarr; Get 3 Days Ad-Free VIP)</h2>
+        <p>
+          Help us make <strong>Pocket Arcade</strong> even better! Players who submit an accepted bug report receive a
+          <strong>3-Day Ad-Free Reward Code</strong> (<code>PA3-XXXX-YYYYYY</code>) that <strong>removes all banner &amp; interstitial ads</strong> and <strong>grants instant rewarded boosters without watching video ads</strong>.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <h3>1. How to Report a Bug</h3>
+            <ol>
+              <li>Open <strong>Pocket Arcade &rarr; Settings (&#9881;) &rarr; Report a Bug</strong>.</li>
+              <li>
+                Tap <strong>Open GitHub Issue</strong> (<a href="https://github.com/tAcQ/money/issues/new" target="_blank" rel="noopener noreferrer">github.com/tAcQ/money/issues/new</a>)
+                or <strong>Send Email</strong> (<a href="mailto:tacq999@gmail.com">tacq999@gmail.com</a>). Your device diagnostics and unique Player ID (<code>PA-XXXXXX</code>) are automatically attached.
+              </li>
+              <li>
+                You can also submit directly from this webpage using the helper below (please include your <strong>Player ID: <code>PA-XXXXXX</code></strong> shown in <strong>Settings &rarr; Report a Bug</strong>).
+              </li>
+            </ol>
+          </div>
+
+          <div class="step-box">
+            <h3>2. How to Redeem Your Code</h3>
+            <ol>
+              <li>
+                Once your bug report is accepted, we will reply to your GitHub Issue or Email with a one-time reward code bound to your Player ID (e.g., <code>PA3-K9M2-8F31A4</code>).
+              </li>
+              <li>Open <strong>Pocket Arcade &rarr; Settings (&#9881;) &rarr; Report a Bug</strong>.</li>
+              <li>
+                Paste the code into <strong>Enter Reward Code</strong> and tap <strong>Redeem</strong> to immediately unlock 3 days of Ad-Free VIP!
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE WEB BUG REPORT HELPER -->
+      <section id="report-helper" class="card" aria-labelledby="helper-heading">
+        <h2 id="helper-heading">🛠️ Interactive Web Bug Report Helper</h2>
+        <p>
+          Fill in your details below to automatically generate a pre-filled GitHub Issue or Email report with your Player ID attached:
+        </p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="bug-player-id">Player ID <span class="hint">(shown in Settings &rarr; Report a Bug)</span></label>
+            <input type="text" id="bug-player-id" placeholder="e.g. PA-7K4M9X" maxlength="24" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="bug-device">Device Model &amp; OS</label>
+            <input type="text" id="bug-device" placeholder="e.g. Pixel 8 / Android 15 or iPhone 16 / iOS 18" maxlength="120">
+          </div>
+
+          <div class="field">
+            <label for="bug-game">Mini-Game / Area</label>
+            <select id="bug-game">
+              <option value="General / All Mini-Games">General / All Mini-Games</option>
+              <option value="Cosmic Merge">Cosmic Merge</option>
+              <option value="Gem Blocks">Gem Blocks</option>
+              <option value="Sky Stack">Sky Stack</option>
+              <option value="Pin Spin">Pin Spin</option>
+              <option value="Leaderboards / Settings / Shop">Leaderboards / Settings / Shop</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="bug-description">Bug Description &amp; Steps to Reproduce</label>
+          <textarea id="bug-description" placeholder="Describe what happened, what you expected to happen, and any steps to reproduce the issue..."></textarea>
+        </div>
+
+        <div class="btn-row">
+          <a id="btn-github-issue"
+             class="btn btn-primary"
+             href="https://github.com/tAcQ/money/issues/new"
+             target="_blank"
+             rel="noopener noreferrer">
+            Open Pre-Filled GitHub Issue &rarr;
+          </a>
+          <a id="btn-email-report"
+             class="btn btn-secondary"
+             href="mailto:tacq999@gmail.com">
+            Send Pre-Filled Email (tacq999@gmail.com) &rarr;
+          </a>
+        </div>
+        <p id="form-status" class="status-note" aria-live="polite">
+          Enter your Player ID (PA-XXXXXX) and bug details above to pre-fill the report links.
+        </p>
+      </section>
+
+      <!-- PRIVACY & SUPPORT LINKS -->
+      <section class="card" aria-labelledby="support-links-heading">
+        <h2 id="support-links-heading">🔒 Privacy Policy &amp; Official Links</h2>
+        <p>
+          <strong>Pocket Arcade</strong> respects your privacy: high scores, settings, and your randomly generated local Player ID (<code>PA-XXXXXX</code>) are stored locally on your device. Read our full disclosures for Google Play Data Safety, Google AdMob (UMP consent), Leaderboards, and In-App Purchases:
+        </p>
+        <ul>
+          <li><strong>Privacy Policy:</strong> <a href="/pocket-arcade/privacy.html">Pocket Arcade Privacy Policy (<code>/pocket-arcade/privacy.html</code>)</a> &middot; <a href="/privacy.html">Direct Link (<code>/privacy.html</code>)</a></li>
+          <li><strong>GitHub Issue Tracker:</strong> <a href="https://github.com/tAcQ/money/issues" target="_blank" rel="noopener noreferrer">https://github.com/tAcQ/money/issues</a></li>
+          <li><strong>Bug Bounty &amp; Player Support Email:</strong> <a href="mailto:tacq999@gmail.com">tacq999@gmail.com</a></li>
+          <li><strong>Developer &amp; Privacy Inquiries:</strong> <a href="mailto:zrl0420@gmail.com">zrl0420@gmail.com</a></li>
+          <li><strong>AdMob Authorized Sellers (<code>app-ads.txt</code>):</strong> <a href="/app-ads.txt">/app-ads.txt</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2026 Renlong Zhang &middot; Pocket Arcade (<code>com.tacq.pocketarcade</code>) &middot;
+        <a href="/pocket-arcade/privacy.html">Privacy Policy</a> &middot;
+        <a href="/">Home</a>
+      </p>
+    </footer>
+  </div>
+  <script src="support.js"></script>
+</body>
+</html>

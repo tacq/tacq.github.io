@@ -11,37 +11,37 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; style-src 'nonce-pa-privacy-20261016'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="Privacy Policy for Pocket Arcade (Cosmic Merge, Gem Blocks, Sky Stack, and Pin Spin) on Android and iOS.">
-  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacy Policy for Pocket Arcade (com.tacq.pocketarcade — Cosmic Merge, Gem Blocks, Sky Stack, and Pin Spin) on Android and iOS.">
+  <meta name="color-scheme" content="dark light">
   <title>Privacy Policy — Pocket Arcade</title>
   <style nonce="pa-privacy-20261016">
     :root {
-      --bg: #f6f8fa;
-      --card-bg: #ffffff;
-      --card-subtle: #f0f4f8;
-      --text: #1a202c;
-      --text-muted: #4a5568;
-      --border: #e2e8f0;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --badge-bg: #dbeafe;
-      --badge-text: #1e40af;
-      --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-subtle: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1f2937;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --badge-bg: rgba(59, 130, 246, 0.18);
+      --badge-text: #93c5fd;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
       :root {
-        --bg: #0b0f19;
-        --card-bg: #111827;
-        --card-subtle: #1e293b;
-        --text: #f1f5f9;
-        --text-muted: #94a3b8;
-        --border: #1f2937;
-        --accent: #60a5fa;
-        --accent-hover: #93c5fd;
-        --badge-bg: rgba(59, 130, 246, 0.18);
-        --badge-text: #93c5fd;
-        --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+        --bg: #f6f8fa;
+        --card-bg: #ffffff;
+        --card-subtle: #f0f4f8;
+        --text: #1a202c;
+        --text-muted: #4a5568;
+        --border: #e2e8f0;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --badge-bg: #dbeafe;
+        --badge-text: #1e40af;
+        --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
       }
     }
 
@@ -51,7 +51,7 @@
 
     body {
       margin: 0;
-      padding: 2.5rem 1.25rem 4rem;
+      padding: 2rem 1.25rem 4rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       background-color: var(--bg);
       color: var(--text);
@@ -60,8 +60,27 @@
     }
 
     .container {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
     }
 
     .policy-card {
@@ -214,47 +233,62 @@
 </head>
 <body>
   <div class="container">
+    <nav class="top-nav" aria-label="Breadcrumb">
+      <a href="/pocket-arcade/">&larr; Pocket Arcade Support &amp; Bug Bounty</a>
+      <a href="/">Developer Home</a>
+    </nav>
+
     <main class="policy-card">
       <header class="policy-header">
         <div class="badge-row">
           <span class="badge">Android &amp; iOS</span>
+          <span class="badge">com.tacq.pocketarcade</span>
           <span class="meta-date">Effective Date / Last Updated: <time datetime="2026-10-16">October 16, 2026</time></span>
         </div>
         <h1>Privacy Policy — Pocket Arcade</h1>
         <div class="summary-box" role="note" aria-label="Privacy Summary">
           <p>
-            <strong>Summary:</strong> <strong>Pocket Arcade</strong> is a collection of four casual arcade mini-games
-            (<em>Cosmic Merge</em>, <em>Gem Blocks</em>, <em>Sky Stack</em>, and <em>Pin Spin</em>) for Android and iOS.
+            <strong>Overview:</strong> <strong>Pocket Arcade</strong> (<code>com.tacq.pocketarcade</code>, built with Godot 4.7 for Android and iOS) is a collection of four casual arcade mini-games:
+            <em>Cosmic Merge</em>, <em>Gem Blocks</em>, <em>Sky Stack</em>, and <em>Pin Spin</em>.
             We do not require you to create an account with us and we do not operate our own backend servers to store your personal data.
           </p>
         </div>
       </header>
 
       <section id="local-data">
-        <h2>1. Information Stored Locally on Your Device</h2>
+        <h2>1. Local Device Data &amp; Player ID</h2>
         <p>
-          High scores, game progress, audio and vibration preferences, language selection, and your
-          <strong>"Remove Ads"</strong> purchase status are stored locally on your device.
+          High scores, game progress, audio and vibration settings, language preferences, <strong>"Remove Ads"</strong> / Ad-Free Reward Pass status, and a randomly generated local <strong>Player ID</strong> (formatted as <code>PA-XXXXXX</code>) are stored strictly locally on your device.
         </p>
-        <p>
-          We do not transmit this local save data to any proprietary servers. Uninstalling the app or clearing the app's storage data removes this local data from your device.
-        </p>
+        <ul>
+          <li>
+            <strong>Local Player ID (<code>PA-XXXXXX</code>):</strong> Generated locally on your device and used solely to issue and verify 3-Day Ad-Free Bug Bounty reward codes (e.g., <code>PA3-XXXX-YYYYYY</code>). It is never transmitted unless you voluntarily include it when submitting a bug report.
+          </li>
+          <li>
+            <strong>Erasing Local Data:</strong> All local save data and your local Player ID can be erased at any time by clearing the app's storage data or uninstalling Pocket Arcade from your device.
+          </li>
+        </ul>
       </section>
 
       <section id="third-party-services">
         <h2>2. Third-Party Services We Use</h2>
         <p>
-          Pocket Arcade integrates trusted platform and monetization SDKs provided by Google and Apple to support advertising, optional in-app purchases, and optional leaderboards:
+          Pocket Arcade integrates official platform and monetization SDKs provided by Google and Apple to support advertising, optional leaderboards, and optional in-app purchases:
         </p>
 
         <div class="service-block">
           <h3>Advertising (Google AdMob)</h3>
           <ul>
-            <li>We display interstitial ads and opt-in rewarded ads via <strong>Google AdMob</strong>.</li>
+            <li>
+              Pocket Arcade displays banner, interstitial, and opt-in rewarded ads via <strong>Google AdMob</strong>, unless you have an active <strong>Ad-Free Reward Pass</strong> or have purchased the <strong>"Remove Ads"</strong> upgrade.
+            </li>
             <li>
               AdMob may automatically collect and process device identifiers (such as the Android Advertising ID or iOS IDFA),
               coarse location data (derived from IP address), app interaction data (such as app launch and ad views/clicks),
               and diagnostic/crash data to serve personalized or non-personalized ads, prevent fraud and abuse, and measure ad performance.
+            </li>
+            <li>
+              We use <strong>Google's User Messaging Platform (UMP)</strong> to manage GDPR, UK, Swiss, and US state privacy consent choices.
             </li>
             <li>
               Learn more about how Google handles data in its partner services:
@@ -267,16 +301,16 @@
         </div>
 
         <div class="service-block">
-          <h3>In-App Purchases (Google Play Billing &amp; Apple App Store / StoreKit)</h3>
+          <h3>Leaderboards (Google Play Games Services &amp; Apple Game Center)</h3>
           <p>
-            We offer an optional <strong>"Remove Ads"</strong> non-consumable in-app purchase. All payment transactions and purchase restorations are processed directly by <strong>Google Play Billing</strong> (on Android) or <strong>Apple App Store / StoreKit</strong> (on iOS). We never receive, process, or store your credit card, billing address, or banking details.
+            When signed into the optional <strong>Ranking / Leaderboard</strong> feature, your game scores and public gamer profile/ID are handled directly by <strong>Google Play Games Services</strong> (on Android) or <strong>Apple Game Center</strong> (on iOS) under their respective privacy policies (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>).
           </p>
         </div>
 
         <div class="service-block">
-          <h3>Leaderboards (Google Play Games Services &amp; Apple Game Center)</h3>
+          <h3>In-App Purchases (Google Play Billing &amp; Apple StoreKit)</h3>
           <p>
-            If you choose to use the optional <strong>Ranking / Leaderboard</strong> feature, your game scores and public gamer profile/ID are handled directly by <strong>Google Play Games Services</strong> (on Android) or <strong>Apple Game Center</strong> (on iOS) under their respective privacy policies (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>).
+            Optional <strong>"Remove Ads"</strong> non-consumable purchases and purchase restorations are processed securely and directly by <strong>Google Play Billing</strong> (on Android) or <strong>Apple App Store / StoreKit</strong> (on iOS). We never receive, process, or store your payment card or banking details.
           </p>
         </div>
       </section>
@@ -284,14 +318,14 @@
       <section id="privacy-choices">
         <h2>3. Your Privacy Choices &amp; Consent (GDPR / EEA / UK &amp; US State Privacy)</h2>
         <p>
-          Players located in the European Economic Area (EEA), the United Kingdom (UK), Switzerland, and applicable US states are presented with a privacy &amp; consent dialog (powered by Google's User Messaging Platform) on first launch.
+          Players in the European Economic Area (EEA), the United Kingdom (UK), Switzerland, and applicable US states are presented with a consent dialog (via Google's User Messaging Platform) on first launch.
         </p>
         <ul>
           <li>
-            <strong>In-Game Privacy Settings:</strong> You can review, change, or withdraw your ad consent preferences at any time inside the game via <span class="path-pill">Home &rarr; Settings &rarr; Privacy Options</span>.
+            <strong>In-Game Privacy Settings:</strong> You can review, change, or withdraw your consent at any time inside the game via <span class="path-pill">Home &rarr; Settings &rarr; Privacy Options</span>.
           </li>
           <li>
-            <strong>Device-Level Controls:</strong> You may also limit ad tracking, reset, or delete your device's Advertising ID at any time in your device's system settings (on Android under <em>Settings &rarr; Google &rarr; Ads</em>; on iOS under <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>).
+            <strong>Device-Level Controls:</strong> You can also reset or delete your device's Advertising ID or limit ad tracking in your device's system settings.
           </li>
         </ul>
       </section>
@@ -299,34 +333,33 @@
       <section id="childrens-privacy">
         <h2>4. Children's Privacy</h2>
         <p>
-          Pocket Arcade is intended for a general audience (ages 13+) and does not knowingly collect personal information from children under the age of 13 (or the applicable age of digital consent in your jurisdiction). If you believe a child has provided personal information to us, please contact us so we can assist with addressing the inquiry.
+          Pocket Arcade is intended for a general audience (ages 13+) and does not knowingly collect personal information from children under 13.
         </p>
       </section>
 
       <section id="data-retention">
         <h2>5. Data Retention &amp; Deletion</h2>
         <p>
-          Because we do not run our own backend servers or maintain user accounts, we do not hold personal records on our servers.
+          Because we do not run our own backend servers or user accounts, we do not store personal records on our servers. Local save data and your local Player ID can be deleted at any time by clearing app storage or uninstalling the app. If you submit a voluntary bug report via GitHub Issues or email, the information you provide is used solely to troubleshoot the issue and issue your Bug Bounty reward code.
         </p>
-        <ul>
-          <li><strong>Local Save Data:</strong> Can be permanently deleted at any time by clearing the app's storage or uninstalling Pocket Arcade from your device.</li>
-          <li><strong>Third-Party Platform Data:</strong> Data collected by Google (AdMob, Google Play, Play Games Services) or Apple (App Store, Game Center) is retained and deleted in accordance with their respective privacy policies and your Google or Apple account settings.</li>
-        </ul>
       </section>
 
       <section id="contact-us">
-        <h2>6. Contact Us</h2>
+        <h2>6. Contact &amp; Support</h2>
         <p>
-          If you have any questions, requests, or concerns about this Privacy Policy or Pocket Arcade's privacy practices, please contact us at:
+          For privacy inquiries, support requests, or bug reports, please reach out via:
         </p>
-        <p>
-          <strong>Email:</strong> <a href="mailto:zrl0420@gmail.com">zrl0420@gmail.com</a>
-        </p>
+        <ul>
+          <li><strong>GitHub Issues &amp; Support:</strong> <a href="https://github.com/tAcQ/money/issues" target="_blank" rel="noopener noreferrer">https://github.com/tAcQ/money/issues</a></li>
+          <li><strong>Privacy &amp; Developer Email:</strong> <a href="mailto:zrl0420@gmail.com">zrl0420@gmail.com</a></li>
+          <li><strong>Bug Bounty &amp; Support Email:</strong> <a href="mailto:tacq999@gmail.com">tacq999@gmail.com</a></li>
+          <li><strong>Support &amp; Bug Bounty Page:</strong> <a href="/pocket-arcade/">/pocket-arcade/</a></li>
+        </ul>
       </section>
     </main>
 
     <footer class="policy-footer">
-      <p>&copy; 2026 Renlong Zhang &middot; Pocket Arcade</p>
+      <p>&copy; 2026 Renlong Zhang &middot; Pocket Arcade (<code>com.tacq.pocketarcade</code>)</p>
     </footer>
   </div>
 </body>
