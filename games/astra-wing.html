@@ -13,7 +13,7 @@
         content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Astra Wing — Sci-Fi Shoot 'em Up for Android | 星翼战姬</title>
-  <meta name="description" content="Astra Wing (星翼战姬) is a free vertical sci-fi shoot 'em up for Android. Evolve your fighter mid-battle, fly with four ace pilots and take on 16 multi-phase bosses. One-finger controls, plays offline, no forced ads.">
+  <meta name="description" content="Astra Wing (星翼战姬) is a free vertical sci-fi shoot 'em up for Android. Evolve your fighter mid-battle, fly with four ace pilots and take on 15 stages and 16 multi-phase bosses. One-finger controls, plays offline, no forced ads.">
   <meta name="theme-color" content="#07070f">
   <link rel="canonical" href="https://tacq.github.io/games/astra-wing.html">
   <link rel="icon" type="image/png" href="astra-wing/favicon-64.png">
@@ -89,9 +89,41 @@
             <li data-zh="单指操作">One-finger controls</li>
           </ul>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <img class="hero-pilot" src="astra-wing/pilot-0.png" alt="" width="420" height="700">
-          <img class="hero-ship" src="astra-wing/ship-0.png" alt="" width="256" height="256">
+        <div class="hero-art" id="hero-rotator" aria-roledescription="carousel" aria-label="The four pilots">
+          <div class="hero-stage">
+            <figure class="hero-slide hs-aurora is-active">
+              <img class="hero-pilot" src="astra-wing/pilot-0.png" alt="Aurora" width="420" height="700">
+              <img class="hero-ship" src="astra-wing/ship-0.png" alt="" width="256" height="256">
+            </figure>
+            <figure class="hero-slide hs-kira" aria-hidden="true">
+              <img class="hero-pilot" src="astra-wing/pilot-1.png" alt="Kira" width="420" height="700">
+              <img class="hero-ship" src="astra-wing/ship-1.png" alt="" width="256" height="256">
+            </figure>
+            <figure class="hero-slide hs-iris" aria-hidden="true">
+              <img class="hero-pilot" src="astra-wing/pilot-2.png" alt="Iris" width="420" height="700">
+              <img class="hero-ship" src="astra-wing/ship-2.png" alt="" width="256" height="256">
+            </figure>
+            <figure class="hero-slide hs-selene" aria-hidden="true">
+              <img class="hero-pilot" src="astra-wing/pilot-3.png" alt="Selene" width="420" height="700">
+              <img class="hero-ship" src="astra-wing/ship-3.png" alt="" width="256" height="256">
+            </figure>
+          </div>
+          <div class="hero-caption" aria-live="polite">
+            <b class="hero-name hs-aurora is-active" data-zh="奥萝拉 AURORA">AURORA</b>
+            <b class="hero-name hs-kira" data-zh="绮拉 KIRA">KIRA</b>
+            <b class="hero-name hs-iris" data-zh="艾瑞丝 IRIS">IRIS</b>
+            <b class="hero-name hs-selene" data-zh="瑟琳 SELENE">SELENE</b>
+            <span class="hero-code hs-aurora is-active">AWX-01 · DAWNSTRIKE</span>
+            <span class="hero-code hs-kira">AWX-02 · REDLANCE</span>
+            <span class="hero-code hs-iris">AWX-03 · BASTION</span>
+            <span class="hero-code hs-selene">AWX-99 · NULLWING</span>
+          </div>
+          <div class="hero-dots" role="group" aria-label="Choose pilot">
+            <button type="button" class="hero-dot hs-aurora is-active" aria-label="Aurora" aria-pressed="true"></button>
+            <button type="button" class="hero-dot hs-kira" aria-label="Kira" aria-pressed="false"></button>
+            <button type="button" class="hero-dot hs-iris" aria-label="Iris" aria-pressed="false"></button>
+            <button type="button" class="hero-dot hs-selene" aria-label="Selene" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -99,7 +131,7 @@
     <!-- ============ STATS STRIP ============ -->
     <section class="stats" aria-label="Astra Wing at a glance">
       <div class="wrap stats-inner">
-        <div class="stat"><b>16</b><span data-zh="关剧情战役">story stages</span></div>
+        <div class="stat"><b>15</b><span data-zh="关剧情战役">story stages</span></div>
         <div class="stat"><b>16</b><span data-zh="位多阶段 BOSS">multi-phase bosses</span></div>
         <div class="stat"><b>4</b><span data-zh="位战姬 · 4 架战机">pilots &amp; fighters</span></div>
         <div class="stat"><b>5</b><span data-zh="种武器核心">weapon cores</span></div>

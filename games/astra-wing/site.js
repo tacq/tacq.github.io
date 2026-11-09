@@ -71,6 +71,52 @@
     });
   }
 
+  // ---------- Hero pilot rotator ----------
+  var rotator = document.getElementById("hero-rotator");
+  if (rotator) {
+    var slides = rotator.querySelectorAll(".hero-slide");
+    var names = rotator.querySelectorAll(".hero-name");
+    var codes = rotator.querySelectorAll(".hero-code");
+    var dots = rotator.querySelectorAll(".hero-dot");
+    var count = slides.length;
+    var index = 0;
+    var timer = null;
+    var INTERVAL_MS = 4500;
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var show = function (next) {
+      index = (next + count) % count;
+      for (var i = 0; i < count; i++) {
+        var on = i === index;
+        [slides[i], names[i], codes[i], dots[i]].forEach(function (el) {
+          if (el) el.classList.toggle("is-active", on);
+        });
+        if (on) { slides[i].removeAttribute("aria-hidden"); } else { slides[i].setAttribute("aria-hidden", "true"); }
+        if (dots[i]) dots[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    };
+    var paused = false;
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var start = function () {
+      if (reduceMotion || paused || timer || count < 2) return;
+      timer = setInterval(function () { show(index + 1); }, INTERVAL_MS);
+    };
+    var pause = function () { paused = true; stop(); };
+    var resume = function () { paused = false; start(); };
+
+    Array.prototype.forEach.call(dots, function (dot, i) {
+      dot.addEventListener("click", function () { stop(); show(i); start(); });
+    });
+    rotator.addEventListener("mouseenter", pause);
+    rotator.addEventListener("mouseleave", resume);
+    rotator.addEventListener("focusin", pause);
+    rotator.addEventListener("focusout", resume);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { stop(); } else { start(); }
+    });
+    start();
+  }
+
   // ---------- Screenshot lightbox ----------
   var dialog = document.getElementById("lightbox");
   var dialogImg = document.getElementById("lightbox-img");
