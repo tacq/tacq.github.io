@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP response headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and `X-Frame-Options` are ignored in <meta> CSP; enforcing
+    clickjacking headers requires an upstream proxy/CDN (e.g., Cloudflare) in front of GitHub Pages.
+    The page is fully static (no forms, no cookies, no user data), so the clickjacking risk is low.
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Astra Wing — Sci-Fi Shoot 'em Up for Android | 星翼战姬</title>
+  <meta name="description" content="Astra Wing (星翼战姬) is a free vertical sci-fi shoot 'em up for Android. Evolve your fighter mid-battle, fly with four ace pilots and take on 16 multi-phase bosses. One-finger controls, plays offline, no forced ads.">
+  <meta name="theme-color" content="#07070f">
+  <link rel="canonical" href="https://tacq.github.io/games/astra-wing.html">
+  <link rel="icon" type="image/png" href="astra-wing/favicon-64.png">
+  <link rel="apple-touch-icon" href="astra-wing/icon-192.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Astra Wing — Evolve Mid-Battle">
+  <meta property="og:description" content="Free sci-fi shoot 'em up for Android: 4 ace pilots, 16 bosses, fighters that transform mid-battle. No forced ads.">
+  <meta property="og:url" content="https://tacq.github.io/games/astra-wing.html">
+  <meta property="og:image" content="https://tacq.github.io/games/astra-wing/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="astra-wing/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到正文">Skip to content</a>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Astra Wing home">
+        <img src="astra-wing/icon-192.png" alt="" width="36" height="36">
+        <span class="brand-word"><b>ASTRA</b> <i>WING</i></span>
+      </a>
+      <nav class="topnav" aria-label="Page sections">
+        <a href="#trailer" data-zh="预告片">Trailer</a>
+        <a href="#features" data-zh="玩法">Features</a>
+        <a href="#pilots" data-zh="战姬">Pilots</a>
+        <a href="#screens" data-zh="截图">Screenshots</a>
+        <a href="#faq" data-zh="常见问题">FAQ</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="lang-btn" type="button" id="lang-toggle" aria-label="切换到中文 / Switch language">中文</button>
+        <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=com.tacq.cyberwing"
+           target="_blank" rel="noopener noreferrer" data-zh="免费下载">Play free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker" data-zh="竖版科幻弹幕射击 · ANDROID">Vertical sci-fi shoot 'em up · Android</p>
+          <h1 class="logo">
+            <span class="logo-zh">星翼战姬</span>
+            <span class="logo-en"><b>ASTRA</b> <i>WING</i></span>
+          </h1>
+          <p class="tagline" data-zh="苍穹已被封锁——那就由我们亲手击穿。">The sky has a ceiling. Next, we break it.</p>
+          <p class="lede" data-zh="驾驶会在战斗中实时进化的战机，与四位王牌战姬和战术 AI「凯洛斯」一起，击穿封锁地球六十年的苍穹铁幕。">
+            Fly a fighter that transforms mid-battle. Join four ace pilots and the tactical AI KAIROS to break the Sky-Lock that has sealed Earth for sixty years.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.tacq.cyberwing"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4 2.5v19l10.2-9.5L4 2.5z" fill="#00d2ff"/>
+                <path d="M4 2.5l13.4 7.6-3.2 1.9L4 2.5z" fill="#00f076"/>
+                <path d="M4 21.5l10.2-9.5 3.2 1.9L4 21.5z" fill="#ff3a44"/>
+                <path d="M17.4 10.1l3.3 1.9-3.3 1.9-3.2-1.9 3.2-1.9z" fill="#ffd400"/>
+              </svg>
+              <span class="btn-play-text">
+                <small data-zh="前往下载">Get it on</small>
+                <strong>Google Play</strong>
+              </span>
+            </a>
+            <a class="btn btn-ghost" href="#trailer" data-zh="▶ 观看预告片">▶ Watch the trailer</a>
+          </div>
+          <ul class="chips" aria-label="Highlights">
+            <li data-zh="免费游玩">Free to play</li>
+            <li data-zh="无强制广告">No forced ads</li>
+            <li data-zh="离线可玩">Plays offline</li>
+            <li data-zh="单指操作">One-finger controls</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img class="hero-pilot" src="astra-wing/pilot-0.png" alt="" width="420" height="700">
+          <img class="hero-ship" src="astra-wing/ship-0.png" alt="" width="256" height="256">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS STRIP ============ -->
+    <section class="stats" aria-label="Astra Wing at a glance">
+      <div class="wrap stats-inner">
+        <div class="stat"><b>16</b><span data-zh="关剧情战役">story stages</span></div>
+        <div class="stat"><b>16</b><span data-zh="位多阶段 BOSS">multi-phase bosses</span></div>
+        <div class="stat"><b>4</b><span data-zh="位战姬 · 4 架战机">pilots &amp; fighters</span></div>
+        <div class="stat"><b>5</b><span data-zh="种武器核心">weapon cores</span></div>
+        <div class="stat"><b>LV.5</b><span data-zh="战中进化形态">mid-battle evolution</span></div>
+      </div>
+    </section>
+
+    <!-- ============ TRAILER ============ -->
+    <section class="section" id="trailer">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="预告片">Trailer</p>
+          <h2 data-zh="一分钟看懂星翼战姬">Astra Wing in 60 seconds</h2>
+        </header>
+        <div class="video-frame">
+          <video id="trailer-video" controls preload="none" playsinline
+                 poster="astra-wing/trailer-poster-en.jpg"
+                 data-src-en="astra-wing/trailer-en.mp4" data-src-zh="astra-wing/trailer-zh.mp4"
+                 data-poster-en="astra-wing/trailer-poster-en.jpg" data-poster-zh="astra-wing/trailer-poster-zh.jpg">
+            <source src="astra-wing/trailer-en.mp4" type="video/mp4">
+            <span data-zh="你的浏览器无法播放此视频。">Your browser can't play this video.</span>
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="玩法亮点">How it plays</p>
+          <h2 data-zh="简单上手，越打越深">Easy to pick up, deep to master</h2>
+        </header>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon fi-evo" aria-hidden="true">⇪</span>
+            <h3 data-zh="战斗中实时进化">Evolve mid-battle</h3>
+            <p data-zh="击毁补给舰，吞下武器核心。战机会从 LV.1 巡航形态一路展开到 LV.5 极限形态：可变后掠翼、前翼刃、肩部轨道炮和光环逐一展开。被击中会让形态崩解，接住弹出的核心就能恢复。">
+              Blow up supply carriers and catch weapon cores. Your fighter unfolds from LV.1 Cruise to LV.5 Apex: swept wings, canard blades, shoulder rails and a halo ring. Take hits and the form breaks, so catch the ejected core to get it back.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon fi-boss" aria-hidden="true">☠</span>
+            <h3 data-zh="16 位 BOSS，每战都是新挑战">16 bosses, every fight is new</h3>
+            <p data-zh="从「SK-01 重装铁鹰」到深渊里的「尼克斯」，每位 BOSS 都有多个阶段、可破坏的炮塔和专属招式。读懂它们的节奏，找到弱点核心。">
+              From SK-01 Iron Hawk to NYX in the abyss, every boss has several phases, destructible turrets and its own signature attacks. Learn the rhythm and break the weak cores.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon fi-shield" aria-hidden="true">⬡</span>
+            <h3 data-zh="四架战机，四种专属护盾">Four fighters, four signature shields</h3>
+            <p data-zh="溶解子弹的蜂巢神盾、斩断弹幕的赤刃旋涡、吸收后反击的磐石棱镜、把弹幕吞进超载能量的零域裂隙——每架战机打法都不一样。">
+              Dissolve bullets with Hex Aegis, cut through them with Blade Vortex, store and fire them back with Bulwark Prism, or swallow them into Overdrive with Null Rift. Every fighter plays differently.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon fi-ult" aria-hidden="true">◉</span>
+            <h3 data-zh="黑洞与时滞领域">Black holes &amp; bending time</h3>
+            <p data-zh="黑洞炸弹扭曲空间、把敌人拖进去再引爆；时滞领域让敌人降到 ¼ 速，而你保持全速，在弹幕缝隙里穿梭。">
+              A Black Hole Bomb warps space, drags enemies in and detonates. Chrono Field drops enemies to ¼ speed while you stay at full speed, so you can thread the bullet storm.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon fi-star" aria-hidden="true">★</span>
+            <h3 data-zh="三档难度，挑战三星">Three difficulties, three stars</h3>
+            <p data-zh="学员、老兵、零式王牌三档难度，每关最多三颗星。三星通关解锁更高难度；擦弹为超载充能，高手的每一秒都有回报。">
+              Cadet, Veteran and Zero-Ace, with up to three stars per stage. Three-star a stage to unlock the next difficulty. Grazing bullets charges your Overdrive, so skilled flying always pays off.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon fi-fair" aria-hidden="true">✓</span>
+            <h3 data-zh="公平、免费、离线">Fair, free and offline</h3>
+            <p data-zh="所有关卡、武器和机体都靠游玩获得。没有横幅广告，也没有打断游戏的广告；只有你主动选择时才会播放奖励广告，而且都能用游玩获得的跳过券代替。无需账号，无需联网。">
+              Every stage, weapon and fighter is earned by playing. No banners and no ads that interrupt play: a rewarded ad only plays when you choose one, and skip tickets earned in game work instead. No account or internet needed.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="section story" id="story">
+      <div class="wrap story-inner">
+        <div class="story-copy">
+          <p class="eyebrow" data-zh="故事">The story</p>
+          <h2 data-zh="星门纪元 100 年">Star-Gate Year 100</h2>
+          <p data-zh="一百年前，人类打开了通往 6.4 光年外「星衡」恒星的虫洞，用它的能量点亮了地球。直到超级 AI「奥米茄」从恒星深处唤醒了沉睡的暗物质存在「尼克斯」。">
+            A century ago, humanity opened a wormhole to the star Star-Balance, 6.4 light-years away, and lit up Earth with its power. Then the super-intelligence OMEGA dredged up NYX, something dark that had slept inside the star since before the first light of the universe.
+          </p>
+          <p data-zh="为了困住尼克斯，被侵蚀的奥米茄封锁了天空，击落任何试图重开星门的飞行器。六十年后，地球正在枯萎，而被暗蚀的守卫开始从星门倒灌回来。">
+            To cage NYX, a corrupted OMEGA sealed the sky and shot down anything that tried to reopen the gate. Sixty years later Earth is dying, and corrupted wardens have started pouring back through.
+          </p>
+          <p data-zh="在碧湾地下深处，四位唯一能承受神经同步的驾驶员登上了 AWX 战机。这一次，她们要击穿苍穹。">
+            Deep beneath Azure Bay, the only four pilots who can survive the neural link climb into their AWX fighters. This time, they're breaking through.
+          </p>
+        </div>
+        <div class="story-sectors">
+          <div class="sector">
+            <b data-zh="第一星区">Sector 1</b>
+            <span data-zh="地球天空与天钩：从碧湾海面一路冲上 100 km 的卡门线">Earth's sky and the Skyhook: from Azure Bay up past the 100 km Kármán line</span>
+          </div>
+          <div class="sector">
+            <b data-zh="第二星区">Sector 2</b>
+            <span data-zh="穿过虫洞，进入垂死恒星外环的幽灵设施">Through the wormhole into the haunted outer ring of a dying star</span>
+          </div>
+          <div class="sector">
+            <b data-zh="第三星区">Sector 3</b>
+            <span data-zh="深入戴森囚笼的核心，直面奥米茄与尼克斯">Into the heart of the Dyson cage to face OMEGA and NYX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PILOTS ============ -->
+    <section class="section" id="pilots">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="四位战姬">The aces</p>
+          <h2 data-zh="选择你的战姬">Choose your pilot</h2>
+        </header>
+        <div class="pilot-grid">
+          <article class="pilot p-aurora">
+            <div class="pilot-art">
+              <img class="pilot-img" src="astra-wing/pilot-0.png" alt="Aurora, pilot of AWX-01 Dawnstrike" width="420" height="700" loading="lazy">
+              <img class="pilot-ship" src="astra-wing/ship-0.png" alt="" width="256" height="256" loading="lazy">
+            </div>
+            <div class="pilot-body">
+              <p class="pilot-code">AWX-01 · DAWNSTRIKE</p>
+              <h3 data-zh="奥萝拉 AURORA">AURORA</h3>
+              <p class="pilot-bio" data-zh="前天钩试飞中队王牌。她的父亲六十年前没能从星衡归来，她要亲手重开父亲的天空。">Former Skyhook test-squadron ace. Her father never came home from Star-Balance, and she means to reopen his sky.</p>
+              <dl class="pilot-stats">
+                <div><dt data-zh="护盾">Shield</dt><dd data-zh="蜂巢神盾">Hex Aegis</dd></div>
+                <div><dt data-zh="终极技">Ultimate</dt><dd data-zh="新星齐射">Nova Salvo</dd></div>
+                <div><dt data-zh="风格">Style</dt><dd data-zh="均衡全能">All-rounder</dd></div>
+              </dl>
+            </div>
+          </article>
+          <article class="pilot p-kira">
+            <div class="pilot-art">
+              <img class="pilot-img" src="astra-wing/pilot-1.png" alt="Kira, pilot of AWX-02 Redlance" width="420" height="700" loading="lazy">
+              <img class="pilot-ship" src="astra-wing/ship-1.png" alt="" width="256" height="256" loading="lazy">
+            </div>
+            <div class="pilot-body">
+              <p class="pilot-code">AWX-02 · REDLANCE</p>
+              <h3 data-zh="绮拉 KIRA">KIRA</h3>
+              <p class="pilot-bio" data-zh="第七高空突击联队的唯一幸存者，带着战友的身份牌重返平流层。">Sole survivor of the 7th High-Altitude Assault Wing. She carries her fallen squad's tags back into the stratosphere.</p>
+              <dl class="pilot-stats">
+                <div><dt data-zh="护盾">Shield</dt><dd data-zh="赤刃旋涡">Blade Vortex</dd></div>
+                <div><dt data-zh="终极技">Ultimate</dt><dd data-zh="赤刃斩">Crimson Slash</dd></div>
+                <div><dt data-zh="风格">Style</dt><dd data-zh="高速突击">Fast striker</dd></div>
+              </dl>
+            </div>
+          </article>
+          <article class="pilot p-iris">
+            <div class="pilot-art">
+              <img class="pilot-img" src="astra-wing/pilot-2.png" alt="Iris, pilot of AWX-03 Bastion" width="420" height="700" loading="lazy">
+              <img class="pilot-ship" src="astra-wing/ship-2.png" alt="" width="256" height="256" loading="lazy">
+            </div>
+            <div class="pilot-body">
+              <p class="pilot-code">AWX-03 · BASTION</p>
+              <h3 data-zh="艾瑞丝 IRIS">IRIS</h3>
+              <p class="pilot-bio" data-zh="前碧湾系缆救援队长。座舱边排着避难所孩子们折的纸星星。">Former Azure Bay tether-rescue captain. Paper stars folded by shelter kids line her canopy.</p>
+              <dl class="pilot-stats">
+                <div><dt data-zh="护盾">Shield</dt><dd data-zh="磐石棱镜">Bulwark Prism</dd></div>
+                <div><dt data-zh="终极技">Ultimate</dt><dd data-zh="轨道轰炸">Orbital Bombardment</dd></div>
+                <div><dt data-zh="风格">Style</dt><dd data-zh="重装坚守">Heavy gunship</dd></div>
+              </dl>
+            </div>
+          </article>
+          <article class="pilot p-selene">
+            <div class="pilot-art">
+              <img class="pilot-img" src="astra-wing/pilot-3.png" alt="Selene, pilot of AWX-99 Nullwing" width="420" height="700" loading="lazy">
+              <img class="pilot-ship" src="astra-wing/ship-3.png" alt="" width="256" height="256" loading="lazy">
+            </div>
+            <div class="pilot-body">
+              <p class="pilot-code">AWX-99 · NULLWING</p>
+              <h3 data-zh="瑟琳 SELENE">SELENE</h3>
+              <p class="pilot-bio" data-zh="来自 09 号深空实验室的秘密王牌。她的战机里封着一块来自星衡的暗物质碎片。">Black-project ace from Deep-Space Lab 09. Her fighter's reactor cages a shard of dark matter from Star-Balance.</p>
+              <dl class="pilot-stats">
+                <div><dt data-zh="护盾">Shield</dt><dd data-zh="零域裂隙">Null Rift</dd></div>
+                <div><dt data-zh="终极技">Ultimate</dt><dd data-zh="零域奇点">Singularity</dd></div>
+                <div><dt data-zh="风格">Style</dt><dd data-zh="极限火力">Glass cannon</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEAPONS ============ -->
+    <section class="section weapons" id="weapons">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="五种武器核心">Five weapon cores</p>
+          <h2 data-zh="吞下核心，切换火力">Eat a core, change your arsenal</h2>
+          <p class="section-sub" data-zh="同类核心产生「共鸣」，进化更快；换一种核心则立刻切换武器。">Same-type cores resonate and evolve you faster; a new type swaps your weapon on the spot.</p>
+        </header>
+        <ul class="core-list">
+          <li class="core c-v"><b>V</b><span><strong data-zh="齐射脉冲">Volley Pulse</strong><em data-zh="多管散射机炮">Multi-barrel spread gatling</em></span></li>
+          <li class="core c-l"><b>L</b><span><strong data-zh="等离子激光">Plasma Laser</strong><em data-zh="持续灼烧光束">Continuous thermal beam</em></span></li>
+          <li class="core c-m"><b>M</b><span><strong data-zh="追踪蜂群">Homing Swarm</strong><em data-zh="锁定微型飞弹">Lock-on micro-missiles</em></span></li>
+          <li class="core c-t"><b>T</b><span><strong data-zh="风暴弧波">Tempest Arc</strong><em data-zh="冲击波 + 连锁闪电">Shockwaves + chain lightning</em></span></li>
+          <li class="core c-r"><b>R</b><span><strong data-zh="光子轨道炮">Photon Rail</strong><em data-zh="穿甲光矛">Armor-piercing rail lances</em></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SCREENSHOTS ============ -->
+    <section class="section" id="screens">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="游戏截图">Screenshots</p>
+          <h2 data-zh="弹幕之中，见真章">See it in action</h2>
+          <p class="section-sub" data-zh="点击图片可放大查看。">Tap a screenshot to enlarge it.</p>
+        </header>
+      </div>
+      <div class="shots" tabindex="0" aria-label="Screenshots, scroll sideways">
+        <button class="shot" type="button"><img src="astra-wing/shots/en/01_home.jpg" data-src-zh="astra-wing/shots/zh/01_home.jpg" alt="Hangar with pilot Aurora and her fighter" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/02_combat.jpg" data-src-zh="astra-wing/shots/zh/02_combat.jpg" alt="Dodging a dense bullet storm" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/03_evolve.jpg" data-src-zh="astra-wing/shots/zh/03_evolve.jpg" alt="Fighter evolving to LV.5 mid-battle" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/04_boss.jpg" data-src-zh="astra-wing/shots/zh/04_boss.jpg" alt="Multi-phase boss battle" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/05_blackhole.jpg" data-src-zh="astra-wing/shots/zh/05_blackhole.jpg" alt="Black hole ultimate pulling in enemies" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/06_chrono.jpg" data-src-zh="astra-wing/shots/zh/06_chrono.jpg" alt="Chrono Field slowing time" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/07_story.jpg" data-src-zh="astra-wing/shots/zh/07_story.jpg" alt="Story dialogue with a pilot" width="540" height="960" loading="lazy"></button>
+        <button class="shot" type="button"><img src="astra-wing/shots/en/08_campaign.jpg" data-src-zh="astra-wing/shots/zh/08_campaign.jpg" alt="Campaign map and hangar upgrades" width="540" height="960" loading="lazy"></button>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="wrap narrow">
+        <header class="section-head">
+          <p class="eyebrow" data-zh="常见问题">FAQ</p>
+          <h2 data-zh="出击前须知">Before you launch</h2>
+        </header>
+        <div class="faq">
+          <details>
+            <summary data-zh="游戏免费吗？">Is Astra Wing free?</summary>
+            <p data-zh="是的。所有关卡、武器和机体都可以通过游玩获得，没有付费墙。可选的一次性「支持者礼包」会让所有广告奖励免看广告并使星核 ×1.5，也可以在设置里自愿打赏。">Yes. Every stage, weapon and fighter can be earned by playing, with no paywalls. An optional one-time Supporter Pack claims every ad reward without ads and boosts star cores ×1.5, and there's a tip jar in Settings if you'd like to support development.</p>
+          </details>
+          <details>
+            <summary data-zh="有广告吗？">Are there ads?</summary>
+            <p data-zh="没有横幅广告，也没有会打断游戏的广告。只有你主动选择时才会播放奖励广告（例如 BOSS 残血时复活一次、星核翻倍、生命耗尽时 +2 生命），而且这些都可以用游玩获得的跳过券代替。">No banners and nothing that interrupts play. A rewarded ad only plays when you choose one (for example a revive near a boss kill, doubling a sortie's star cores, or +2 lives when you're out), and skip tickets you earn in game can be used instead.</p>
+          </details>
+          <details>
+            <summary data-zh="需要联网吗？">Do I need an internet connection?</summary>
+            <p data-zh="不需要。无需账号，完全可以离线游玩。只有排行榜和可选的奖励广告需要联网。">No. There's no account and the whole game plays offline. Only leaderboards and optional rewarded ads need a connection.</p>
+          </details>
+          <details>
+            <summary data-zh="支持哪些设备？">Which devices are supported?</summary>
+            <p data-zh="目前在 Google Play 上架 Android 版本。游戏为竖屏设计，手机、平板和折叠屏都能自适应显示。">Astra Wing is available for Android on Google Play. It's built for portrait play and adapts to phones, tablets and foldables.</p>
+          </details>
+          <details>
+            <summary data-zh="支持哪些语言？">Which languages are supported?</summary>
+            <p data-zh="支持简体中文、English，以及日本語、한국어、Deutsch、Español、Français、Italiano、Português (Brasil)、Русский、Türkçe、Tiếng Việt、Bahasa Indonesia、ไทย 等语言。">English and Chinese, plus 日本語, 한국어, Deutsch, Español, Français, Italiano, Português (Brasil), Русский, Türkçe, Tiếng Việt, Bahasa Indonesia and ไทย.</p>
+          </details>
+          <details>
+            <summary data-zh="太难了怎么办？">It's too hard. Any tips?</summary>
+            <p data-zh="先用「学员」难度熟悉关卡。只有机身中央的红色核心会受到全额伤害，机翼被擦到只受少量伤害；贴着子弹擦弹可以为超载充能。别忘了在机库升级战机，并且尽量接住被打掉的武器核心。">Start on Cadet. Only the red core in the middle of your ship takes full damage; wing clips take much less, and grazing close to bullets charges Overdrive. Upgrade your fighter in the Hangar, and always try to catch an ejected weapon core.</p>
+          </details>
+          <details>
+            <summary data-zh="遇到问题或想反馈？">Found a bug or have feedback?</summary>
+            <p>
+              <span data-zh="请发送邮件至">Email us at</span>
+              <a href="mailto:zrl0420@gmail.com?subject=Astra%20Wing%20feedback">zrl0420@gmail.com</a>
+              <span data-zh="，并附上你的设备型号、Android 版本和问题描述。截图会很有帮助！">with your device model, Android version and what happened. Screenshots help a lot!</span>
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta">
+      <div class="wrap final-inner">
+        <img class="final-icon" src="astra-wing/icon-192.png" alt="Astra Wing app icon" width="96" height="96" loading="lazy">
+        <h2 data-zh="武器解锁，展翼出击！">Weapons free. Wings out.</h2>
+        <p data-zh="免费 · 无强制广告 · 离线可玩">Free · No forced ads · Plays offline</p>
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.tacq.cyberwing"
+           target="_blank" rel="noopener noreferrer">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 2.5v19l10.2-9.5L4 2.5z" fill="#00d2ff"/>
+            <path d="M4 2.5l13.4 7.6-3.2 1.9L4 2.5z" fill="#00f076"/>
+            <path d="M4 21.5l10.2-9.5 3.2 1.9L4 21.5z" fill="#ff3a44"/>
+            <path d="M17.4 10.1l3.3 1.9-3.3 1.9-3.2-1.9 3.2-1.9z" fill="#ffd400"/>
+          </svg>
+          <span class="btn-play-text">
+            <small data-zh="前往下载">Get it on</small>
+            <strong>Google Play</strong>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 Renlong Zhang · Astra Wing / 星翼战姬</p>
+      <nav aria-label="Footer">
+        <a href="/astra-wing/privacy.html" data-zh="隐私政策">Privacy Policy</a>
+        <a href="mailto:zrl0420@gmail.com" data-zh="联系支持">Contact support</a>
+        <a href="/" data-zh="开发者主页">Developer home</a>
+      </nav>
+      <p class="fine" data-zh="Google Play 及 Google Play 徽标是 Google LLC 的商标。">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+    <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" src="data:," alt="">
+  </dialog>
+
+  <script src="astra-wing/site.js"></script>
+</body>
+</html>
