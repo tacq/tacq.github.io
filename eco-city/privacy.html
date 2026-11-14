@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP response headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and `X-Frame-Options` are ignored in <meta> CSP; enforcing
+    clickjacking headers requires an upstream proxy/CDN (e.g., Cloudflare) in front of GitHub Pages.
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'nonce-eco-privacy-20261113'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Privacy Policy for GreenGrid: Living City (com.tacq.ecocity) on Android and iOS.">
+  <meta name="color-scheme" content="dark light">
+  <title>Privacy Policy — GreenGrid: Living City</title>
+  <style nonce="eco-privacy-20261113">
+    :root {
+      --bg: #0b0f19; --card-bg: #111827; --card-subtle: #1e293b;
+      --text: #f1f5f9; --text-muted: #94a3b8; --border: #1f2937;
+      --accent: #60a5fa; --badge-bg: rgba(59, 130, 246, 0.18); --badge-text: #93c5fd;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fa; --card-bg: #ffffff; --card-subtle: #f0f4f8;
+        --text: #1a202c; --text-muted: #4a5568; --border: #e2e8f0;
+        --accent: #2563eb; --badge-bg: #dbeafe; --badge-text: #1e40af;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 2rem 1.25rem 4rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg); color: var(--text); line-height: 1.65;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    .card {
+      background-color: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.25rem;
+    }
+    .badge {
+      display: inline-block; font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; background-color: var(--badge-bg);
+      color: var(--badge-text); padding: 0.25rem 0.65rem; border-radius: 999px;
+    }
+    h1 { margin: 0.6rem 0 0.25rem; font-size: 1.85rem; }
+    h2 { margin-top: 1.8rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+    p, li { color: var(--text); }
+    .muted { color: var(--text-muted); font-size: 0.92rem; }
+    a { color: var(--accent); }
+    code { background-color: var(--card-subtle); padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="card">
+      <span class="badge">Privacy Policy</span>
+      <h1>GreenGrid: Living City</h1>
+      <p class="muted">Bundle / Package ID: <code>com.tacq.ecocity</code> · Publisher: Enco Universe · Effective date: November 13, 2026</p>
+
+      <p><strong>GreenGrid: Living City</strong> is an idle resource-network and sustainable city-balancing puzzle game for iOS and Android. We respect your privacy and collect the minimum data needed to run the game, deliver optional level packs, process optional in-app purchases, and serve ads where enabled.</p>
+
+      <h2>1. Data Stored Locally on Your Device</h2>
+      <ul>
+        <li><strong>Game Progress &amp; Settings:</strong> Level completion, unlocks, language preference, audio/accessibility settings, and local event logs are stored locally on your device and are never uploaded to our own servers.</li>
+        <li><strong>Over-the-Air Level Packs:</strong> The app periodically checks static HTTPS files hosted on GitHub Pages (<code>tacq.github.io</code>) to download signed, data-only level updates. No user account or personal identifier is sent in these requests.</li>
+      </ul>
+
+      <h2>2. Advertising &amp; Consent (Google AdMob)</h2>
+      <p>Free versions of the game may display infrequent interstitial ads between completed levels and opt-in rewarded ads when you request a hint or bonus. Advertising is provided by <strong>Google AdMob</strong>, which may collect device identifiers (such as Android Advertising ID or iOS IDFA when permitted), coarse IP-based location, ad interaction events, and diagnostic information to serve ads and prevent fraud.</p>
+      <ul>
+        <li><strong>EEA / UK / Switzerland (GDPR):</strong> We present Google's User Messaging Platform (UMP) consent form before initializing ads, and you can review or withdraw consent anytime via <em>Settings → Privacy Options</em> inside the game.</li>
+        <li><strong>iOS App Tracking Transparency (ATT):</strong> On iOS, cross-app tracking identifiers (IDFA) are accessed only if you grant permission in Apple's system prompt.</li>
+        <li>See <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google's Privacy Policy</a> for details.</li>
+      </ul>
+
+      <h2>3. In-App Purchases</h2>
+      <p>Optional purchases (such as <em>Remove Ads</em>, product ID <code>remove_ads</code>) are processed directly by <strong>Apple App Store (StoreKit 2)</strong> or <strong>Google Play Billing</strong>. We never receive or store your credit card or payment details, and you can restore owned non-consumable purchases anytime via <em>Settings → Restore Purchases</em>.</p>
+
+      <h2>4. Children's Privacy</h2>
+      <p>We do not knowingly collect personal information from children, and ad requests are configured with family-safe content ratings (PG / general audiences).</p>
+
+      <h2>5. Your Rights &amp; Contact</h2>
+      <p>You can delete all local game data at any time via <em>Settings → Reset progress</em> or by uninstalling the app. For privacy questions or support requests, please visit our <a href="/contact.html">Support &amp; Contact page</a>.</p>
+    </article>
+  </main>
+</body>
+</html>

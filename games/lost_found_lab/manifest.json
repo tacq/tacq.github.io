@@ -1,0 +1,15 @@
+{
+ "game": "lost_found_lab",
+ "packs": [
+  {
+   "id": "lfl_museum",
+   "version": 1,
+   "url": "lfl_museum-v1.zip",
+   "sha256": "309b15fd96d3b4ba9338fdb9130007b90ee40f1431dd38e862131b533e06e1ff",
+   "size": 735625,
+   "min_app": "0.1.0",
+   "title": "Science Museum"
+  }
+ ],
+ "revoked": []
+}

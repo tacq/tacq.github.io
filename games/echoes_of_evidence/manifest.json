@@ -1,0 +1,15 @@
+{
+ "game": "echoes_of_evidence",
+ "packs": [
+  {
+   "id": "eoe_ch3",
+   "version": 1,
+   "url": "eoe_ch3-v1.zip",
+   "sha256": "c2c4c7796cafac682e61dd4394ab457df7d8aa990acab484a38eecf6379697e6",
+   "size": 530053,
+   "min_app": "0.1.0",
+   "title": "Chapter 3: The Night Line"
+  }
+ ],
+ "revoked": []
+}

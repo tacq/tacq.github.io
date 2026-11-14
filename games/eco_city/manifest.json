@@ -1,0 +1,15 @@
+{
+ "game": "eco_city",
+ "packs": [
+  {
+   "id": "eco_coast",
+   "version": 1,
+   "url": "eco_coast-v1.zip",
+   "sha256": "7f8315f1fe80d52f6a1e4b65f362a546874a92ba82f956992046babfadfde83b",
+   "size": 20265,
+   "min_app": "0.2.0",
+   "title": "Act 2: The Coast"
+  }
+ ],
+ "revoked": []
+}
