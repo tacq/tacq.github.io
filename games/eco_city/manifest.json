@@ -3,10 +3,10 @@
  "packs": [
   {
    "id": "eco_coast",
-   "version": 1,
-   "url": "eco_coast-v1.zip",
-   "sha256": "7f8315f1fe80d52f6a1e4b65f362a546874a92ba82f956992046babfadfde83b",
-   "size": 20265,
+   "version": 2,
+   "url": "eco_coast-v2.zip",
+   "sha256": "666039d06c7466158a64d6ab83dfbca66362859376be02bc9733769b4436cce9",
+   "size": 20275,
    "min_app": "0.2.0",
    "title": "Act 2: The Coast"
   }
