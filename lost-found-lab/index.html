@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP response headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and `X-Frame-Options` are ignored in <meta> CSP; enforcing
+    clickjacking headers requires an upstream proxy/CDN (e.g., Cloudflare) in front of GitHub Pages.
+    The page is fully static (no forms, no cookies, no scripts, no user data).
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>The Lost &amp; Found Lab — Cozy Clue-Sorting Puzzle Game for iPhone &amp; Android</title>
+  <meta name="description" content="The Lost &amp; Found Lab is a cozy clue-based sorting puzzle. Inspect, flip, clean, repair and power up lost objects, read the clues and return every item to its owner. 18 cases, 15 languages. Coming soon to the App Store and Google Play.">
+  <meta name="theme-color" content="#1a120c">
+  <link rel="canonical" href="https://tacq.github.io/lost-found-lab/">
+  <link rel="icon" type="image/png" href="img/favicon-64.png">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Lost &amp; Found Lab — every lost thing has a story">
+  <meta property="og:description" content="A cozy clue-based sorting puzzle: inspect lost objects, read the clues and send each one home.">
+  <meta property="og:url" content="https://tacq.github.io/lost-found-lab/">
+  <meta property="og:image" content="https://tacq.github.io/lost-found-lab/img/key-art.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/game-page.css">
+</head>
+<body class="theme-lfl">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="The Lost &amp; Found Lab, top of page">
+        <img src="img/icon-192.png" alt="" width="36" height="36">
+        <span>The Lost &amp; Found Lab</span>
+      </a>
+      <nav class="topnav" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#screens">Screenshots</a>
+        <a class="opt" href="#languages">Languages</a>
+        <a class="opt" href="#info">Privacy &amp; support</a>
+        <a href="/">Developer home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="game-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Cozy clue-sorting puzzle · iPhone &amp; Android</p>
+          <h1 id="game-title">The Lost &amp; Found Lab<span class="alt" lang="zh-Hans">失物招领实验室</span></h1>
+          <p class="tagline">Every lost thing has a story.</p>
+          <p class="lede">
+            A crate of forgotten objects lands on your desk. Turn each one over, scrub off the grime, snap a loose
+            piece back in place, power it up and read the clues it hides. Then match it to the owner the evidence
+            points to. No countdowns, no guessing, just a warm little lab and a satisfying click when it all adds up.
+          </p>
+          <div class="cta-row">
+            <p class="soon"><small>Coming soon</small><strong>to the App Store and Google Play</strong></p>
+            <a class="btn" href="#screens">See screenshots</a>
+          </div>
+          <ul class="chips" aria-label="Highlights">
+            <li>Free to play</li>
+            <li>18 handmade cases</li>
+            <li>Hints only when you're stuck</li>
+            <li>15 languages</li>
+            <li>No account needed</li>
+          </ul>
+        </div>
+        <figure class="hero-art">
+          <div class="frame">
+            <img src="img/key-art.jpg" alt="Key art: a cozy lost-and-found lab with wooden shelves of lost toys, hats and bags, a workbench, warm lamps and an arched window" width="720" height="1280">
+          </div>
+          <img class="badge-icon" src="img/icon-192.png" alt="The Lost &amp; Found Lab app icon" width="96" height="96">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="The Lost &amp; Found Lab at a glance">
+      <div class="wrap stats-inner">
+        <div class="stat"><b>18</b><span>cases to solve</span></div>
+        <div class="stat"><b>3</b><span>places: Pool, Station &amp; Science Museum</span></div>
+        <div class="stat"><b>5</b><span>ways to inspect an object</span></div>
+        <div class="stat"><b>15</b><span>languages</span></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">How it plays</p>
+          <h2 id="features-title">Look closer. Think it through. Send it home.</h2>
+          <p class="section-sub">Each case is a small logic puzzle built from real clues: initials, locker numbers, colours, tags and notes.</p>
+        </header>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🔍</span>
+            <h3>Hands-on inspecting</h3>
+            <p>Tap glowing spots to read clues, flip objects to see the back, scrub away grime, fit a missing piece into its socket and slot in a battery to bring a gadget back to life.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🧩</span>
+            <h3>Fair, clue-based logic</h3>
+            <p>Owner cards tick what matches and cross what doesn't, always with a shape and a word, never colour alone. Route an object wrong and the game shows exactly which clue contradicts it.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🏛️</span>
+            <h3>18 cases, 3 places</h3>
+            <p>Start at the Community Pool, move on to the Train Station, then open the Science Museum wing with fossils, microscopes, magnets and more. Every case is handmade.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">💡</span>
+            <h3>Your lab, your pace</h3>
+            <p>Earn credits to upgrade the lab, fill your collection shelf with every object you return and claim daily rewards. Hints wake up only after you've been stuck a while, and they point at evidence, never at the answer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREENSHOTS ============ -->
+    <section class="section section-alt" id="screens" aria-labelledby="screens-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Screenshots</p>
+          <h2 id="screens-title">A peek inside the lab</h2>
+          <p class="scroll-hint">Scroll sideways to see more.</p>
+        </header>
+      </div>
+      <div class="shots" tabindex="0" role="region" aria-label="Screenshots, scroll sideways">
+        <figure><img src="img/shot-1.jpg" alt="Home screen: the lab with shelves of objects and a Start your first case button" width="540" height="960" loading="lazy"><figcaption>Welcome to the lab</figcaption></figure>
+        <figure><img src="img/shot-2.jpg" alt="Case play: a crate of lost items above four owner cards with initials and locker numbers" width="540" height="960" loading="lazy"><figcaption>Match each object to its owner</figcaption></figure>
+        <figure><img src="img/shot-3.jpg" alt="Inspector: a grimy brass key with a Scrub the grime away prompt" width="540" height="960" loading="lazy"><figcaption>Clean, flip and inspect</figcaption></figure>
+        <figure><img src="img/shot-4.jpg" alt="Case closed: three stamps, earned credits and the list of returned objects" width="540" height="960" loading="lazy"><figcaption>Case closed</figcaption></figure>
+        <figure><img src="img/shot-5.jpg" alt="Lab upgrades: desk lamp, clue counter, window fern, label maker and display lights" width="540" height="960" loading="lazy"><figcaption>Upgrade your lab</figcaption></figure>
+        <figure><img src="img/shot-6.jpg" alt="Collection shelf filled with returned objects such as goggles, keys and swim rings" width="540" height="960" loading="lazy"><figcaption>Fill the collection shelf</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ LANGUAGES ============ -->
+    <section class="section" id="languages" aria-labelledby="lang-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Languages</p>
+          <h2 id="lang-title">Plays in 15 languages</h2>
+          <p class="section-sub">Every clue, card and menu is translated. Switch any time in Settings.</p>
+        </header>
+        <ul class="lang-list">
+          <li lang="en">English</li>
+          <li lang="zh-Hans">简体中文</li>
+          <li lang="zh-Hant">繁體中文</li>
+          <li lang="ja">日本語</li>
+          <li lang="ko">한국어</li>
+          <li lang="es">Español</li>
+          <li lang="pt-BR">Português (Brasil)</li>
+          <li lang="fr">Français</li>
+          <li lang="de">Deutsch</li>
+          <li lang="ru">Русский</li>
+          <li lang="it">Italiano</li>
+          <li lang="tr">Türkçe</li>
+          <li lang="id">Bahasa Indonesia</li>
+          <li lang="vi">Tiếng Việt</li>
+          <li lang="th">ไทย</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ INFO ============ -->
+    <section class="section section-alt" id="info" aria-labelledby="info-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Good to know</p>
+          <h2 id="info-title">Availability, privacy &amp; support</h2>
+        </header>
+        <div class="info-grid">
+          <article class="info">
+            <h3>Coming soon</h3>
+            <p>The Lost &amp; Found Lab is coming soon to the App Store (iPhone) and Google Play (Android). Store links will appear here at launch.</p>
+          </article>
+          <article class="info">
+            <h3>Free, with fair ads</h3>
+            <p>The game is free. Ads never appear during a puzzle: an occasional ad may play between cases, and rewarded ads only play when you choose one. An optional one-time <strong>Remove Ads</strong> purchase removes interstitial ads for good.</p>
+          </article>
+          <article class="info">
+            <h3>Your privacy</h3>
+            <p>No account and no sign-up. Progress and settings are saved on your device. Read the full <a href="privacy.html">privacy policy</a>.</p>
+          </article>
+          <article class="info">
+            <h3>Support</h3>
+            <p>Found a bug or have an idea? Email <a href="mailto:zrl0420@gmail.com?subject=The%20Lost%20%26%20Found%20Lab%20support">zrl0420@gmail.com</a> with your device model and what happened, or visit the <a href="/contact.html">contact page</a>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap">
+        <img src="img/icon-192.png" alt="The Lost &amp; Found Lab app icon" width="96" height="96" loading="lazy">
+        <h2 id="final-title">Something's waiting to be found.</h2>
+        <p>Free · 18 cases · 15 languages · No account</p>
+        <div class="cta-row">
+          <p class="soon"><small>Coming soon</small><strong>to the App Store and Google Play</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 Renlong Zhang · The Lost &amp; Found Lab</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="/contact.html">Support</a>
+        <a href="/eco-city/">GreenGrid: Living City</a>
+        <a href="/echoes-of-evidence/">Echoes of Evidence</a>
+        <a href="/">Developer home</a>
+      </nav>
+      <p class="fine">App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </footer>
+</body>
+</html>

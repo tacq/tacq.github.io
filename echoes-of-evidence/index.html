@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    GitHub Pages does not allow custom HTTP response headers, so CSP is delivered via <meta>.
+    TODO(security): `frame-ancestors` and `X-Frame-Options` are ignored in <meta> CSP; enforcing
+    clickjacking headers requires an upstream proxy/CDN (e.g., Cloudflare) in front of GitHub Pages.
+    The page is fully static (no forms, no cookies, no scripts, no user data).
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Echoes of Evidence — Noir Timeline Mystery Game for iPhone &amp; Android</title>
+  <meta name="description" content="Echoes of Evidence is a noir timeline-deduction mystery. Read evidence cards, rebuild what really happened, catch the statement that can't be true and close 9 handcrafted, non-violent cases. 15 languages. Coming soon to the App Store and Google Play.">
+  <meta name="theme-color" content="#0a0b10">
+  <link rel="canonical" href="https://tacq.github.io/echoes-of-evidence/">
+  <link rel="icon" type="image/png" href="img/favicon-64.png">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Echoes of Evidence — records never lie. People sometimes do.">
+  <meta property="og:description" content="A noir timeline-deduction mystery: 9 handcrafted, fair, non-violent cases in 3 chapters.">
+  <meta property="og:url" content="https://tacq.github.io/echoes-of-evidence/">
+  <meta property="og:image" content="https://tacq.github.io/echoes-of-evidence/img/key-art.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/game-page.css">
+</head>
+<body class="theme-eoe">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Echoes of Evidence, top of page">
+        <img src="img/icon-192.png" alt="" width="36" height="36">
+        <span>Echoes of Evidence</span>
+      </a>
+      <nav class="topnav" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#screens">Screenshots</a>
+        <a class="opt" href="#languages">Languages</a>
+        <a class="opt" href="#info">Privacy &amp; support</a>
+        <a href="/">Developer home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="game-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Noir deduction mystery · iPhone &amp; Android</p>
+          <h1 id="game-title">Echoes of Evidence<span class="alt" lang="zh-Hans">证据回响</span></h1>
+          <p class="tagline">Records never lie. People sometimes do.</p>
+          <p class="lede">
+            Rain on the window, a lamp on the desk and a stack of case files. Read logs, messages, maps and
+            statements, put the events in the right order and work out who was where, when. One statement can't be
+            true. Find it, rebuild the timeline and stamp the case closed.
+          </p>
+          <div class="cta-row">
+            <p class="soon"><small>Coming soon</small><strong>to the App Store and Google Play</strong></p>
+            <a class="btn" href="#screens">See screenshots</a>
+          </div>
+          <ul class="chips" aria-label="Highlights">
+            <li>Free to play</li>
+            <li>9 handcrafted cases</li>
+            <li>Every case logically solvable</li>
+            <li>Non-violent mysteries</li>
+            <li>15 languages</li>
+          </ul>
+        </div>
+        <figure class="hero-art">
+          <div class="frame">
+            <img src="img/key-art.jpg" alt="Key art: a detective's desk with a green banker's lamp and pinned evidence, beside a rain-streaked window over a city at night" width="720" height="1280">
+          </div>
+          <img class="badge-icon" src="img/icon-192.png" alt="Echoes of Evidence app icon" width="96" height="96">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Echoes of Evidence at a glance">
+      <div class="wrap stats-inner">
+        <div class="stat"><b>9</b><span>handcrafted cases</span></div>
+        <div class="stat"><b>3</b><span>chapters</span></div>
+        <div class="stat"><b>0</b><span>guesswork: every answer is in the evidence</span></div>
+        <div class="stat"><b>15</b><span>languages</span></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">How it plays</p>
+          <h2 id="features-title">Think like a detective, not a guesser</h2>
+          <p class="section-sub">Every case is checked by a logic engine, so there is exactly one answer and you can always reason your way to it.</p>
+        </header>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🗂️</span>
+            <h3>Read the evidence</h3>
+            <p>Door logs, camera stills, messages, floor plans, walking-time maps and witness statements. Records are always true; people can be wrong.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🕰️</span>
+            <h3>Rebuild the timeline</h3>
+            <p>Drag events into order. <em>Check board</em> is free and unlimited: it lists every conflict with the cards you've read, in plain language.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">⚖️</span>
+            <h3>Compare &amp; conclude</h3>
+            <p>Put two cards side by side to see if they contradict each other and why. Then answer the case questions: who did it, what happened just before, and which statement can't be true.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🌧️</span>
+            <h3>Fair hints, cozy noir</h3>
+            <p>Hints only unlock once you're stuck, and they point at cards, never at the answer. Three chapters of small, non-violent mysteries, from riverside mornings to a night train.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREENSHOTS ============ -->
+    <section class="section section-alt" id="screens" aria-labelledby="screens-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Screenshots</p>
+          <h2 id="screens-title">Open the case file</h2>
+          <p class="scroll-hint">Scroll sideways to see more.</p>
+        </header>
+      </div>
+      <div class="shots" tabindex="0" role="region" aria-label="Screenshots, scroll sideways">
+        <figure><img src="img/shot-1.jpg" alt="Case board for Chapter 3, The Night Line, with case covers and star ratings" width="540" height="960" loading="lazy"><figcaption>Pick a case</figcaption></figure>
+        <figure><img src="img/shot-2.jpg" alt="Case briefing for The Missing Prototype with portraits of the people involved" width="540" height="960" loading="lazy"><figcaption>Read the briefing</figcaption></figure>
+        <figure><img src="img/shot-3.jpg" alt="Evidence tab with tilted paper cards: logs, messages, camera stills and a floor plan" width="540" height="960" loading="lazy"><figcaption>Study the evidence</figcaption></figure>
+        <figure><img src="img/shot-4.jpg" alt="Timeline board with events placed in numbered slots and a Check board button" width="540" height="960" loading="lazy"><figcaption>Order the timeline</figcaption></figure>
+        <figure><img src="img/shot-5.jpg" alt="Compare panel stamping two cards as a contradiction with an explanation" width="540" height="960" loading="lazy"><figcaption>Find the contradiction</figcaption></figure>
+        <figure><img src="img/shot-6.jpg" alt="Case closed screen with a star rating and an explanation of what really happened" width="540" height="960" loading="lazy"><figcaption>Case closed</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ LANGUAGES ============ -->
+    <section class="section" id="languages" aria-labelledby="lang-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Languages</p>
+          <h2 id="lang-title">Plays in 15 languages</h2>
+          <p class="section-sub">Every case, card and question is translated. Text size and reduce-motion options are in Settings.</p>
+        </header>
+        <ul class="lang-list">
+          <li lang="en">English</li>
+          <li lang="zh-Hans">简体中文</li>
+          <li lang="zh-Hant">繁體中文</li>
+          <li lang="ja">日本語</li>
+          <li lang="ko">한국어</li>
+          <li lang="es">Español</li>
+          <li lang="pt-BR">Português (Brasil)</li>
+          <li lang="fr">Français</li>
+          <li lang="de">Deutsch</li>
+          <li lang="ru">Русский</li>
+          <li lang="it">Italiano</li>
+          <li lang="tr">Türkçe</li>
+          <li lang="id">Bahasa Indonesia</li>
+          <li lang="vi">Tiếng Việt</li>
+          <li lang="th">ไทย</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ INFO ============ -->
+    <section class="section section-alt" id="info" aria-labelledby="info-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Good to know</p>
+          <h2 id="info-title">Availability, privacy &amp; support</h2>
+        </header>
+        <div class="info-grid">
+          <article class="info">
+            <h3>Coming soon</h3>
+            <p>Echoes of Evidence is coming soon to the App Store (iPhone) and Google Play (Android). Store links will appear here at launch.</p>
+          </article>
+          <article class="info">
+            <h3>Free, with fair ads</h3>
+            <p>The game is free. Ads never appear while you work a case: an occasional ad may play between cases, and rewarded ads only play when you choose one. An optional one-time <strong>Remove Ads</strong> purchase removes interstitial ads for good.</p>
+          </article>
+          <article class="info">
+            <h3>Your privacy</h3>
+            <p>No account and no sign-up. Progress and settings are saved on your device. Read the full <a href="privacy.html">privacy policy</a>.</p>
+          </article>
+          <article class="info">
+            <h3>Support</h3>
+            <p>Found a bug or have an idea? Email <a href="mailto:zrl0420@gmail.com?subject=Echoes%20of%20Evidence%20support">zrl0420@gmail.com</a> with your device model and what happened, or visit the <a href="/contact.html">contact page</a>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap">
+        <img src="img/icon-192.png" alt="Echoes of Evidence app icon" width="96" height="96" loading="lazy">
+        <h2 id="final-title">The evidence is waiting.</h2>
+        <p>Free · 9 cases · 3 chapters · 15 languages</p>
+        <div class="cta-row">
+          <p class="soon"><small>Coming soon</small><strong>to the App Store and Google Play</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 Renlong Zhang · Echoes of Evidence</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="/contact.html">Support</a>
+        <a href="/lost-found-lab/">The Lost &amp; Found Lab</a>
+        <a href="/eco-city/">GreenGrid: Living City</a>
+        <a href="/">Developer home</a>
+      </nav>
+      <p class="fine">App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </footer>
+</body>
+</html>
